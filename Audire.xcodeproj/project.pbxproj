@@ -25,6 +25,7 @@
 		97C816CE28EB13570048658F /* ShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C816CC28EB13570048658F /* ShopViewController.swift */; };
 		97C816CF28EB13570048658F /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C816CD28EB13570048658F /* ProfileViewController.swift */; };
 		97C816D228EB1A940048658F /* NavigationBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C816D128EB1A940048658F /* NavigationBarView.swift */; };
+		97C816D928EB1C790048658F /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C816D828EB1C790048658F /* CustomButton.swift */; };
 		FBE64C31F22FA4F3AAEE6EDB /* Pods_Audire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79A155AC9D337D43BE8D9080 /* Pods_Audire.framework */; };
 /* End PBXBuildFile section */
 
@@ -54,6 +55,7 @@
 		97C816D528EB1AEA0048658F /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
 		97C816D628EB1AEA0048658F /* Montserrat-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Light.ttf"; sourceTree = "<group>"; };
 		97C816D728EB1AEA0048658F /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.ttf"; sourceTree = "<group>"; };
+		97C816D828EB1C790048658F /* CustomButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +158,7 @@
 		97C816D028EB1A890048658F /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				97C816D828EB1C790048658F /* CustomButton.swift */,
 				97C816D128EB1A940048658F /* NavigationBarView.swift */,
 			);
 			path = Views;
@@ -340,6 +343,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				97C816D928EB1C790048658F /* CustomButton.swift in Sources */,
 				97C816CB28EB13110048658F /* AppDelegate.swift in Sources */,
 				9769C60E28EB04F600037B51 /* MainTabBarViewController.swift in Sources */,
 				97C816D228EB1A940048658F /* NavigationBarView.swift in Sources */,
