@@ -24,6 +24,7 @@
 		97C816CB28EB13110048658F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C816C928EB13110048658F /* AppDelegate.swift */; };
 		97C816CE28EB13570048658F /* ShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C816CC28EB13570048658F /* ShopViewController.swift */; };
 		97C816CF28EB13570048658F /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C816CD28EB13570048658F /* ProfileViewController.swift */; };
+		97C816D228EB1A940048658F /* NavigationBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C816D128EB1A940048658F /* NavigationBarView.swift */; };
 		FBE64C31F22FA4F3AAEE6EDB /* Pods_Audire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79A155AC9D337D43BE8D9080 /* Pods_Audire.framework */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +50,10 @@
 		97C816C928EB13110048658F /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		97C816CC28EB13570048658F /* ShopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopViewController.swift; sourceTree = "<group>"; };
 		97C816CD28EB13570048658F /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		97C816D128EB1A940048658F /* NavigationBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationBarView.swift; sourceTree = "<group>"; };
+		97C816D528EB1AEA0048658F /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
+		97C816D628EB1AEA0048658F /* Montserrat-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Light.ttf"; sourceTree = "<group>"; };
+		97C816D728EB1AEA0048658F /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +90,8 @@
 		970AB74628E9C594002EE407 /* Audire */ = {
 			isa = PBXGroup;
 			children = (
+				97C816D328EB1AD80048658F /* Resources */,
+				97C816D028EB1A890048658F /* Views */,
 				97C816C928EB13110048658F /* AppDelegate.swift */,
 				97C816C828EB13110048658F /* SceneDelegate.swift */,
 				97C816B628EB07D80048658F /* Helpers */,
@@ -144,6 +151,32 @@
 				9769C61128EB050100037B51 /* AirPodsViewController.swift */,
 			);
 			path = AirPodsViewController;
+			sourceTree = "<group>";
+		};
+		97C816D028EB1A890048658F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				97C816D128EB1A940048658F /* NavigationBarView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		97C816D328EB1AD80048658F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				97C816D428EB1AE30048658F /* Fonts */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		97C816D428EB1AE30048658F /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				97C816D728EB1AEA0048658F /* Montserrat-Bold.ttf */,
+				97C816D628EB1AEA0048658F /* Montserrat-Light.ttf */,
+				97C816D528EB1AEA0048658F /* Montserrat-Regular.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		D579759A4AFB0A3489499DFF /* Frameworks */ = {
@@ -309,6 +342,7 @@
 			files = (
 				97C816CB28EB13110048658F /* AppDelegate.swift in Sources */,
 				9769C60E28EB04F600037B51 /* MainTabBarViewController.swift in Sources */,
+				97C816D228EB1A940048658F /* NavigationBarView.swift in Sources */,
 				97C816CE28EB13570048658F /* ShopViewController.swift in Sources */,
 				9769C61328EB056500037B51 /* CustomCollectionViewCell.swift in Sources */,
 				97C816C328EB091F0048658F /* UIColor + ext.swift in Sources */,
