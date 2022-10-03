@@ -1,0 +1,9 @@
+query ExampleQuery($address: String!) {
+  getUserData(address: $address) {
+    address
+    balance_clio
+    balance_ton
+    balance_usdt
+   
+    }
+}
