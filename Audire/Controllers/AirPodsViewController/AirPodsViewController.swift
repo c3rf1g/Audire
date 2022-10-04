@@ -10,9 +10,6 @@ class AirPodsViewController: UIViewController, UICollectionViewDelegate, UIColle
     override func viewDidLoad() {
         super.viewDidLoad()
         setCollectionView()
-
-    
-        
     }
     
     override var prefersStatusBarHidden: Bool {
