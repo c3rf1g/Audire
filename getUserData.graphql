@@ -1,7 +1,0 @@
-query GetUserData($address: String!) {
-  getUserData(address: $address) {
-	address
-	balance_ton
-	balance_usdt
-  }
-}
