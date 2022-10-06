@@ -11,71 +11,65 @@ import SnapKit
 
 class CustomButton: UIButton {
     
-    var text: String
-    var fontStyle: String
-    var fontSize: CGFloat
+    private let text: String
+    private let fontStyle: String
+    private let fontSize: CGFloat
 
     required init(text: String, fontStyle: String, fontSize: CGFloat) {
-       
         self.text = text
         self.fontStyle = fontStyle
         self.fontSize = fontSize
         
         super.init(frame: .zero)
         
-        self.customView()
+        self.setupUI()
+        self.addingTargets()
     }
 
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func customView() {
+    private func setupUI() {
+        self.backgroundColor = Resources.Colors.inactiveButtonColor
         
-        let screen = UIScreen.main.bounds
-        let multiplierY = Double(screen.size.height / 926)
-       
+        //MARK: Text
+        self.setTitle(text, for: .normal)
+        self.setTitleColor(.white, for: .normal)
+        self.setTitleColor(Resources.Colors.activeButtonTextColor, for: .highlighted)
         
-        backgroundColor = UIColor(red: 39/255, green: 0/255, blue: 74/255, alpha: 1)
-        
-        setTitle(text, for: .normal)
-        setTitleColor(.white, for: .normal)
-        setTitleColor(UIColor(red: 139/255, green: 117/255, blue: 156/255, alpha: 1), for: .highlighted)
-        
-        
-        if screen.size.width < 380 {
-            titleLabel?.font = UIFont(name: "Montserrat-\(fontStyle)", size: (fontSize - 4))
+        if Resources.ScreenSizes.width < 380 {
+            self.titleLabel?.font = UIFont(name: "Montserrat-\(fontStyle)", size: (fontSize - 4))
         } else {
-            titleLabel?.font = UIFont(name: "Montserrat-\(fontStyle)", size: fontSize)
+            self.titleLabel?.font = UIFont(name: "Montserrat-\(fontStyle)", size: fontSize)
         }
         
-        layer.cornerRadius =  ((30 - 10) / 2 ) * multiplierY
-        layer.shadowColor = UIColor.black.cgColor
-        layer.shadowOffset = CGSize(width: 4, height: 4)
-        layer.shadowOpacity = 0.25
-        layer.shadowRadius = 5
-        
-        
+        //MARK: Cornerns and Shadow
+        self.layer.cornerRadius =  ((30 - 10) / 2 ) * Resources.Multipliers.multiplierY
+        self.layer.shadowColor = UIColor.black.cgColor
+        self.layer.shadowOffset = CGSize(width: 4, height: 4)
+        self.layer.shadowOpacity = 0.25
+        self.layer.shadowRadius = 5
+    }
     
-        addTarget(self, action: #selector(unclicked), for: .touchUpInside)
-        addTarget(self, action: #selector(clicked), for: .touchDown)
-        
+    private func addingTargets() {
+        self.addTarget(self, action: #selector(unclicked), for: .touchUpInside)
+        self.addTarget(self, action: #selector(clicked), for: .touchDown)
     }
     
     @objc private func unclicked() {
-        self.backgroundColor = UIColor(red: 39/255, green: 0/255, blue: 74/255, alpha: 1)
+        self.backgroundColor = Resources.Colors.inactiveButtonColor
         self.layer.shadowOffset = CGSize(width: 4, height: 4)
         
     }
     
     @objc private func clicked() {
-        backgroundColor = UIColor(red: 48/255, green: 35/255, blue: 61/255, alpha: 1)
-        layer.shadowOffset = CGSize(width: -4, height: -4)
+        self.backgroundColor = Resources.Colors.activeButtonColor
+        self.layer.shadowOffset = CGSize(width: -4, height: -4)
     }
     
     
 }
-
 
 
     

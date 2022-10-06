@@ -15,108 +15,84 @@ class NavigationBarView: UIView {
     private let chargeStatusImage = UIImageView(image: UIImage(named: "chargeStatus.png"))
     private let firstTokenImage = UIImageView(image: UIImage(named: "token.png"))
     private let secondTokenImage = UIImageView(image: UIImage(named: "mainToken.png"))
-    private let firstLabel = UILabel()
-    private let secondLabel = UILabel()
+    private let firstLabel = CustomLabel(customText: "0.57", fontStyle: "Regular", fontSize: 20)
+    private let secondLabel = CustomLabel(customText: "1680.21", fontStyle: "Regular", fontSize: 20)
     
     override init(frame: CGRect) {
         super.init(frame: .zero)
-        self.customView()
+        
+        self.addingSubviews()
+        self.setupContentMode()
+        self.setupConst()
     }
     
     required init(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func customView() {
-        
-        let screen = UIScreen.main.bounds
-        let multiplierX = Double(screen.size.width / 428)
-        let multiplierY = Double(screen.size.height / 926)
+    private func addingSubviews() {
+        self.addSubview(earphonesImage)
+        self.addSubview(chargeStatusImage)
+        self.addSubview(firstTokenImage)
+        self.addSubview(secondTokenImage)
+        self.addSubview(firstLabel)
+        self.addSubview(secondLabel)
+    }
+    
+    private func setupContentMode() {
+        earphonesImage.contentMode = .scaleAspectFit
+        chargeStatusImage.contentMode = .scaleAspectFit
+        firstTokenImage.contentMode = .scaleAspectFit
+        secondTokenImage.contentMode = .scaleAspectFit
+    }
+    
+    private func setupConst() {
         
         //MARK: earphonesImage
-        
-        self.addSubview(earphonesImage)
-        earphonesImage.contentMode = .scaleAspectFit
-       
         earphonesImage.snp.makeConstraints { make in
-            make.left.equalToSuperview().inset(30 * multiplierX)
-            make.right.equalToSuperview().inset(338 * multiplierX)
-            make.top.equalToSuperview().inset(0 * multiplierY)
-            make.bottom.equalToSuperview().inset(61 * multiplierY)
+            make.left.equalToSuperview().inset(30 * Resources.Multipliers.multiplierX)
+            make.right.equalToSuperview().inset(338 * Resources.Multipliers.multiplierX)
+            make.top.equalToSuperview().inset(0 * Resources.Multipliers.multiplierY)
+            make.bottom.equalToSuperview().inset(61 * Resources.Multipliers.multiplierY)
         }
-       
-        //MARK: chargeStatusImage
-        self.addSubview(chargeStatusImage)
-        chargeStatusImage.contentMode = .scaleAspectFit
         
+        //MARK: chargeStatusImage
         chargeStatusImage.snp.makeConstraints { make in
-            make.left.equalToSuperview().inset(101.5 * multiplierX)
-            make.right.equalToSuperview().inset(303.5 * multiplierX)
-            make.top.equalToSuperview().inset(-5 * multiplierY)
-            make.bottom.equalToSuperview().inset(55 * multiplierY)
+            make.left.equalToSuperview().inset(101.5 * Resources.Multipliers.multiplierX)
+            make.right.equalToSuperview().inset(303.5 * Resources.Multipliers.multiplierX)
+            make.top.equalToSuperview().inset(-5 * Resources.Multipliers.multiplierY)
+            make.bottom.equalToSuperview().inset(55 * Resources.Multipliers.multiplierY)
         }
         
         //MARK: firstTokenImage
-        
-        self.addSubview(firstTokenImage)
-        firstTokenImage.contentMode = .scaleAspectFit
-        
         firstTokenImage.snp.makeConstraints { make in
-            make.left.equalToSuperview().inset(369 * multiplierX)
-            make.right.equalToSuperview().inset(24 * multiplierX)
-            make.top.equalToSuperview().inset(-5 * multiplierY)
-            make.bottom.equalToSuperview().inset(91 * multiplierY)
+            make.left.equalToSuperview().inset(369 * Resources.Multipliers.multiplierX)
+            make.right.equalToSuperview().inset(24 * Resources.Multipliers.multiplierX)
+            make.top.equalToSuperview().inset(-5 * Resources.Multipliers.multiplierY)
+            make.bottom.equalToSuperview().inset(91 * Resources.Multipliers.multiplierY)
         }
         
         //MARK: secondTokenImage
-        
-        self.addSubview(secondTokenImage)
-        secondTokenImage.contentMode = .scaleAspectFit
-        
         secondTokenImage.snp.makeConstraints { make in
             make.centerX.equalTo(firstTokenImage.snp.centerX)
-            make.right.equalToSuperview().inset(22.5 * multiplierX)
-            make.top.equalToSuperview().inset(26 * multiplierY)
-            make.bottom.equalToSuperview().inset(55.5 * multiplierY)
+            make.right.equalToSuperview().inset(22.5 * Resources.Multipliers.multiplierX)
+            make.top.equalToSuperview().inset(26 * Resources.Multipliers.multiplierY)
+            make.bottom.equalToSuperview().inset(55.5 * Resources.Multipliers.multiplierY)
         }
         
         //MARK: firstLabel
-        
-        self.addSubview(firstLabel)
-        firstLabel.text = "0.27"
-        firstLabel.textColor = .white
-        firstLabel.font = UIFont(name: "Montserrat-Regular", size: 20)
-        
-       /* if screen.size.width < 380 {
-            firstLabel.font = UIFont(name: "Montserrat-Light", size: 20)
-        } else {
-            firstLabel.font = UIFont(name: "Montserrat-Light", size: 20)
-        }*/
-        
         firstLabel.snp.makeConstraints { make in
-            make.left.equalToSuperview().inset(317 * multiplierX).priority(.medium)
-            make.right.equalToSuperview().inset(70 * multiplierX).priority(.high)
-            make.top.equalToSuperview().inset(6 * multiplierY).priority(.medium)
+            make.left.equalToSuperview().inset(317 * Resources.Multipliers.multiplierX).priority(.medium)
+            make.right.equalToSuperview().inset(70 * Resources.Multipliers.multiplierY).priority(.high)
+            make.top.equalToSuperview().inset(6 * Resources.Multipliers.multiplierY).priority(.medium)
             make.centerY.equalTo(secondTokenImage.snp.centerY)
         }
         
         //MARK: secondLabel
-        
-        self.addSubview(secondLabel)
-        secondLabel.text = "1651.54"
-        secondLabel.textColor = .white
-        secondLabel.font = UIFont(name: "Montserrat-Regular", size: 20)
-        
-       /* if screen.size.width < 380 {
-            secondLabel.font = UIFont(name: "Montserrat-Light", size: 20)
-        } else {
-            secondLabel.font = UIFont(name: "Montserrat-Light", size: 20)
-        }*/
-        
         secondLabel.snp.makeConstraints { make in
-            make.left.equalToSuperview().inset(291 * multiplierX).priority(.medium)
-            make.right.equalToSuperview().inset(70 * multiplierX).priority(.high)
-            make.top.equalToSuperview().inset(44.5 * multiplierY).priority(.medium)
+            make.left.equalToSuperview().inset(291 * Resources.Multipliers.multiplierX).priority(.medium)
+            make.right.equalToSuperview().inset(70 * Resources.Multipliers.multiplierY).priority(.high)
+            make.top.equalToSuperview().inset(44.5 * Resources.Multipliers.multiplierY).priority(.medium)
             make.centerY.equalTo(firstTokenImage.snp.centerY)
         }
         

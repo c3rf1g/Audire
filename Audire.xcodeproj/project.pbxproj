@@ -26,6 +26,13 @@
 		97C816CF28EB13570048658F /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C816CD28EB13570048658F /* ProfileViewController.swift */; };
 		97C816D228EB1A940048658F /* NavigationBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C816D128EB1A940048658F /* NavigationBarView.swift */; };
 		97C816D928EB1C790048658F /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C816D828EB1C790048658F /* CustomButton.swift */; };
+		B76D513628EDC4D900C053E0 /* CustomLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B76D513528EDC4D900C053E0 /* CustomLabel.swift */; };
+		B76D513828EDC50D00C053E0 /* CustomSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B76D513728EDC50D00C053E0 /* CustomSlider.swift */; };
+		B76D513A28EDC52400C053E0 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B76D513928EDC52400C053E0 /* CustomTextField.swift */; };
+		B7ED2DD628EDCA4900653D87 /* FilteringViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7ED2DD528EDCA4900653D87 /* FilteringViewController.swift */; };
+		B7ED2DD728EDCBFB00653D87 /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 97C816D528EB1AEA0048658F /* Montserrat-Regular.ttf */; };
+		B7ED2DD828EDCBFE00653D87 /* Montserrat-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 97C816D628EB1AEA0048658F /* Montserrat-Light.ttf */; };
+		B7ED2DD928EDCC0000653D87 /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 97C816D728EB1AEA0048658F /* Montserrat-Bold.ttf */; };
 		FBE64C31F22FA4F3AAEE6EDB /* Pods_Audire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79A155AC9D337D43BE8D9080 /* Pods_Audire.framework */; };
 /* End PBXBuildFile section */
 
@@ -56,6 +63,10 @@
 		97C816D628EB1AEA0048658F /* Montserrat-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Light.ttf"; sourceTree = "<group>"; };
 		97C816D728EB1AEA0048658F /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.ttf"; sourceTree = "<group>"; };
 		97C816D828EB1C790048658F /* CustomButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		B76D513528EDC4D900C053E0 /* CustomLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLabel.swift; sourceTree = "<group>"; };
+		B76D513728EDC50D00C053E0 /* CustomSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSlider.swift; sourceTree = "<group>"; };
+		B76D513928EDC52400C053E0 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		B7ED2DD528EDCA4900653D87 /* FilteringViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilteringViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,13 +103,11 @@
 		970AB74628E9C594002EE407 /* Audire */ = {
 			isa = PBXGroup;
 			children = (
+				B76D513B28EDC63800C053E0 /* Application */,
 				97C816D328EB1AD80048658F /* Resources */,
-				97C816D028EB1A890048658F /* Views */,
-				97C816C928EB13110048658F /* AppDelegate.swift */,
-				97C816C828EB13110048658F /* SceneDelegate.swift */,
 				97C816B628EB07D80048658F /* Helpers */,
+				97C816D028EB1A890048658F /* Views */,
 				9769C61228EB052400037B51 /* Controllers */,
-				9769C60028EB009B00037B51 /* MainTabBarViewController.swift */,
 				97711EC728E9C82500FE1462 /* schema.json */,
 				97711EC928E9C84700FE1462 /* GraphQL */,
 				970AB75028E9C596002EE407 /* Assets.xcassets */,
@@ -111,9 +120,10 @@
 		9769C61228EB052400037B51 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				9769C60028EB009B00037B51 /* MainTabBarViewController.swift */,
+				B7ED2DDA28EDCEDB00653D87 /* ShopViewController */,
 				97C816C228EB08F50048658F /* AirPodsViewController */,
 				97C816CD28EB13570048658F /* ProfileViewController.swift */,
-				97C816CC28EB13570048658F /* ShopViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -158,8 +168,11 @@
 		97C816D028EB1A890048658F /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				97C816D828EB1C790048658F /* CustomButton.swift */,
 				97C816D128EB1A940048658F /* NavigationBarView.swift */,
+				97C816D828EB1C790048658F /* CustomButton.swift */,
+				B76D513528EDC4D900C053E0 /* CustomLabel.swift */,
+				B76D513728EDC50D00C053E0 /* CustomSlider.swift */,
+				B76D513928EDC52400C053E0 /* CustomTextField.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -180,6 +193,24 @@
 				97C816D528EB1AEA0048658F /* Montserrat-Regular.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		B76D513B28EDC63800C053E0 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				97C816C828EB13110048658F /* SceneDelegate.swift */,
+				97C816C928EB13110048658F /* AppDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		B7ED2DDA28EDCEDB00653D87 /* ShopViewController */ = {
+			isa = PBXGroup;
+			children = (
+				97C816CC28EB13570048658F /* ShopViewController.swift */,
+				B7ED2DD528EDCA4900653D87 /* FilteringViewController.swift */,
+			);
+			path = ShopViewController;
 			sourceTree = "<group>";
 		};
 		D579759A4AFB0A3489499DFF /* Frameworks */ = {
@@ -268,8 +299,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B7ED2DD828EDCBFE00653D87 /* Montserrat-Light.ttf in Resources */,
+				B7ED2DD728EDCBFB00653D87 /* Montserrat-Regular.ttf in Resources */,
 				97711EC828E9C82500FE1462 /* schema.json in Resources */,
 				9769C5FD28EAFAA500037B51 /* getUserData.graphql in Resources */,
+				B7ED2DD928EDCC0000653D87 /* Montserrat-Bold.ttf in Resources */,
 				970AB75428E9C596002EE407 /* LaunchScreen.storyboard in Resources */,
 				970AB75128E9C596002EE407 /* Assets.xcassets in Resources */,
 				97711ECC28E9C97C00FE1462 /* data.graphql in Resources */,
@@ -344,8 +378,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				97C816D928EB1C790048658F /* CustomButton.swift in Sources */,
+				B76D513828EDC50D00C053E0 /* CustomSlider.swift in Sources */,
 				97C816CB28EB13110048658F /* AppDelegate.swift in Sources */,
 				9769C60E28EB04F600037B51 /* MainTabBarViewController.swift in Sources */,
+				B7ED2DD628EDCA4900653D87 /* FilteringViewController.swift in Sources */,
+				B76D513A28EDC52400C053E0 /* CustomTextField.swift in Sources */,
+				B76D513628EDC4D900C053E0 /* CustomLabel.swift in Sources */,
 				97C816D228EB1A940048658F /* NavigationBarView.swift in Sources */,
 				97C816CE28EB13570048658F /* ShopViewController.swift in Sources */,
 				9769C61328EB056500037B51 /* CustomCollectionViewCell.swift in Sources */,
