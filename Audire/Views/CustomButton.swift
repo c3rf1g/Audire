@@ -14,11 +14,13 @@ class CustomButton: UIButton {
     private let text: String
     private let fontStyle: String
     private let fontSize: CGFloat
+    private let radius: CGFloat
 
-    required init(text: String, fontStyle: String, fontSize: CGFloat) {
+    required init(text: String, fontStyle: String, fontSize: CGFloat, radius: CGFloat) {
         self.text = text
         self.fontStyle = fontStyle
         self.fontSize = fontSize
+        self.radius = radius
         
         super.init(frame: .zero)
         
@@ -45,7 +47,8 @@ class CustomButton: UIButton {
         }
         
         //MARK: Cornerns and Shadow
-        self.layer.cornerRadius =  ((30 - 10) / 2 ) * Resources.Multipliers.multiplierY
+        //self.layer.cornerRadius =  ((30 - 10) / 2 ) * Resources.Multipliers.multiplierY
+        self.layer.cornerRadius = radius * Resources.Multipliers.multiplierY
         self.layer.shadowColor = UIColor.black.cgColor
         self.layer.shadowOffset = CGSize(width: 4, height: 4)
         self.layer.shadowOpacity = 0.25
@@ -67,8 +70,6 @@ class CustomButton: UIButton {
         self.backgroundColor = Resources.Colors.activeButtonColor
         self.layer.shadowOffset = CGSize(width: -4, height: -4)
     }
-    
-    
 }
 
 

@@ -7,18 +7,22 @@
 
 import Foundation
 import UIKit
+import RangeSeekSlider
 
-class CustomSlider: UISlider {
+class CustomSlider: RangeSeekSlider {
     
-    private let minValue: Float
-    private let maxValue: Float
-    private let color: UIColor
+    let minimumValue: CGFloat
+    let maximumValue: CGFloat
+    let mainColor: UIColor
+    let borderShadowColor: UIColor
     
-    required init(minValue: Float, maxValue: Float, color: UIColor) {
-        self.minValue = minValue
-        self.maxValue = maxValue
-        self.color = color
-        
+    
+    required init(minimumValue: CGFloat, maximumValue: CGFloat, mainColor: UIColor, borderShadowColor: UIColor) {
+        self.minimumValue = minimumValue
+        self.maximumValue = maximumValue
+        self.mainColor = mainColor
+        self.borderShadowColor = borderShadowColor
+    
         super.init(frame: .zero)
         
         self.setupUI()
@@ -28,12 +32,38 @@ class CustomSlider: UISlider {
         fatalError("init(coder:) has not been implemented")
     }
     
+    required init(frame: CGRect) {
+        fatalError("init(frame:) has not been implemented")
+    }
+    
     private func setupUI(){
-        self.maximumValue = maxValue
-        self.minimumValue = minValue
-        self.value = 100
-        self.thumbTintColor = color
-        self.minimumTrackTintColor = color
+        self.minValue = minimumValue
+        self.maxValue = maximumValue
+        
+        self.lineHeight = 20 * Resources.Multipliers.multiplierY
+        self.colorBetweenHandles = mainColor
+        self.tintColor = .clear
+        
+        self.handleDiameter = 20 
+        self.handleColor = .clear
+       
+        self.hideLabels = true
+        self.enableStep = true
+        self.step = 1
+        
+        self.layer.borderWidth = 1
+        self.layer.borderColor = mainColor.cgColor
+        self.layer.cornerRadius = 5
+        
+        self.layer.shadowColor = borderShadowColor.cgColor
+        self.layer.shadowOffset = CGSize.zero
+        self.layer.shadowOpacity = 1
+        self.layer.shadowRadius = 5
+        
+        if Resources.ScreenSizes.width < 380 {
+            self.layer.borderWidth = 0.7
+            self.layer.cornerRadius = 3
+        }
     }
     
 }

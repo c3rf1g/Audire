@@ -1,16 +1,20 @@
 PODS:
+  - RangeSeekSlider (1.8.0)
   - SnapKit (5.6.0)
 
 DEPENDENCIES:
+  - RangeSeekSlider
   - SnapKit
 
 SPEC REPOS:
   trunk:
+    - RangeSeekSlider
     - SnapKit
 
 SPEC CHECKSUMS:
+  RangeSeekSlider: 650b11fa1edcb92e1e0ede797669d98622570fb5
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
 
-PODFILE CHECKSUM: dec993d01764c71aaed0966dadaad137c838406e
+PODFILE CHECKSUM: 4645b9d6419ea69190c82784a31704cd3571e1e3
 
 COCOAPODS: 1.11.3

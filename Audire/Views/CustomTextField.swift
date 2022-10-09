@@ -25,6 +25,7 @@ class CustomTextField: UITextField {
         
         setupUI()
         addDoneButtonOnKeyboard()
+        setupTargets()
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -44,7 +45,7 @@ class CustomTextField: UITextField {
             attributes: [NSAttributedString.Key.foregroundColor: Resources.Colors.activeButtonTextColor]
         )
         
-        textColor = Resources.Colors.activeButtonTextColor
+        textColor = .white
         textAlignment = .center
         
         if Resources.ScreenSizes.width < 380 {
@@ -83,9 +84,24 @@ class CustomTextField: UITextField {
 
         self.inputAccessoryView = doneToolbar
     }
+    
+    private func setupTargets() {
+        self.addTarget(self, action: #selector(didBeginEditing), for: .editingDidBegin)
+        self.addTarget(self, action: #selector(didEndEditing), for: .editingDidEnd)
+    }
         
     @objc private func doneButtonAction() {
         self.resignFirstResponder()
+    }
+    
+    @objc private func didBeginEditing() {
+        layer.borderColor = UIColor.white.cgColor
+    }
+    
+    @objc private func didEndEditing() {
+        if self.text == "" {
+            layer.borderColor = Resources.Colors.activeButtonTextColor.cgColor
+        }
     }
 }
 

@@ -4,8 +4,17 @@ import SnapKit
 
 class ShopViewController: UIViewController {
     
-    private let sortingButton = CustomButton(text: "Sort by", fontStyle: "Regular", fontSize: 20)
-    private let filteringButton = CustomButton(text: "Filters", fontStyle: "Regular", fontSize: 20)
+    private let sortingButton = CustomButton(
+        text: "Sort by",
+        fontStyle: "Regular",
+        fontSize: 20, radius: 10
+    )
+    private let filteringButton = CustomButton(
+        text: "Filters",
+        fontStyle: "Regular",
+        fontSize: 20,
+        radius: 10
+    )
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -88,7 +97,7 @@ class ShopViewController: UIViewController {
         let vc = FilteringViewController()
         
         if let presentationController = vc.presentationController as? UISheetPresentationController {
-            presentationController.detents = [.medium()]
+            presentationController.detents = [.large()]
         }
         self.present(vc, animated: true)
     }

@@ -3,13 +3,12 @@
 //  Audire
 //
 //  Created by Константин Хамицевич on 05.10.2022.
-//
 
-//TODO: Настроить текст филд(количество символов, расположение текста, таргеты, тип клавы), опрокинуть связи между слайдерами и текст филдами
 
 import Foundation
 import UIKit
 import SnapKit
+import RangeSeekSlider
 
 class FilteringViewController: UIViewController {
     
@@ -21,34 +20,40 @@ class FilteringViewController: UIViewController {
     private let volumeLabel = CustomLabel(customText: "Volume", fontStyle: "Regular", fontSize: 20)
     
     private let ratingSlider = CustomSlider(
-        minValue: 1,
-        maxValue: 100,
-        color: Resources.Colors.ratingSliderColor
+        minimumValue: 1,
+        maximumValue: 100,
+        mainColor: Resources.Colors.ratingSliderColor,
+        borderShadowColor: Resources.Colors.ratingSliderShadowColor
     )
     private let priceSlider = CustomSlider(
-        minValue: 1,
-        maxValue: 100,
-        color: Resources.Colors.priceSliderColor
+        minimumValue: 1,
+        maximumValue: 100,
+        mainColor: Resources.Colors.priceSliderColor,
+        borderShadowColor: Resources.Colors.priceSliderShadowColor
     )
     private let releaseSlider = CustomSlider(
-        minValue: 1,
-        maxValue: 100,
-        color: Resources.Colors.releaseSliderColor
+        minimumValue: 1,
+        maximumValue: 100,
+        mainColor: Resources.Colors.releaseSliderColor,
+        borderShadowColor: Resources.Colors.releaseSliderShadowColor
     )
     private let powerSlider = CustomSlider(
-        minValue: 1,
-        maxValue: 100,
-        color: Resources.Colors.powerSliderColor
+        minimumValue: 1,
+        maximumValue: 100,
+        mainColor: Resources.Colors.powerSliderColor,
+        borderShadowColor: Resources.Colors.powerSliderShadowColor
     )
     private let batterySlider = CustomSlider(
-        minValue: 1,
-        maxValue: 100,
-        color: Resources.Colors.batterySliderColor
+        minimumValue: 1,
+        maximumValue: 100,
+        mainColor: Resources.Colors.batterySliderColor,
+        borderShadowColor: Resources.Colors.batterySliderShadowColor
     )
     private let volumeSlider = CustomSlider(
-        minValue: 1,
-        maxValue: 100,
-        color: Resources.Colors.volumeSliderColor
+        minimumValue: 1,
+        maximumValue: 100,
+        mainColor: Resources.Colors.volumeSliderColor,
+        borderShadowColor: Resources.Colors.volumeSliderShadowColor
     )
     
     private let ratingMax = CustomTextField(startText: "100", fontStyle: "Regular", fontSize: 20)
@@ -69,21 +74,35 @@ class FilteringViewController: UIViewController {
     private let volumeMax = CustomTextField(startText: "100", fontStyle: "Regular", fontSize: 20)
     private let volumeMin = CustomTextField(startText: "1", fontStyle: "Regular", fontSize: 20)
     
+    private let applyButton = CustomButton(
+        text: "Apply",
+        fontStyle: "Regular",
+        fontSize: 16,
+        radius: 5
+    )
+    private let resetButton = CustomButton(
+        text: "Reset",
+        fontStyle: "Regular",
+        fontSize: 16,
+        radius: 5
+    )
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.setupUI()
         self.addingSubviews()
-        self.addingTargets()
+        self.setupDelegatesAndTargets()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
         self.setupConst()
     }
     
     private func setupUI() {
-        self.view.backgroundColor = Resources.Colors.inactiveButtonColor
+        self.view.backgroundColor = Resources.Colors.backgroundColor
     }
     
     private func addingSubviews() {
@@ -91,7 +110,7 @@ class FilteringViewController: UIViewController {
             ratingLabel, priceLabel, releaseLabel, powerLabel, batteryLabel, volumeLabel,
             ratingSlider, priceSlider, releaseSlider, powerSlider, batterySlider, volumeSlider,
             ratingMax, priceMax, releaseMax, powerMax, batteryMax, volumeMax,
-            ratingMin, priceMin, releaseMin, powerMin, batteryMin, volumeMin
+            ratingMin, priceMin, releaseMin, powerMin, batteryMin, volumeMin, applyButton, resetButton
         ]
         
         for element in allElements {
@@ -99,22 +118,29 @@ class FilteringViewController: UIViewController {
         }
     }
     
-    private func addingTargets() {
+    private func setupDelegatesAndTargets() {
         let slidersArray = [
             ratingSlider, priceSlider, releaseSlider,
             powerSlider, batterySlider, volumeSlider
         ]
-        let maxArray = [
+        
+        let minMaxArray = [
             ratingMax, priceMax, releaseMax,
-            powerMax, batteryMax, volumeMax
+            powerMax, batteryMax, volumeMax,
+            ratingMin, priceMin, releaseMin,
+            powerMin, batteryMin, volumeMin,
         ]
         
+        for element in minMaxArray {
+            element.delegate = self
+        }
         for slider in slidersArray {
-            slider.addTarget(self, action: #selector(sliderValueDidChanged), for: .valueChanged)
+            slider.delegate = self
         }
-        for element in maxArray{
-            element.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
-        }
+        
+        applyButton.addTarget(self, action: #selector(applyButtonPressed), for: .touchUpInside)
+        resetButton.addTarget(self, action: #selector(resetButtonPressed), for: .touchUpInside)
+        
     }
     
     private func setupConst() {
@@ -137,43 +163,43 @@ class FilteringViewController: UIViewController {
         
         //MARK: Эти мультиплаеры только для этого контроллера(половина экрана)
         let multiplierX = Double(self.view.frame.width / 428)
-        let multiplierY = Double(self.view.frame.height / 501.6666666666667)
-       
+        let multiplierY = Double(self.view.frame.height / 869.0)
+        
         //MARK: Consts for labels
         ratingLabel.snp.makeConstraints { make in
             make.left.equalToSuperview().inset(92 * multiplierX).priority(.high)
             make.right.equalToSuperview().inset(268 * multiplierX).priority(.medium)
-            make.top.equalToSuperview().inset(24.8 * multiplierY)
+            make.top.equalToSuperview().inset(54 * multiplierY)
         }
         
         priceLabel.snp.makeConstraints { make in
             make.left.equalToSuperview().inset(92 * multiplierX).priority(.high)
             make.right.equalToSuperview().inset(284 * multiplierX).priority(.medium)
-            make.top.equalToSuperview().inset(100.8 * multiplierY)
+            make.top.equalToSuperview().inset(136 * multiplierY)
         }
         
         releaseLabel.snp.makeConstraints { make in
             make.left.equalToSuperview().inset(92 * multiplierX).priority(.high)
             make.right.equalToSuperview().inset(257 * multiplierX).priority(.medium)
-            make.top.equalToSuperview().inset(176.8 * multiplierY)
+            make.top.equalToSuperview().inset(218 * multiplierY)
         }
         
         powerLabel.snp.makeConstraints { make in
             make.left.equalToSuperview().inset(92 * multiplierX).priority(.high)
             make.right.equalToSuperview().inset(271 * multiplierX).priority(.medium)
-            make.top.equalToSuperview().inset(252.8 * multiplierY)
+            make.top.equalToSuperview().inset(300 * multiplierY)
         }
         
         batteryLabel.snp.makeConstraints { make in
             make.left.equalToSuperview().inset(92 * multiplierX).priority(.high)
             make.right.equalToSuperview().inset(261 * multiplierX).priority(.medium)
-            make.top.equalToSuperview().inset(330.8 * multiplierY)
+            make.top.equalToSuperview().inset(382 * multiplierY)
         }
         
         volumeLabel.snp.makeConstraints { make in
             make.left.equalToSuperview().inset(92 * multiplierX).priority(.high)
             make.right.equalToSuperview().inset(257 * multiplierX).priority(.medium)
-            make.top.equalToSuperview().inset(406.8 * multiplierY)
+            make.top.equalToSuperview().inset(464 * multiplierY)
         }
         
         //MARK: Consts for sliders
@@ -182,11 +208,12 @@ class FilteringViewController: UIViewController {
                 make.height.equalTo(20 * multiplierY)
                 make.left.equalToSuperview().inset(92 * multiplierX)
                 make.right.equalToSuperview().inset(92 * multiplierX)
-                make.top.equalTo(labelsArray[i].snp.bottom).offset(16 * multiplierY)
+                make.top.equalTo(labelsArray[i].snp.bottom).offset(14 * multiplierY)
             }
+            slidersArray[i].lineHeight = 20 * multiplierY
         }
         
-        //MARK: Min Max fields
+        //MARK: Min Max fields const
         for i in 0..<labelsArray.count {
             maxArray[i].snp.makeConstraints { make in
                 make.left.equalToSuperview().inset(279 * multiplierX)
@@ -202,71 +229,204 @@ class FilteringViewController: UIViewController {
                 make.height.equalTo(24 * multiplierY)
             }
         }
-    }
-    
-    @objc private func sliderValueDidChanged(slider: CustomSlider) {
-        let newValue = slider.value
         
-        switch slider {
-        case ratingSlider:
-            ratingMax.text = String(Int(slider.value))
-            slider.value = {
-                return Float(Int(newValue))
-            }()
-        case priceSlider:
-            priceMax.text = String(Int(slider.value))
-            slider.value = {
-                return Float(Int(newValue))
-            }()
-        case releaseSlider:
-            releaseMax.text = String(Int(slider.value))
-            slider.value = {
-                return Float(Int(newValue))
-            }()
-        case powerSlider:
-            powerMax.text = String(Int(slider.value))
-            slider.value = {
-                return Float(Int(newValue))
-            }()
-        case batterySlider:
-            batteryMax.text = String(Int(slider.value))
-            slider.value = {
-                return Float(Int(newValue))
-            }()
-        case volumeSlider:
-            volumeMax.text = String(Int(slider.value))
-            slider.value = {
-                return Float(Int(newValue))
-            }()
-        default: print("Error")
+        //MARK: buttons const
+        
+        resetButton.snp.makeConstraints { make in
+            make.height.equalTo(20 * multiplierY)
+            make.left.equalToSuperview().inset(229 * multiplierX)
+            make.right.equalToSuperview().inset(92 * multiplierX)
+            make.top.equalTo(volumeSlider.snp.bottom).offset(48 * multiplierY)
         }
         
+        applyButton.snp.makeConstraints { make in
+            make.height.equalTo(20 * multiplierY)
+            make.left.equalToSuperview().inset(92 * multiplierX)
+            make.right.equalToSuperview().inset(229 * multiplierX)
+            make.top.equalTo(volumeSlider.snp.bottom).offset(48 * multiplierY)
+        }
     }
-
-    @objc private func textFieldDidChange(textField: CustomTextField) {
-        if let stringValue = textField.text {
-            if let floatValue = Float(stringValue) {
-                var slider = ratingSlider
-                
-                switch textField {
-                case ratingMax:
-                    slider = ratingSlider
-                case priceMax:
-                    slider = priceSlider
-                case releaseMax:
-                    slider = releaseSlider
-                case powerMax:
-                    slider = powerSlider
-                case batteryMax:
-                    slider = batterySlider
-                case volumeSlider:
-                    slider = volumeSlider
-                default: print("Error")
-                }
-                
-                slider.setValue(floatValue, animated: true)
-            }
+    
+    @objc private func applyButtonPressed() {
+        //MARK: Записать данные сортировки
+        
+        self.dismiss(animated: true)
+        
+    }
+    
+    @objc private func resetButtonPressed() {
+        let slidersArray = [
+            ratingSlider, priceSlider, releaseSlider,
+            powerSlider, batterySlider, volumeSlider
+        ]
+        let minMaxArray = [
+            ratingMax, priceMax, releaseMax,
+            powerMax, batteryMax, volumeMax,
+            ratingMin, priceMin, releaseMin,
+            powerMin, batteryMin, volumeMin,
+        ]
+        
+        for element in minMaxArray {
+            element.text = nil
+        }
+        
+        for slider in slidersArray {
+            slider.selectedMinValue = 1
+            slider.selectedMaxValue = 100
+            slider.updateHandlePositions()
         }
     }
 }
 
+extension FilteringViewController: RangeSeekSliderDelegate {
+    //MARK: Изменение текста в зависимости от положение ползунков
+    func rangeSeekSlider(_ slider: RangeSeekSlider, didChange minValue: CGFloat, maxValue: CGFloat) {
+        switch slider {
+        case ratingSlider:
+            ratingMax.text = String(Int(slider.selectedMaxValue))
+            ratingMin.text = String(Int(slider.selectedMinValue))
+        case priceSlider:
+            priceMax.text = String(Int(slider.selectedMaxValue))
+            priceMin.text = String(Int(slider.selectedMinValue))
+        case releaseSlider:
+            releaseMax.text = String(Int(slider.selectedMaxValue))
+            releaseMin.text = String(Int(slider.selectedMinValue))
+        case powerSlider:
+            powerMax.text = String(Int(slider.selectedMaxValue))
+            powerMin.text = String(Int(slider.selectedMinValue))
+        case batterySlider:
+            batteryMax.text = String(Int(slider.selectedMaxValue))
+            batteryMin.text = String(Int(slider.selectedMinValue))
+        case volumeSlider:
+            volumeMax.text = String(Int(slider.selectedMaxValue))
+            volumeMin.text = String(Int(slider.selectedMinValue))
+        default: print("Error")
+        }
+    }
+}
+
+extension FilteringViewController: UITextFieldDelegate {
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        //MARK: Изменение введенных цифр
+        var temp = textField.text ?? ""
+        var tempArray: [Character?] = []
+        
+        for element in temp {
+            tempArray.append(element)
+        }
+        
+        switch tempArray.count {
+        case 0:
+            tempArray.append(contentsOf: [nil, nil, nil])
+        case 1:
+            tempArray.append(contentsOf: [nil, nil])
+        case 2:
+            tempArray.append(contentsOf: [nil])
+            
+        default: break
+        }
+        
+        if  (tempArray[0] == "0" && tempArray[1] == nil && tempArray[2] == nil) ||
+            (tempArray[0] == "0" && tempArray[1] == "0" && tempArray[2] == nil) ||
+            (tempArray[0] == "0" && tempArray[1] == "0" && tempArray[2] == "0") {           //0
+            temp = "1"
+        } else if tempArray[0] == "0" && tempArray[1] == "0" && tempArray[2] != "0" {       //001
+            temp.removeFirst()
+            temp.removeFirst()
+        } else if tempArray[0] == "0" && tempArray[1] != "0" {                              //010 025 01 02
+            temp.removeFirst()
+        } else if (Int(temp) ?? 0) > 100 {                                                  // >100
+            temp = "100"
+        }
+        
+        textField.text = temp
+        
+        //MARK: Изменение положения ползунков в зависимости от текста
+        let slidersArray = [
+            ratingSlider, priceSlider, releaseSlider,
+            powerSlider, batterySlider, volumeSlider
+        ]
+        
+        if let stringValue = textField.text {                   //Для случая, если значение изменилось на число
+            if let floatValue = Float(stringValue) {
+                switch textField {
+                case ratingMax:
+                    ratingSlider.selectedMaxValue = CGFloat(floatValue)
+                case ratingMin:
+                    ratingSlider.selectedMinValue = CGFloat(floatValue)
+                case priceMax:
+                    priceSlider.selectedMaxValue = CGFloat(floatValue)
+                case priceMin:
+                    priceSlider.selectedMinValue = CGFloat(floatValue)
+                case releaseMax:
+                    releaseSlider.selectedMaxValue = CGFloat(floatValue)
+                case releaseMin:
+                    releaseSlider.selectedMinValue = CGFloat(floatValue)
+                case powerMax:
+                    powerSlider.selectedMaxValue = CGFloat(floatValue)
+                case powerMin:
+                    powerSlider.selectedMinValue = CGFloat(floatValue)
+                case batteryMax:
+                    batterySlider.selectedMaxValue = CGFloat(floatValue)
+                case batteryMin:
+                    batterySlider.selectedMinValue = CGFloat(floatValue)
+                case volumeMax:
+                    volumeSlider.selectedMaxValue = CGFloat(floatValue)
+                case volumeMin:
+                    volumeSlider.selectedMinValue = CGFloat(floatValue)
+                
+                default: break
+                }
+                
+                for slider in slidersArray {
+                    slider.updateHandlePositions()
+                }
+                
+            } else {
+                switch textField {                      //Для случая, если значение скинулось на дефолтное 
+                case ratingMax:
+                    ratingSlider.selectedMaxValue = 100
+                case ratingMin:
+                    ratingSlider.selectedMinValue = 1
+                case priceMax:
+                    priceSlider.selectedMaxValue = 100
+                case priceMin:
+                    priceSlider.selectedMinValue = 1
+                case releaseMax:
+                    releaseSlider.selectedMaxValue = 100
+                case releaseMin:
+                    releaseSlider.selectedMinValue = 1
+                case powerMax:
+                    powerSlider.selectedMaxValue = 100
+                case powerMin:
+                    powerSlider.selectedMinValue = 1
+                case batteryMax:
+                    batterySlider.selectedMaxValue = 100
+                case batteryMin:
+                    batterySlider.selectedMinValue = 1
+                case volumeMax:
+                    volumeSlider.selectedMaxValue = 100
+                case volumeMin:
+                    volumeSlider.selectedMinValue = 1
+                
+                default: break
+                }
+                
+                for slider in slidersArray {
+                    slider.updateHandlePositions()
+                }
+            }
+        }
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        //MARK: Ограничение вводимого текста 3 символами
+        let currentText = textField.text ?? ""
+        
+        guard let stringRange = Range(range, in: currentText) else { return false }
+
+        let updatedText = currentText.replacingCharacters(in: stringRange, with: string)
+        return updatedText.count <= 3
+    }
+}
