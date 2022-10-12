@@ -9,5 +9,3 @@ enum Resources {
         static var topBorder = UIColor(hexString: "#EB00FF")
     }
 }
-
-

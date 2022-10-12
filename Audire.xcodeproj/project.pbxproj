@@ -7,13 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3DEC11FC28F69C710034C4C9 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DEC11FB28F69C710034C4C9 /* DetailViewController.swift */; };
 		970AB75128E9C596002EE407 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 970AB75028E9C596002EE407 /* Assets.xcassets */; };
 		970AB75428E9C596002EE407 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 970AB75228E9C596002EE407 /* LaunchScreen.storyboard */; };
 		9769C5FD28EAFAA500037B51 /* getUserData.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 9769C5FC28EAFAA500037B51 /* getUserData.graphql */; };
 		9769C5FF28EAFBA700037B51 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9769C5FE28EAFBA700037B51 /* API.swift */; };
 		9769C60828EB032400037B51 /* Apollo in Frameworks */ = {isa = PBXBuildFile; productRef = 9769C60728EB032400037B51 /* Apollo */; };
 		9769C60E28EB04F600037B51 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9769C60028EB009B00037B51 /* MainTabBarViewController.swift */; };
-		9769C61328EB056500037B51 /* CustomCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9769C61028EB050100037B51 /* CustomCollectionViewCell.swift */; };
+		9769C61328EB056500037B51 /* AirPodsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9769C61028EB050100037B51 /* AirPodsCollectionViewCell.swift */; };
 		9769C61428EB056700037B51 /* AirPodsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9769C61128EB050100037B51 /* AirPodsViewController.swift */; };
 		97711EC828E9C82500FE1462 /* schema.json in Resources */ = {isa = PBXBuildFile; fileRef = 97711EC728E9C82500FE1462 /* schema.json */; };
 		97711ECC28E9C97C00FE1462 /* data.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 97711ECB28E9C97C00FE1462 /* data.graphql */; };
@@ -32,6 +33,7 @@
 /* Begin PBXFileReference section */
 		11179938EE2FD5F334DDF5AB /* Pods-Audire.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Audire.debug.xcconfig"; path = "Target Support Files/Pods-Audire/Pods-Audire.debug.xcconfig"; sourceTree = "<group>"; };
 		2A968D28BA71CEBB2F6C6753 /* Pods-Audire.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Audire.release.xcconfig"; path = "Target Support Files/Pods-Audire/Pods-Audire.release.xcconfig"; sourceTree = "<group>"; };
+		3DEC11FB28F69C710034C4C9 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		79A155AC9D337D43BE8D9080 /* Pods_Audire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Audire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		970AB74428E9C594002EE407 /* Audire.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Audire.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		970AB75028E9C596002EE407 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -40,7 +42,7 @@
 		9769C5FC28EAFAA500037B51 /* getUserData.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = getUserData.graphql; sourceTree = SOURCE_ROOT; };
 		9769C5FE28EAFBA700037B51 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		9769C60028EB009B00037B51 /* MainTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
-		9769C61028EB050100037B51 /* CustomCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollectionViewCell.swift; sourceTree = "<group>"; };
+		9769C61028EB050100037B51 /* AirPodsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirPodsCollectionViewCell.swift; sourceTree = "<group>"; };
 		9769C61128EB050100037B51 /* AirPodsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirPodsViewController.swift; sourceTree = "<group>"; };
 		97711EC728E9C82500FE1462 /* schema.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = schema.json; sourceTree = "<group>"; };
 		97711ECB28E9C97C00FE1462 /* data.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = data.graphql; sourceTree = "<group>"; };
@@ -149,8 +151,9 @@
 		97C816C228EB08F50048658F /* AirPodsViewController */ = {
 			isa = PBXGroup;
 			children = (
-				9769C61028EB050100037B51 /* CustomCollectionViewCell.swift */,
+				9769C61028EB050100037B51 /* AirPodsCollectionViewCell.swift */,
 				9769C61128EB050100037B51 /* AirPodsViewController.swift */,
+				3DEC11FB28F69C710034C4C9 /* DetailViewController.swift */,
 			);
 			path = AirPodsViewController;
 			sourceTree = "<group>";
@@ -207,6 +210,7 @@
 			buildConfigurationList = 970AB75828E9C596002EE407 /* Build configuration list for PBXNativeTarget "Audire" */;
 			buildPhases = (
 				EEA25085B7FB7C2721036F11 /* [CP] Check Pods Manifest.lock */,
+				3DEC11FA28EECBA40034C4C9 /* Run SwiftLint */,
 				97711EC628E9C7D000FE1462 /* GraphQL */,
 				970AB74028E9C594002EE407 /* Sources */,
 				970AB74128E9C594002EE407 /* Frameworks */,
@@ -296,6 +300,24 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Audire/Pods-Audire-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		3DEC11FA28EECBA40034C4C9 /* Run SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Run SwiftLint";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "${PODS_ROOT}/SwiftLint/swiftlint\n";
+		};
 		97711EC628E9C7D000FE1462 /* GraphQL */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -348,7 +370,7 @@
 				9769C60E28EB04F600037B51 /* MainTabBarViewController.swift in Sources */,
 				97C816D228EB1A940048658F /* NavigationBarView.swift in Sources */,
 				97C816CE28EB13570048658F /* ShopViewController.swift in Sources */,
-				9769C61328EB056500037B51 /* CustomCollectionViewCell.swift in Sources */,
+				9769C61328EB056500037B51 /* AirPodsCollectionViewCell.swift in Sources */,
 				97C816C328EB091F0048658F /* UIColor + ext.swift in Sources */,
 				97C816CA28EB13110048658F /* SceneDelegate.swift in Sources */,
 				97C816CF28EB13570048658F /* ProfileViewController.swift in Sources */,
@@ -356,6 +378,7 @@
 				9769C5FF28EAFBA700037B51 /* API.swift in Sources */,
 				97C816C728EB12700048658F /* Resources.swift in Sources */,
 				9769C61428EB056700037B51 /* AirPodsViewController.swift in Sources */,
+				3DEC11FC28F69C710034C4C9 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
