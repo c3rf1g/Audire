@@ -12,7 +12,7 @@ final class MainTabBarViewController: UITabBarController {
     }
     
     private func setNavigationBar() {
-        self.view.backgroundColor = UIColor(red: 40/255, green: 24/255, blue: 61/255, alpha: 1)
+        self.view.backgroundColor = Resources.Colors.backgroundColor
         
         self.view.addSubview(customView)
         customView.snp.makeConstraints { make in
