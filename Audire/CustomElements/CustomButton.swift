@@ -1,15 +1,14 @@
-//
-//  ButtonView.swift
-//  marketplaceSorting
-//
-//  Created by Константин Хамицевич on 02.10.2022.
-//
-
-import Foundation
 import UIKit
 import SnapKit
 
-class CustomButton: UIButton {
+final class CustomButton: UIButton {
+    private struct Constants {
+        static let screenWidthForChangingFontSize: CGFloat = 380
+        static let shadowOffsetWidth: CGFloat = 4
+        static let shadowOffsetHeight: CGFloat = 4
+        static let shadowOpacity: Float = 0.25
+        static let shadowRadius: CGFloat = 5
+    }
     
     private let text: String
     private let fontStyle: String
@@ -40,19 +39,18 @@ class CustomButton: UIButton {
         self.setTitleColor(.white, for: .normal)
         self.setTitleColor(Resources.Colors.activeButtonTextColor, for: .highlighted)
         
-        if Resources.ScreenSizes.width < 380 {
+        if Resources.ScreenSizes.width < Constants.screenWidthForChangingFontSize {
             self.titleLabel?.font = UIFont(name: "Montserrat-\(fontStyle)", size: (fontSize - 4))
         } else {
             self.titleLabel?.font = UIFont(name: "Montserrat-\(fontStyle)", size: fontSize)
         }
         
         //MARK: Cornerns and Shadow
-        //self.layer.cornerRadius =  ((30 - 10) / 2 ) * Resources.Multipliers.multiplierY
         self.layer.cornerRadius = radius * Resources.Multipliers.multiplierY
         self.layer.shadowColor = UIColor.black.cgColor
-        self.layer.shadowOffset = CGSize(width: 4, height: 4)
-        self.layer.shadowOpacity = 0.25
-        self.layer.shadowRadius = 5
+        self.layer.shadowOffset = CGSize(width: Constants.shadowOffsetWidth, height: Constants.shadowOffsetHeight)
+        self.layer.shadowOpacity = Constants.shadowOpacity
+        self.layer.shadowRadius = Constants.shadowRadius
     }
     
     private func addingTargets() {
@@ -62,13 +60,12 @@ class CustomButton: UIButton {
     
     @objc private func unclicked() {
         self.backgroundColor = Resources.Colors.inactiveButtonColor
-        self.layer.shadowOffset = CGSize(width: 4, height: 4)
-        
+        self.layer.shadowOffset = CGSize(width: Constants.shadowOffsetWidth, height: Constants.shadowOffsetHeight)
     }
     
     @objc private func clicked() {
         self.backgroundColor = Resources.Colors.activeButtonColor
-        self.layer.shadowOffset = CGSize(width: -4, height: -4)
+        self.layer.shadowOffset = CGSize(width: -Constants.shadowOffsetWidth, height: -Constants.shadowOffsetHeight)
     }
 }
 

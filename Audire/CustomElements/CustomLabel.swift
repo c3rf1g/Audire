@@ -1,15 +1,9 @@
-//
-//  CustomLabel.swift
-//  Audire
-//
-//  Created by Константин Хамицевич on 05.10.2022.
-//
-
-import Foundation
 import UIKit
-import SnapKit
 
-class CustomLabel: UILabel {
+final class CustomLabel: UILabel {
+    private struct Constants {
+        static let screenWidthForChangingFontSize: CGFloat = 380
+    }
     
     private let customText: String
     private let fontStyle: String
@@ -32,7 +26,7 @@ class CustomLabel: UILabel {
     private func setupUI() {
         text = customText
         
-        if Resources.ScreenSizes.width < 380 {
+        if Resources.ScreenSizes.width < Constants.screenWidthForChangingFontSize {
             font = UIFont(name: "Montserrat-\(fontStyle)", size: (fontSize - 4))
         } else {
             font = UIFont(name: "Montserrat-\(fontStyle)", size: fontSize)

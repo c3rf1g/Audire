@@ -1,22 +1,17 @@
-//
-//  CustomTextField.swift
-//  Audire
-//
-//  Created by Константин Хамицевич on 05.10.2022.
-//
-
-import Foundation
 import UIKit
-import SnapKit
 
-class CustomTextField: UITextField {
+final class CustomTextField: UITextField {
+    private struct Constants {
+        static let screenWidthForChangingFontSize: CGFloat = 380
+        static let borderWidth: CGFloat = 2
+        static let cornerRadius: CGFloat = 5
+    }
     
     private let startText: String
     private let fontStyle: String
     private let fontSize: CGFloat
     
     required init(startText: String, fontStyle: String, fontSize: CGFloat) {
-        
         self.startText = startText
         self.fontStyle = fontStyle
         self.fontSize = fontSize
@@ -33,9 +28,9 @@ class CustomTextField: UITextField {
     }
     
     private func setupUI() {
-        layer.borderWidth = 2
+        layer.borderWidth = Constants.borderWidth
         layer.borderColor = Resources.Colors.activeButtonTextColor.cgColor
-        layer.cornerRadius = 5
+        layer.cornerRadius = Constants.cornerRadius
         
         contentVerticalAlignment = .center
         contentHorizontalAlignment = .right
@@ -48,23 +43,22 @@ class CustomTextField: UITextField {
         textColor = .white
         textAlignment = .center
         
-        if Resources.ScreenSizes.width < 380 {
+        if Resources.ScreenSizes.width < Constants.screenWidthForChangingFontSize {
             font = UIFont(name: "Montserrat-\(fontStyle)", size: (fontSize - 4))
-            layer.borderWidth = 1.3
-            layer.cornerRadius = 3
+            layer.borderWidth = Constants.borderWidth - 0.7
+            layer.cornerRadius = Constants.cornerRadius - 2
         } else {
             font = UIFont(name: "Montserrat-\(fontStyle)", size: fontSize)
         }
         
         keyboardType = .asciiCapableNumberPad
         keyboardAppearance = .dark
-        
     }
     
     private func addDoneButtonOnKeyboard() {
         let doneToolbar: UIToolbar = UIToolbar(frame: CGRect(x: 0, y: 0, width: 428, height: 50))
         doneToolbar.barStyle = .default
-           
+        
         let flexSpace = UIBarButtonItem(
             barButtonSystemItem: .flexibleSpace,
             target: nil,

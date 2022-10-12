@@ -23,12 +23,15 @@
 		97C816CA28EB13110048658F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C816C828EB13110048658F /* SceneDelegate.swift */; };
 		97C816CB28EB13110048658F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C816C928EB13110048658F /* AppDelegate.swift */; };
 		97C816CE28EB13570048658F /* ShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C816CC28EB13570048658F /* ShopViewController.swift */; };
-		97C816CF28EB13570048658F /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C816CD28EB13570048658F /* ProfileViewController.swift */; };
 		97C816D228EB1A940048658F /* NavigationBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C816D128EB1A940048658F /* NavigationBarView.swift */; };
 		97C816D928EB1C790048658F /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C816D828EB1C790048658F /* CustomButton.swift */; };
 		B76D513628EDC4D900C053E0 /* CustomLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B76D513528EDC4D900C053E0 /* CustomLabel.swift */; };
 		B76D513828EDC50D00C053E0 /* CustomSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B76D513728EDC50D00C053E0 /* CustomSlider.swift */; };
 		B76D513A28EDC52400C053E0 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B76D513928EDC52400C053E0 /* CustomTextField.swift */; };
+		B7E074B928F3504C001B10D5 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E074B828F3504C001B10D5 /* ProfileView.swift */; };
+		B7E074BC28F35117001B10D5 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E074BB28F35117001B10D5 /* ProfileViewController.swift */; };
+		B7E074E328F59D8B001B10D5 /* CustomActionSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E074E228F59D8A001B10D5 /* CustomActionSheet.swift */; };
+		B7E074E728F6D597001B10D5 /* CustomIconButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E074E628F6D597001B10D5 /* CustomIconButton.swift */; };
 		B7ED2DD628EDCA4900653D87 /* FilteringViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7ED2DD528EDCA4900653D87 /* FilteringViewController.swift */; };
 		B7ED2DD728EDCBFB00653D87 /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 97C816D528EB1AEA0048658F /* Montserrat-Regular.ttf */; };
 		B7ED2DD828EDCBFE00653D87 /* Montserrat-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 97C816D628EB1AEA0048658F /* Montserrat-Light.ttf */; };
@@ -57,7 +60,6 @@
 		97C816C828EB13110048658F /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		97C816C928EB13110048658F /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		97C816CC28EB13570048658F /* ShopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopViewController.swift; sourceTree = "<group>"; };
-		97C816CD28EB13570048658F /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		97C816D128EB1A940048658F /* NavigationBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationBarView.swift; sourceTree = "<group>"; };
 		97C816D528EB1AEA0048658F /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
 		97C816D628EB1AEA0048658F /* Montserrat-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Light.ttf"; sourceTree = "<group>"; };
@@ -66,6 +68,10 @@
 		B76D513528EDC4D900C053E0 /* CustomLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLabel.swift; sourceTree = "<group>"; };
 		B76D513728EDC50D00C053E0 /* CustomSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSlider.swift; sourceTree = "<group>"; };
 		B76D513928EDC52400C053E0 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		B7E074B828F3504C001B10D5 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		B7E074BB28F35117001B10D5 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		B7E074E228F59D8A001B10D5 /* CustomActionSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomActionSheet.swift; sourceTree = "<group>"; };
+		B7E074E628F6D597001B10D5 /* CustomIconButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomIconButton.swift; sourceTree = "<group>"; };
 		B7ED2DD528EDCA4900653D87 /* FilteringViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilteringViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -106,7 +112,8 @@
 				B76D513B28EDC63800C053E0 /* Application */,
 				97C816D328EB1AD80048658F /* Resources */,
 				97C816B628EB07D80048658F /* Helpers */,
-				97C816D028EB1A890048658F /* Views */,
+				B7E074BD28F35BDD001B10D5 /* CustomElements */,
+				97C816D028EB1A890048658F /* CustomViews */,
 				9769C61228EB052400037B51 /* Controllers */,
 				97711EC728E9C82500FE1462 /* schema.json */,
 				97711EC928E9C84700FE1462 /* GraphQL */,
@@ -120,10 +127,10 @@
 		9769C61228EB052400037B51 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				B7E074BA28F35060001B10D5 /* ProfileViewController */,
 				9769C60028EB009B00037B51 /* MainTabBarViewController.swift */,
 				B7ED2DDA28EDCEDB00653D87 /* ShopViewController */,
 				97C816C228EB08F50048658F /* AirPodsViewController */,
-				97C816CD28EB13570048658F /* ProfileViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -165,16 +172,13 @@
 			path = AirPodsViewController;
 			sourceTree = "<group>";
 		};
-		97C816D028EB1A890048658F /* Views */ = {
+		97C816D028EB1A890048658F /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
 				97C816D128EB1A940048658F /* NavigationBarView.swift */,
-				97C816D828EB1C790048658F /* CustomButton.swift */,
-				B76D513528EDC4D900C053E0 /* CustomLabel.swift */,
-				B76D513728EDC50D00C053E0 /* CustomSlider.swift */,
-				B76D513928EDC52400C053E0 /* CustomTextField.swift */,
+				B7E074B828F3504C001B10D5 /* ProfileView.swift */,
 			);
-			path = Views;
+			path = CustomViews;
 			sourceTree = "<group>";
 		};
 		97C816D328EB1AD80048658F /* Resources */ = {
@@ -202,6 +206,27 @@
 				97C816C928EB13110048658F /* AppDelegate.swift */,
 			);
 			path = Application;
+			sourceTree = "<group>";
+		};
+		B7E074BA28F35060001B10D5 /* ProfileViewController */ = {
+			isa = PBXGroup;
+			children = (
+				B7E074BB28F35117001B10D5 /* ProfileViewController.swift */,
+			);
+			path = ProfileViewController;
+			sourceTree = "<group>";
+		};
+		B7E074BD28F35BDD001B10D5 /* CustomElements */ = {
+			isa = PBXGroup;
+			children = (
+				97C816D828EB1C790048658F /* CustomButton.swift */,
+				B7E074E628F6D597001B10D5 /* CustomIconButton.swift */,
+				B76D513528EDC4D900C053E0 /* CustomLabel.swift */,
+				B76D513728EDC50D00C053E0 /* CustomSlider.swift */,
+				B76D513928EDC52400C053E0 /* CustomTextField.swift */,
+				B7E074E228F59D8A001B10D5 /* CustomActionSheet.swift */,
+			);
+			path = CustomElements;
 			sourceTree = "<group>";
 		};
 		B7ED2DDA28EDCEDB00653D87 /* ShopViewController */ = {
@@ -378,20 +403,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				97C816D928EB1C790048658F /* CustomButton.swift in Sources */,
+				B7E074E328F59D8B001B10D5 /* CustomActionSheet.swift in Sources */,
 				B76D513828EDC50D00C053E0 /* CustomSlider.swift in Sources */,
 				97C816CB28EB13110048658F /* AppDelegate.swift in Sources */,
 				9769C60E28EB04F600037B51 /* MainTabBarViewController.swift in Sources */,
 				B7ED2DD628EDCA4900653D87 /* FilteringViewController.swift in Sources */,
 				B76D513A28EDC52400C053E0 /* CustomTextField.swift in Sources */,
+				B7E074BC28F35117001B10D5 /* ProfileViewController.swift in Sources */,
 				B76D513628EDC4D900C053E0 /* CustomLabel.swift in Sources */,
 				97C816D228EB1A940048658F /* NavigationBarView.swift in Sources */,
 				97C816CE28EB13570048658F /* ShopViewController.swift in Sources */,
 				9769C61328EB056500037B51 /* CustomCollectionViewCell.swift in Sources */,
+				B7E074B928F3504C001B10D5 /* ProfileView.swift in Sources */,
 				97C816C328EB091F0048658F /* UIColor + ext.swift in Sources */,
 				97C816CA28EB13110048658F /* SceneDelegate.swift in Sources */,
-				97C816CF28EB13570048658F /* ProfileViewController.swift in Sources */,
 				97711ED028E9D09000FE1462 /* Net.swift in Sources */,
 				9769C5FF28EAFBA700037B51 /* API.swift in Sources */,
+				B7E074E728F6D597001B10D5 /* CustomIconButton.swift in Sources */,
 				97C816C728EB12700048658F /* Resources.swift in Sources */,
 				9769C61428EB056700037B51 /* AirPodsViewController.swift in Sources */,
 			);

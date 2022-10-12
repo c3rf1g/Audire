@@ -4,7 +4,6 @@ enum Resources {
     enum Colors {
         static var inactive = UIColor(hexString: "#FF06FE")
         static var tabBarBackground = UIColor(hexString: "#130E22")
-        //static var backgroundColor = UIColor(hexString: "#1C1344")
         static var backgroundColor = UIColor(hexString: "#28183D")
         static var borderHeadphones = UIColor(hexString: "#FA00FF")
         static var topBorder = UIColor(hexString: "#EB00FF")
@@ -24,6 +23,7 @@ enum Resources {
         static var batterySliderShadowColor = UIColor(hexString: "#FF00B8")
         static var volumeSliderColor = UIColor(hexString: "#FFAAD3")
         static var volumeSliderShadowColor = UIColor(hexString: "#FF007A")
+        static var profileAtarBorderColor = UIColor(hexString: "#F9B7FF")
     }
     
     enum Multipliers {
@@ -34,6 +34,21 @@ enum Resources {
     enum ScreenSizes {
         static var width = UIScreen.main.bounds.size.width
         static var height = UIScreen.main.bounds.size.height
+    }
+    
+    enum AppImages {
+        static let earphones = UIImage(named: "earphones.png")
+        static let chargeStatus = UIImage(named: "chargeStatus.png")
+        static let firstToken = UIImage(named: "token.png")
+        static let secondToken = UIImage(named: "mainToken.png")
+        static let wallet = UIImage(named: "wallet.png")
+        static let account = UIImage(named: "account.png")
+        static let settings = UIImage(named: "settings.png")
+        static let about = UIImage(named: "about.png")
+        static let walletActive = UIImage(named: "walletActive.png")
+        static let accountActive = UIImage(named: "accountActive.png")
+        static let settingsActive = UIImage(named: "settingsActive.png")
+        static let aboutActive = UIImage(named: "aboutActive.png")
     }
 }
 

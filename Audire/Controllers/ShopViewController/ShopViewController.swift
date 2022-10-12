@@ -1,13 +1,12 @@
-import Foundation
 import UIKit
 import SnapKit
 
-class ShopViewController: UIViewController {
-    
+final class ShopViewController: UIViewController {
     private let sortingButton = CustomButton(
         text: "Sort by",
         fontStyle: "Regular",
-        fontSize: 20, radius: 10
+        fontSize: 20,
+        radius: 10
     )
     private let filteringButton = CustomButton(
         text: "Filters",
@@ -56,40 +55,7 @@ class ShopViewController: UIViewController {
     }
     
     @objc private func sortingButtonPressed() {
-        let actionSheet = UIAlertController(title: "Sorting", message: nil, preferredStyle: .actionSheet)
-        
-        actionSheet.view.tintColor = Resources.Colors.sortingButtonActionSheetTextColor
-
-        actionSheet.addAction(UIAlertAction(title: "Max price", style: .default, handler: { _ in
-    
-        }))
-        
-        actionSheet.addAction(UIAlertAction(title: "Rating", style: .default, handler: { _ in
-            
-        }))
-        
-        actionSheet.addAction(UIAlertAction(title: "Release date", style: .default, handler: { _ in
-            
-        }))
-        
-        actionSheet.addAction(UIAlertAction(title: "Volume", style: .default, handler: { _ in
-            
-        }))
-        
-        actionSheet.addAction(UIAlertAction(title: "Power", style: .default, handler: { _ in
-            
-        }))
-        
-        actionSheet.addAction(UIAlertAction(title: "Battery", style: .default, handler: { _ in
-            
-        }))
-        
-        actionSheet.addAction(UIAlertAction(title: "Min price", style: .default, handler: { _ in
-           
-        }))
-        
-        actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-        
+        let actionSheet = CustomActionSheet(title: "Sorting", message: nil, preferredStyle: .actionSheet)
         self.present(actionSheet, animated: true, completion: nil)
     }
     
@@ -101,5 +67,4 @@ class ShopViewController: UIViewController {
         }
         self.present(vc, animated: true)
     }
-    
 }

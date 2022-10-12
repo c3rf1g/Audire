@@ -1,20 +1,11 @@
-//
-//  NavigationBarView.swift
-//  NavigationBarView
-//
-//  Created by Константин Хамицевич on 29.09.2022.
-//
-
-import Foundation
 import UIKit
 import SnapKit
 
-class NavigationBarView: UIView {
-    
-    private let earphonesImage = UIImageView(image: UIImage(named: "earphones.png"))
-    private let chargeStatusImage = UIImageView(image: UIImage(named: "chargeStatus.png"))
-    private let firstTokenImage = UIImageView(image: UIImage(named: "token.png"))
-    private let secondTokenImage = UIImageView(image: UIImage(named: "mainToken.png"))
+final class NavigationBarView: UIView {
+    private let earphonesImage = UIImageView(image: Resources.AppImages.earphones)
+    private let chargeStatusImage = UIImageView(image: Resources.AppImages.chargeStatus)
+    private let firstTokenImage = UIImageView(image: Resources.AppImages.firstToken)
+    private let secondTokenImage = UIImageView(image: Resources.AppImages.secondToken)
     private let firstLabel = CustomLabel(customText: "0.57", fontStyle: "Regular", fontSize: 20)
     private let secondLabel = CustomLabel(customText: "1680.21", fontStyle: "Regular", fontSize: 20)
     
@@ -95,7 +86,5 @@ class NavigationBarView: UIView {
             make.top.equalToSuperview().inset(44.5 * Resources.Multipliers.multiplierY).priority(.medium)
             make.centerY.equalTo(firstTokenImage.snp.centerY)
         }
-        
     }
-    
 }

@@ -1,17 +1,8 @@
-//
-//  FilteringViewController.swift
-//  Audire
-//
-//  Created by Константин Хамицевич on 05.10.2022.
-
-
-import Foundation
 import UIKit
 import SnapKit
 import RangeSeekSlider
 
 class FilteringViewController: UIViewController {
-    
     private let ratingLabel = CustomLabel(customText: "Rating", fontStyle: "Regular", fontSize: 20)
     private let priceLabel = CustomLabel(customText: "Price", fontStyle: "Regular", fontSize: 20)
     private let releaseLabel = CustomLabel(customText: "Release", fontStyle: "Regular", fontSize: 20)
@@ -140,7 +131,6 @@ class FilteringViewController: UIViewController {
         
         applyButton.addTarget(self, action: #selector(applyButtonPressed), for: .touchUpInside)
         resetButton.addTarget(self, action: #selector(resetButtonPressed), for: .touchUpInside)
-        
     }
     
     private func setupConst() {
@@ -249,9 +239,7 @@ class FilteringViewController: UIViewController {
     
     @objc private func applyButtonPressed() {
         //MARK: Записать данные сортировки
-        
         self.dismiss(animated: true)
-        
     }
     
     @objc private func resetButtonPressed() {
@@ -268,6 +256,7 @@ class FilteringViewController: UIViewController {
         
         for element in minMaxArray {
             element.text = nil
+            element.layer.borderColor = Resources.Colors.activeButtonTextColor.cgColor
         }
         
         for slider in slidersArray {
@@ -284,29 +273,40 @@ extension FilteringViewController: RangeSeekSliderDelegate {
         switch slider {
         case ratingSlider:
             ratingMax.text = String(Int(slider.selectedMaxValue))
+            ratingMax.layer.borderColor = UIColor.white.cgColor
             ratingMin.text = String(Int(slider.selectedMinValue))
+            ratingMin.layer.borderColor = UIColor.white.cgColor
         case priceSlider:
             priceMax.text = String(Int(slider.selectedMaxValue))
+            priceMax.layer.borderColor = UIColor.white.cgColor
             priceMin.text = String(Int(slider.selectedMinValue))
+            priceMin.layer.borderColor = UIColor.white.cgColor
         case releaseSlider:
             releaseMax.text = String(Int(slider.selectedMaxValue))
+            releaseMax.layer.borderColor = UIColor.white.cgColor
             releaseMin.text = String(Int(slider.selectedMinValue))
+            releaseMin.layer.borderColor = UIColor.white.cgColor
         case powerSlider:
             powerMax.text = String(Int(slider.selectedMaxValue))
+            powerMax.layer.borderColor = UIColor.white.cgColor
             powerMin.text = String(Int(slider.selectedMinValue))
+            powerMin.layer.borderColor = UIColor.white.cgColor
         case batterySlider:
             batteryMax.text = String(Int(slider.selectedMaxValue))
+            batteryMax.layer.borderColor = UIColor.white.cgColor
             batteryMin.text = String(Int(slider.selectedMinValue))
+            batteryMin.layer.borderColor = UIColor.white.cgColor
         case volumeSlider:
             volumeMax.text = String(Int(slider.selectedMaxValue))
+            volumeMax.layer.borderColor = UIColor.white.cgColor
             volumeMin.text = String(Int(slider.selectedMinValue))
+            volumeMin.layer.borderColor = UIColor.white.cgColor
         default: print("Error")
         }
     }
 }
 
 extension FilteringViewController: UITextFieldDelegate {
-    
     func textFieldDidEndEditing(_ textField: UITextField) {
         //MARK: Изменение введенных цифр
         var temp = textField.text ?? ""
@@ -341,7 +341,7 @@ extension FilteringViewController: UITextFieldDelegate {
         }
         
         textField.text = temp
-        
+
         //MARK: Изменение положения ползунков в зависимости от текста
         let slidersArray = [
             ratingSlider, priceSlider, releaseSlider,
