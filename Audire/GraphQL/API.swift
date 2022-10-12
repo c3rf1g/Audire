@@ -4,22 +4,21 @@
 import Apollo
 import Foundation
 
-public final class ExampleQueryQuery: GraphQLQuery {
+public final class GetUserDataExtraQuery: GraphQLQuery {
   /// The raw GraphQL definition of this operation.
   public let operationDefinition: String =
     """
-    query ExampleQuery($address: String!) {
+    query GetUserDataExtra($address: String!) {
       getUserData(address: $address) {
         __typename
         address
-        balance_clio
         balance_ton
         balance_usdt
       }
     }
     """
 
-  public let operationName: String = "ExampleQuery"
+  public let operationName: String = "GetUserDataExtra"
 
   public var address: String
 
@@ -64,7 +63,6 @@ public final class ExampleQueryQuery: GraphQLQuery {
       public static let selections: [GraphQLSelection] = [
         GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
         GraphQLField("address", type: .nonNull(.scalar(GraphQLID.self))),
-        GraphQLField("balance_clio", type: .nonNull(.scalar(Double.self))),
         GraphQLField("balance_ton", type: .nonNull(.scalar(Double.self))),
         GraphQLField("balance_usdt", type: .nonNull(.scalar(Double.self))),
       ]
@@ -75,8 +73,8 @@ public final class ExampleQueryQuery: GraphQLQuery {
         self.resultMap = unsafeResultMap
       }
 
-      public init(address: GraphQLID, balanceClio: Double, balanceTon: Double, balanceUsdt: Double) {
-        self.init(unsafeResultMap: ["__typename": "User", "address": address, "balance_clio": balanceClio, "balance_ton": balanceTon, "balance_usdt": balanceUsdt])
+      public init(address: GraphQLID, balanceTon: Double, balanceUsdt: Double) {
+        self.init(unsafeResultMap: ["__typename": "User", "address": address, "balance_ton": balanceTon, "balance_usdt": balanceUsdt])
       }
 
       public var __typename: String {
@@ -95,16 +93,6 @@ public final class ExampleQueryQuery: GraphQLQuery {
         }
         set {
           resultMap.updateValue(newValue, forKey: "address")
-        }
-      }
-
-      /// balance clio
-      public var balanceClio: Double {
-        get {
-          return resultMap["balance_clio"]! as! Double
-        }
-        set {
-          resultMap.updateValue(newValue, forKey: "balance_clio")
         }
       }
 

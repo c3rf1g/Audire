@@ -51,5 +51,3 @@ enum Resources {
         static let aboutActive = UIImage(named: "aboutActive.png")
     }
 }
-
-

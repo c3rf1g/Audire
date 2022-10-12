@@ -7,5 +7,10 @@ target 'Audire' do
 
   # Pods for PlayApp
 pod 'SnapKit'
+<<<<<<< HEAD
 pod 'RangeSeekSlider'
+=======
+
+pod 'SwiftLint'
+>>>>>>> main
 end
