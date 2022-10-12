@@ -33,7 +33,7 @@ class NavigationBarView: UIView {
         let multiplierX = Double(screen.size.width / 428)
         let multiplierY = Double(screen.size.height / 926)
         
-        //MARK: earphonesImage
+        // MARK: earphonesImage
         
         self.addSubview(earphonesImage)
         earphonesImage.contentMode = .scaleAspectFit
@@ -45,7 +45,7 @@ class NavigationBarView: UIView {
             make.bottom.equalToSuperview().inset(61 * multiplierY)
         }
        
-        //MARK: chargeStatusImage
+        // MARK: chargeStatusImage
         self.addSubview(chargeStatusImage)
         chargeStatusImage.contentMode = .scaleAspectFit
         
@@ -56,7 +56,7 @@ class NavigationBarView: UIView {
             make.bottom.equalToSuperview().inset(55 * multiplierY)
         }
         
-        //MARK: firstTokenImage
+        // MARK: firstTokenImage
         
         self.addSubview(firstTokenImage)
         firstTokenImage.contentMode = .scaleAspectFit
@@ -68,7 +68,7 @@ class NavigationBarView: UIView {
             make.bottom.equalToSuperview().inset(91 * multiplierY)
         }
         
-        //MARK: secondTokenImage
+        // MARK: secondTokenImage
         
         self.addSubview(secondTokenImage)
         secondTokenImage.contentMode = .scaleAspectFit
@@ -80,7 +80,7 @@ class NavigationBarView: UIView {
             make.bottom.equalToSuperview().inset(55.5 * multiplierY)
         }
         
-        //MARK: firstLabel
+        // MARK: firstLabel
         
         self.addSubview(firstLabel)
         firstLabel.text = "0.27"
@@ -100,7 +100,7 @@ class NavigationBarView: UIView {
             make.centerY.equalTo(secondTokenImage.snp.centerY)
         }
         
-        //MARK: secondLabel
+        // MARK: secondLabel
         
         self.addSubview(secondLabel)
         secondLabel.text = "1651.54"

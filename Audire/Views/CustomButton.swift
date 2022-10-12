@@ -35,13 +35,11 @@ class CustomButton: UIButton {
         let screen = UIScreen.main.bounds
         let multiplierY = Double(screen.size.height / 926)
        
-        
         backgroundColor = UIColor(red: 39/255, green: 0/255, blue: 74/255, alpha: 1)
         
         setTitle(text, for: .normal)
         setTitleColor(.white, for: .normal)
         setTitleColor(UIColor(red: 139/255, green: 117/255, blue: 156/255, alpha: 1), for: .highlighted)
-        
         
         if screen.size.width < 380 {
             titleLabel?.font = UIFont(name: "Montserrat-\(fontStyle)", size: (fontSize - 4))
@@ -55,8 +53,6 @@ class CustomButton: UIButton {
         layer.shadowOpacity = 0.25
         layer.shadowRadius = 5
         
-        
-    
         addTarget(self, action: #selector(unclicked), for: .touchUpInside)
         addTarget(self, action: #selector(clicked), for: .touchDown)
         
@@ -73,11 +69,4 @@ class CustomButton: UIButton {
         layer.shadowOffset = CGSize(width: -4, height: -4)
     }
     
-    
 }
-
-
-
-    
-
-

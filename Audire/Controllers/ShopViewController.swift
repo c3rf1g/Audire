@@ -11,7 +11,6 @@ class ShopViewController: UIViewController {
         self.setupUI()
     }
 
-    
     private func setupUI() {
         
         let screen = UIScreen.main.bounds
@@ -41,7 +40,6 @@ class ShopViewController: UIViewController {
     
     @objc func buttonPressed() {
         let actionSheet = UIAlertController(title: "Sorting", message: nil, preferredStyle: .actionSheet)
-        
         
         actionSheet.addAction(UIAlertAction(title: "Max price", style: .default, handler: { _ in
     
