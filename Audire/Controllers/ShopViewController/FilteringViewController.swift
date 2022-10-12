@@ -1,6 +1,5 @@
 import UIKit
 import SnapKit
-import RangeSeekSlider
 
 class FilteringViewController: UIViewController {
     private let ratingLabel = CustomLabel(customText: "Rating", fontStyle: "Regular", fontSize: 20)

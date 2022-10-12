@@ -1,5 +1,4 @@
 import UIKit
-import RangeSeekSlider
 
 final class CustomSlider: RangeSeekSlider {
     private struct Constants {
