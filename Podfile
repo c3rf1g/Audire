@@ -7,6 +7,7 @@ target 'Audire' do
 
   # Pods for PlayApp
 pod 'SnapKit'
-
 pod 'SwiftLint'
+
+
 end
