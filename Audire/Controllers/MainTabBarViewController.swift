@@ -48,6 +48,10 @@ final class MainTabBarViewController: UITabBarController {
         topline.frame = CGRect(x: 0, y: 0, width: self.tabBar.frame.width, height: 2)
         topline.backgroundColor = UIColor(hexString: "#EB00FF").cgColor
         self.tabBar.layer.addSublayer(topline)
+        let tabBarAppearance: UITabBarAppearance = UITabBarAppearance()
+            tabBarAppearance.configureWithDefaultBackground()
+            tabBarAppearance.backgroundColor = Resources.Colors.tabBarBackground
+            UITabBar.appearance().standardAppearance = tabBarAppearance
         tabBar.backgroundColor = Resources.Colors.tabBarBackground
         
         tabBar.itemPositioning = .fill

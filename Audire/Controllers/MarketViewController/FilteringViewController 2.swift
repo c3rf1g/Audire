@@ -177,28 +177,28 @@ class FilteringViewController: UIViewController {
         }
         
         //MARK: Consts for sliders
-        for i in 0..<labelsArray.count{
-            slidersArray[i].snp.makeConstraints { make in
+        for index in 0..<labelsArray.count{
+            slidersArray[index].snp.makeConstraints { make in
                 make.height.equalTo(20 * multiplierY)
                 make.left.equalToSuperview().inset(92 * multiplierX)
                 make.right.equalToSuperview().inset(92 * multiplierX)
-                make.top.equalTo(labelsArray[i].snp.bottom).offset(16 * multiplierY)
+                make.top.equalTo(labelsArray[index].snp.bottom).offset(16 * multiplierY)
             }
         }
         
         //MARK: Min Max fields
-        for i in 0..<labelsArray.count {
-            maxArray[i].snp.makeConstraints { make in
+        for index in 0..<labelsArray.count {
+            maxArray[index].snp.makeConstraints { make in
                 make.left.equalToSuperview().inset(279 * multiplierX)
                 make.right.equalToSuperview().inset(92 * multiplierX)
-                make.centerY.equalTo(labelsArray[i].snp.centerY)
+                make.centerY.equalTo(labelsArray[index].snp.centerY)
                 make.height.equalTo(24 * multiplierY)
             }
             
-            minArray[i].snp.makeConstraints { make in
+            minArray[index].snp.makeConstraints { make in
                 make.left.equalToSuperview().inset(217 * multiplierX)
                 make.right.equalToSuperview().inset(153 * multiplierX)
-                make.centerY.equalTo(labelsArray[i].snp.centerY)
+                make.centerY.equalTo(labelsArray[index].snp.centerY)
                 make.height.equalTo(24 * multiplierY)
             }
         }
