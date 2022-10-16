@@ -1,7 +1,7 @@
 import UIKit
 
 final class MainTabBarViewController: UITabBarController {
-    let customView = NavigationBarView()
+    private let customView = NavigationBarView()
     private let multiplier: Double = 121 / 926
     
     override func viewDidLoad() {
@@ -53,5 +53,3 @@ final class MainTabBarViewController: UITabBarController {
         tabBar.itemPositioning = .fill
     }
 }
-
-

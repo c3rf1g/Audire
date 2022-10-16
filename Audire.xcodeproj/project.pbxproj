@@ -7,17 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3DEC11FC28F69C710034C4C9 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DEC11FB28F69C710034C4C9 /* DetailViewController.swift */; };
 		970AB75128E9C596002EE407 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 970AB75028E9C596002EE407 /* Assets.xcassets */; };
 		970AB75428E9C596002EE407 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 970AB75228E9C596002EE407 /* LaunchScreen.storyboard */; };
-		9769C5FD28EAFAA500037B51 /* getUserData.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 9769C5FC28EAFAA500037B51 /* getUserData.graphql */; };
-		9769C5FF28EAFBA700037B51 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9769C5FE28EAFBA700037B51 /* API.swift */; };
-		9769C60828EB032400037B51 /* Apollo in Frameworks */ = {isa = PBXBuildFile; productRef = 9769C60728EB032400037B51 /* Apollo */; };
 		9769C60E28EB04F600037B51 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9769C60028EB009B00037B51 /* MainTabBarViewController.swift */; };
-		9769C61328EB056500037B51 /* CustomCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9769C61028EB050100037B51 /* CustomCollectionViewCell.swift */; };
+		9769C61328EB056500037B51 /* AirPodsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9769C61028EB050100037B51 /* AirPodsCollectionViewCell.swift */; };
 		9769C61428EB056700037B51 /* AirPodsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9769C61128EB050100037B51 /* AirPodsViewController.swift */; };
 		97711EC828E9C82500FE1462 /* schema.json in Resources */ = {isa = PBXBuildFile; fileRef = 97711EC728E9C82500FE1462 /* schema.json */; };
-		97711ECC28E9C97C00FE1462 /* data.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 97711ECB28E9C97C00FE1462 /* data.graphql */; };
 		97711ED028E9D09000FE1462 /* Net.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97711ECF28E9D08F00FE1462 /* Net.swift */; };
+		97C64B6C28EC8476001F857F /* ApolloGen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C64B6B28EC8476001F857F /* ApolloGen.swift */; };
+		97C64B6F28EC8676001F857F /* Apollo in Frameworks */ = {isa = PBXBuildFile; productRef = 97C64B6E28EC8676001F857F /* Apollo */; };
+		97C64B7128EC8676001F857F /* ApolloCodegenLib in Frameworks */ = {isa = PBXBuildFile; productRef = 97C64B7028EC8676001F857F /* ApolloCodegenLib */; };
+		97C64B7528ED9B93001F857F /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C64B7328EC876C001F857F /* API.swift */; };
 		97C816C328EB091F0048658F /* UIColor + ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C816BC28EB08B70048658F /* UIColor + ext.swift */; };
 		97C816C728EB12700048658F /* Resources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C816C628EB12700048658F /* Resources.swift */; };
 		97C816CA28EB13110048658F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C816C828EB13110048658F /* SceneDelegate.swift */; };
@@ -25,6 +26,7 @@
 		97C816CE28EB13570048658F /* ShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C816CC28EB13570048658F /* ShopViewController.swift */; };
 		97C816D228EB1A940048658F /* NavigationBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C816D128EB1A940048658F /* NavigationBarView.swift */; };
 		97C816D928EB1C790048658F /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C816D828EB1C790048658F /* CustomButton.swift */; };
+		97C816DD28EB21230048658F /* data.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 97C816DC28EB21230048658F /* data.graphql */; };
 		B70C810928F722440063CD9F /* RangeSeekSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70C810828F722440063CD9F /* RangeSeekSlider.swift */; };
 		B70C810A28F722440063CD9F /* TapticEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70C810728F722430063CD9F /* TapticEngine.swift */; };
 		B70C810B28F722440063CD9F /* RangeSeekSliderDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70C810628F722420063CD9F /* RangeSeekSliderDelegate.swift */; };
@@ -45,19 +47,19 @@
 /* Begin PBXFileReference section */
 		11179938EE2FD5F334DDF5AB /* Pods-Audire.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Audire.debug.xcconfig"; path = "Target Support Files/Pods-Audire/Pods-Audire.debug.xcconfig"; sourceTree = "<group>"; };
 		2A968D28BA71CEBB2F6C6753 /* Pods-Audire.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Audire.release.xcconfig"; path = "Target Support Files/Pods-Audire/Pods-Audire.release.xcconfig"; sourceTree = "<group>"; };
+		3DEC11FB28F69C710034C4C9 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		79A155AC9D337D43BE8D9080 /* Pods_Audire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Audire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		970AB74428E9C594002EE407 /* Audire.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Audire.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		970AB75028E9C596002EE407 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		970AB75328E9C596002EE407 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		970AB75528E9C596002EE407 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9769C5FC28EAFAA500037B51 /* getUserData.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = getUserData.graphql; sourceTree = SOURCE_ROOT; };
-		9769C5FE28EAFBA700037B51 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		9769C60028EB009B00037B51 /* MainTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
-		9769C61028EB050100037B51 /* CustomCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollectionViewCell.swift; sourceTree = "<group>"; };
+		9769C61028EB050100037B51 /* AirPodsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirPodsCollectionViewCell.swift; sourceTree = "<group>"; };
 		9769C61128EB050100037B51 /* AirPodsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirPodsViewController.swift; sourceTree = "<group>"; };
 		97711EC728E9C82500FE1462 /* schema.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = schema.json; sourceTree = "<group>"; };
-		97711ECB28E9C97C00FE1462 /* data.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = data.graphql; sourceTree = "<group>"; };
 		97711ECF28E9D08F00FE1462 /* Net.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Net.swift; sourceTree = "<group>"; };
+		97C64B6B28EC8476001F857F /* ApolloGen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApolloGen.swift; sourceTree = "<group>"; };
+		97C64B7328EC876C001F857F /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		97C816BC28EB08B70048658F /* UIColor + ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + ext.swift"; sourceTree = "<group>"; };
 		97C816C628EB12700048658F /* Resources.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Resources.swift; sourceTree = "<group>"; };
 		97C816C828EB13110048658F /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -68,6 +70,7 @@
 		97C816D628EB1AEA0048658F /* Montserrat-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Light.ttf"; sourceTree = "<group>"; };
 		97C816D728EB1AEA0048658F /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.ttf"; sourceTree = "<group>"; };
 		97C816D828EB1C790048658F /* CustomButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		97C816DC28EB21230048658F /* data.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = data.graphql; sourceTree = "<group>"; };
 		B70C810628F722420063CD9F /* RangeSeekSliderDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RangeSeekSliderDelegate.swift; sourceTree = "<group>"; };
 		B70C810728F722430063CD9F /* TapticEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapticEngine.swift; sourceTree = "<group>"; };
 		B70C810828F722440063CD9F /* RangeSeekSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RangeSeekSlider.swift; sourceTree = "<group>"; };
@@ -87,7 +90,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				FBE64C31F22FA4F3AAEE6EDB /* Pods_Audire.framework in Frameworks */,
-				9769C60828EB032400037B51 /* Apollo in Frameworks */,
+				97C64B7128EC8676001F857F /* ApolloCodegenLib in Frameworks */,
+				97C64B6F28EC8676001F857F /* Apollo in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -144,10 +148,9 @@
 		97711EC928E9C84700FE1462 /* GraphQL */ = {
 			isa = PBXGroup;
 			children = (
-				9769C5FE28EAFBA700037B51 /* API.swift */,
-				97711ECB28E9C97C00FE1462 /* data.graphql */,
+				97C64B7328EC876C001F857F /* API.swift */,
 				97711ECF28E9D08F00FE1462 /* Net.swift */,
-				9769C5FC28EAFAA500037B51 /* getUserData.graphql */,
+				97C816DC28EB21230048658F /* data.graphql */,
 			);
 			path = GraphQL;
 			sourceTree = "<group>";
@@ -158,6 +161,7 @@
 				B70C810C28F7224E0063CD9F /* RangeSlider */,
 				97C816C628EB12700048658F /* Resources.swift */,
 				97C816BB28EB08A80048658F /* Extensions */,
+				97C64B6B28EC8476001F857F /* ApolloGen.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -173,8 +177,9 @@
 		97C816C228EB08F50048658F /* AirPodsViewController */ = {
 			isa = PBXGroup;
 			children = (
-				9769C61028EB050100037B51 /* CustomCollectionViewCell.swift */,
+				9769C61028EB050100037B51 /* AirPodsCollectionViewCell.swift */,
 				9769C61128EB050100037B51 /* AirPodsViewController.swift */,
+				3DEC11FB28F69C710034C4C9 /* DetailViewController.swift */,
 			);
 			path = AirPodsViewController;
 			sourceTree = "<group>";
@@ -279,8 +284,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 970AB75828E9C596002EE407 /* Build configuration list for PBXNativeTarget "Audire" */;
 			buildPhases = (
+				97C64B7228EC8718001F857F /* GraphQL */,
 				EEA25085B7FB7C2721036F11 /* [CP] Check Pods Manifest.lock */,
+
+				3DEC11FA28EECBA40034C4C9 /* Run SwiftLint */,
 				97711EC628E9C7D000FE1462 /* GraphQL */,
+
 				970AB74028E9C594002EE407 /* Sources */,
 				970AB74128E9C594002EE407 /* Frameworks */,
 				970AB74228E9C594002EE407 /* Resources */,
@@ -292,7 +301,8 @@
 			);
 			name = Audire;
 			packageProductDependencies = (
-				9769C60728EB032400037B51 /* Apollo */,
+				97C64B6E28EC8676001F857F /* Apollo */,
+				97C64B7028EC8676001F857F /* ApolloCodegenLib */,
 			);
 			productName = AudireApollo;
 			productReference = 970AB74428E9C594002EE407 /* Audire.app */;
@@ -323,9 +333,7 @@
 			);
 			mainGroup = 970AB73B28E9C594002EE407;
 			packageReferences = (
-				97711EC228E9C6F500FE1462 /* XCRemoteSwiftPackageReference "apollo-ios" */,
-				97711EC328E9C7BA00FE1462 /* XCRemoteSwiftPackageReference "apollo-ios" */,
-				9769C60628EB032400037B51 /* XCRemoteSwiftPackageReference "apollo-ios" */,
+				97C64B6D28EC8676001F857F /* XCRemoteSwiftPackageReference "apollo-ios" */,
 			);
 			productRefGroup = 970AB74528E9C594002EE407 /* Products */;
 			projectDirPath = "";
@@ -344,11 +352,10 @@
 				B7ED2DD828EDCBFE00653D87 /* Montserrat-Light.ttf in Resources */,
 				B7ED2DD728EDCBFB00653D87 /* Montserrat-Regular.ttf in Resources */,
 				97711EC828E9C82500FE1462 /* schema.json in Resources */,
-				9769C5FD28EAFAA500037B51 /* getUserData.graphql in Resources */,
 				B7ED2DD928EDCC0000653D87 /* Montserrat-Bold.ttf in Resources */,
 				970AB75428E9C596002EE407 /* LaunchScreen.storyboard in Resources */,
 				970AB75128E9C596002EE407 /* Assets.xcassets in Resources */,
-				97711ECC28E9C97C00FE1462 /* data.graphql in Resources */,
+				97C816DD28EB21230048658F /* data.graphql in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -372,7 +379,27 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Audire/Pods-Audire-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+
+		3DEC11FA28EECBA40034C4C9 /* Run SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Run SwiftLint";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "${PODS_ROOT}/SwiftLint/swiftlint\n";
+		};
 		97711EC628E9C7D000FE1462 /* GraphQL */ = {
+
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -433,6 +460,7 @@
 				97C816D228EB1A940048658F /* NavigationBarView.swift in Sources */,
 				B70C810B28F722440063CD9F /* RangeSeekSliderDelegate.swift in Sources */,
 				97C816CE28EB13570048658F /* ShopViewController.swift in Sources */,
+				9769C61328EB056500037B51 /* AirPodsCollectionViewCell.swift in Sources */,
 				9769C61328EB056500037B51 /* CustomCollectionViewCell.swift in Sources */,
 				B7E074B928F3504C001B10D5 /* ProfileView.swift in Sources */,
 				97C816C328EB091F0048658F /* UIColor + ext.swift in Sources */,
@@ -441,7 +469,9 @@
 				9769C5FF28EAFBA700037B51 /* API.swift in Sources */,
 				B7E074E728F6D597001B10D5 /* CustomIconButton.swift in Sources */,
 				97C816C728EB12700048658F /* Resources.swift in Sources */,
+				97C64B6C28EC8476001F857F /* ApolloGen.swift in Sources */,
 				9769C61428EB056700037B51 /* AirPodsViewController.swift in Sources */,
+				3DEC11FC28F69C710034C4C9 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -655,23 +685,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		9769C60628EB032400037B51 /* XCRemoteSwiftPackageReference "apollo-ios" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/apollographql/apollo-ios";
-			requirement = {
-				kind = exactVersion;
-				version = 0.28.0;
-			};
-		};
-		97711EC228E9C6F500FE1462 /* XCRemoteSwiftPackageReference "apollo-ios" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/apollographql/apollo-ios";
-			requirement = {
-				kind = upToNextMinorVersion;
-				minimumVersion = 0.28.0;
-			};
-		};
-		97711EC328E9C7BA00FE1462 /* XCRemoteSwiftPackageReference "apollo-ios" */ = {
+		97C64B6D28EC8676001F857F /* XCRemoteSwiftPackageReference "apollo-ios" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/apollographql/apollo-ios";
 			requirement = {
@@ -682,10 +696,15 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		9769C60728EB032400037B51 /* Apollo */ = {
+		97C64B6E28EC8676001F857F /* Apollo */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 97711EC328E9C7BA00FE1462 /* XCRemoteSwiftPackageReference "apollo-ios" */;
+			package = 97C64B6D28EC8676001F857F /* XCRemoteSwiftPackageReference "apollo-ios" */;
 			productName = Apollo;
+		};
+		97C64B7028EC8676001F857F /* ApolloCodegenLib */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 97C64B6D28EC8676001F857F /* XCRemoteSwiftPackageReference "apollo-ios" */;
+			productName = ApolloCodegenLib;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
