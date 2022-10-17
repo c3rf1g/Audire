@@ -1,12 +1,3 @@
-//
-//  FilteringViewController.swift
-//  Audire
-//
-//  Created by Константин Хамицевич on 05.10.2022.
-//
-
-//TODO: Настроить текст филд(количество символов, расположение текста, таргеты, тип клавы), опрокинуть связи между слайдерами и текст филдами
-
 import Foundation
 import UIKit
 import SnapKit
@@ -112,7 +103,7 @@ class FilteringViewController: UIViewController {
         for slider in slidersArray {
             slider.addTarget(self, action: #selector(sliderValueDidChanged), for: .valueChanged)
         }
-        for element in maxArray{
+        for element in maxArray {
             element.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
         }
     }
@@ -135,11 +126,11 @@ class FilteringViewController: UIViewController {
             powerMax, batteryMax, volumeMax
         ]
         
-        //MARK: Эти мультиплаеры только для этого контроллера(половина экрана)
+        // MARK: Эти мультиплаеры только для этого контроллера(половина экрана)
         let multiplierX = Double(self.view.frame.width / 428)
         let multiplierY = Double(self.view.frame.height / 501.6666666666667)
        
-        //MARK: Consts for labels
+        // MARK: Consts for labels
         ratingLabel.snp.makeConstraints { make in
             make.left.equalToSuperview().inset(92 * multiplierX).priority(.high)
             make.right.equalToSuperview().inset(268 * multiplierX).priority(.medium)
@@ -176,8 +167,8 @@ class FilteringViewController: UIViewController {
             make.top.equalToSuperview().inset(406.8 * multiplierY)
         }
         
-        //MARK: Consts for sliders
-        for index in 0..<labelsArray.count{
+        // MARK: Consts for sliders
+        for index in 0..<labelsArray.count {
             slidersArray[index].snp.makeConstraints { make in
                 make.height.equalTo(20 * multiplierY)
                 make.left.equalToSuperview().inset(92 * multiplierX)
@@ -186,7 +177,7 @@ class FilteringViewController: UIViewController {
             }
         }
         
-        //MARK: Min Max fields
+        // MARK: Min Max fields
         for index in 0..<labelsArray.count {
             maxArray[index].snp.makeConstraints { make in
                 make.left.equalToSuperview().inset(279 * multiplierX)
@@ -269,4 +260,3 @@ class FilteringViewController: UIViewController {
         }
     }
 }
-

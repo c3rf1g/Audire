@@ -34,7 +34,7 @@ final class CustomButton: UIButton {
     private func setupUI() {
         self.backgroundColor = Resources.Colors.inactiveButtonColor
         
-        //MARK: Text
+        // MARK: Text
         self.setTitle(text, for: .normal)
         self.setTitleColor(.white, for: .normal)
         self.setTitleColor(Resources.Colors.activeButtonTextColor, for: .highlighted)
@@ -45,8 +45,8 @@ final class CustomButton: UIButton {
             self.titleLabel?.font = UIFont(name: "Montserrat-\(fontStyle)", size: fontSize)
         }
         
-        //MARK: Cornerns and Shadow
-        self.layer.cornerRadius = radius * Resources.Multipliers.multiplierY
+        // MARK: Cornerns and Shadow
+        self.layer.cornerRadius = radius * Resources.Multipliers.multiplierX
         self.layer.shadowColor = UIColor.black.cgColor
         self.layer.shadowOffset = CGSize(width: Constants.shadowOffsetWidth, height: Constants.shadowOffsetHeight)
         self.layer.shadowOpacity = Constants.shadowOpacity
@@ -68,8 +68,3 @@ final class CustomButton: UIButton {
         self.layer.shadowOffset = CGSize(width: -Constants.shadowOffsetWidth, height: -Constants.shadowOffsetHeight)
     }
 }
-
-
-    
-
-

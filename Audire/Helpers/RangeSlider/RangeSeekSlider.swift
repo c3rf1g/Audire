@@ -8,6 +8,9 @@
 
 import UIKit
 // swiftlint:disable type_body_length
+// swiftlint:disable unused_optional_binding
+// swiftlint:disable cyclomatic_complexity
+// swiftlint:disable file_length
 @IBDesignable open class RangeSeekSlider: UIControl {
 
     // MARK: - initializers
@@ -28,7 +31,6 @@ import UIKit
         self.init(frame: frame)
         completion?(self)
     }
-
 
     // MARK: - open stored properties
 
@@ -221,7 +223,6 @@ import UIKit
     /// The brief description displayed in accessibility mode for maximum value handler. If not set, the default is empty String.
     @IBInspectable open var maxLabelAccessibilityHint: String?
 
-
     // MARK: - private stored properties
 
     private enum HandleTracking { case none, left, right }
@@ -247,7 +248,6 @@ import UIKit
     // see http://stackoverflow.com/questions/13462046/custom-uiview-not-showing-accessibility-on-voice-over
     private var accessibleElements: [UIAccessibilityElement] = []
 
-
     // MARK: - private computed properties
 
     private var leftHandleAccessibilityElement: UIAccessibilityElement {
@@ -272,7 +272,6 @@ import UIKit
         return element
     }
 
-
     // MARK: - UIView
 
     open override func layoutSubviews() {
@@ -291,7 +290,6 @@ import UIKit
         return CGSize(width: UIView.noIntrinsicMetric, height: 65.0)
     }
 
-
     // MARK: - UIControl
 
     open override func beginTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
@@ -302,10 +300,9 @@ import UIKit
 
         guard isTouchingLeftHandle || isTouchingRightHandle else { return false }
 
-
         // the touch was inside one of the handles so we're definitely going to start movign one of them. But the handles might be quite close to each other, so now we need to find out which handle the touch was closest too, and activate that one.
-        let distanceFromLeftHandle: CGFloat = touchLocation.distance(to: leftHandle.frame.center)
-        let distanceFromRightHandle: CGFloat = touchLocation.distance(to: rightHandle.frame.center)
+        let distanceFromLeftHandle: CGFloat = touchLocation.distance(toPoint: leftHandle.frame.center)
+        let distanceFromRightHandle: CGFloat = touchLocation.distance(toPoint: rightHandle.frame.center)
 
         if distanceFromLeftHandle < distanceFromRightHandle && !disableRange {
             handleTracking = .left
@@ -361,7 +358,6 @@ import UIKit
         delegate?.didEndTouches(in: self)
     }
 
-
     // MARK: - UIAccessibility
 
     open override func accessibilityElementCount() -> Int {
@@ -377,12 +373,10 @@ import UIKit
         return accessibleElements.firstIndex(of: element) ?? 0
     }
 
-
     // MARK: - open methods
 
     /// When subclassing **RangeSeekSlider** and setting each item in **setupStyle()**, the design is reflected in Interface Builder as well.
     open func setupStyle() {}
-
 
     // MARK: - private methods
 
@@ -459,16 +453,16 @@ import UIKit
     }
 
     private func updateLineHeight() {
-        let barSidePadding: CGFloat = 0                          //16.0
+        let barSidePadding: CGFloat = 0                          // 16.0
         let yMiddle: CGFloat = frame.height / 2.0
         let lineLeftSide: CGPoint = CGPoint(x: barSidePadding, y: yMiddle)
         let lineRightSide: CGPoint = CGPoint(x: frame.width - barSidePadding,
                                              y: yMiddle)
         sliderLine.frame = CGRect(x: lineLeftSide.x,
-                                  y: 0,                                  //lineLeftSide.y,
+                                  y: 0,                                  // lineLeftSide.y,
                                   width: lineRightSide.x - lineLeftSide.x,
                                   height: lineHeight)
-        sliderLine.cornerRadius = 5                                          //lineHeight / 2.0
+        sliderLine.cornerRadius = 5                                          // lineHeight / 2.0
         sliderLineBetweenHandles.cornerRadius = sliderLine.cornerRadius
     }
 
@@ -701,7 +695,6 @@ import UIKit
     }
 }
 
-
 // MARK: - RangeSeekSliderLeftElement
 
 private final class RangeSeekSliderLeftElement: UIAccessibilityElement {
@@ -718,7 +711,6 @@ private final class RangeSeekSliderLeftElement: UIAccessibilityElement {
         accessibilityValue = slider.minLabel.string as? String
     }
 }
-
 
 // MARK: - RangeSeekSliderRightElement
 
@@ -739,7 +731,6 @@ private final class RangeSeekSliderRightElement: UIAccessibilityElement {
     }
 }
 
-
 // MARK: - CGRect
 
 private extension CGRect {
@@ -749,14 +740,13 @@ private extension CGRect {
     }
 }
 
-
 // MARK: - CGPoint
 
 private extension CGPoint {
 
-    func distance(to: CGPoint) -> CGFloat {
-        let distX: CGFloat = to.x - x
-        let distY: CGFloat = to.y - y
+    func distance(toPoint: CGPoint) -> CGFloat {
+        let distX: CGFloat = toPoint.x - x
+        let distY: CGFloat = toPoint.y - y
         return sqrt(distX * distX + distY * distY)
     }
 }

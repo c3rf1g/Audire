@@ -45,9 +45,7 @@ enum Resources {
         static let account = UIImage(named: "account.png")
         static let settings = UIImage(named: "settings.png")
         static let about = UIImage(named: "about.png")
-        static let walletActive = UIImage(named: "walletActive.png")
-        static let accountActive = UIImage(named: "accountActive.png")
-        static let settingsActive = UIImage(named: "settingsActive.png")
-        static let aboutActive = UIImage(named: "aboutActive.png")
+        static let arrowButtonImage = UIImage(named: "arrow.png")
+        static let showWalletsButtonImage = UIImage(named: "showWallets.png")
     }
 }

@@ -1,7 +1,9 @@
 import UIKit
 import SnapKit
-
+// swiftlint:disable cyclomatic_complexity
 class FilteringViewController: UIViewController {
+    private let methods = Methods()
+    
     private let ratingLabel = CustomLabel(customText: "Rating", fontStyle: "Regular", fontSize: 20)
     private let priceLabel = CustomLabel(customText: "Price", fontStyle: "Regular", fontSize: 20)
     private let releaseLabel = CustomLabel(customText: "Release", fontStyle: "Regular", fontSize: 20)
@@ -118,7 +120,7 @@ class FilteringViewController: UIViewController {
             ratingMax, priceMax, releaseMax,
             powerMax, batteryMax, volumeMax,
             ratingMin, priceMin, releaseMin,
-            powerMin, batteryMin, volumeMin,
+            powerMin, batteryMin, volumeMin
         ]
         
         for element in minMaxArray {
@@ -150,94 +152,93 @@ class FilteringViewController: UIViewController {
             powerMax, batteryMax, volumeMax
         ]
         
-        //MARK: Эти мультиплаеры только для этого контроллера(половина экрана)
+        // MARK: Эти мультиплаеры только для этого контроллера(половина экрана)
         let multiplierX = Double(self.view.frame.width / 428)
         let multiplierY = Double(self.view.frame.height / 869.0)
         
-        //MARK: Consts for labels
+        // MARK: Consts for labels
         ratingLabel.snp.makeConstraints { make in
-            make.left.equalToSuperview().inset(92 * multiplierX).priority(.high)
-            make.right.equalToSuperview().inset(268 * multiplierX).priority(.medium)
+            make.leading.equalToSuperview().inset(92 * multiplierX).priority(.high)
+            make.trailing.equalToSuperview().inset(268 * multiplierX).priority(.medium)
             make.top.equalToSuperview().inset(54 * multiplierY)
         }
         
         priceLabel.snp.makeConstraints { make in
-            make.left.equalToSuperview().inset(92 * multiplierX).priority(.high)
-            make.right.equalToSuperview().inset(284 * multiplierX).priority(.medium)
+            make.leading.equalToSuperview().inset(92 * multiplierX).priority(.high)
+            make.trailing.equalToSuperview().inset(284 * multiplierX).priority(.medium)
             make.top.equalToSuperview().inset(136 * multiplierY)
         }
         
         releaseLabel.snp.makeConstraints { make in
-            make.left.equalToSuperview().inset(92 * multiplierX).priority(.high)
-            make.right.equalToSuperview().inset(257 * multiplierX).priority(.medium)
+            make.leading.equalToSuperview().inset(92 * multiplierX).priority(.high)
+            make.trailing.equalToSuperview().inset(257 * multiplierX).priority(.medium)
             make.top.equalToSuperview().inset(218 * multiplierY)
         }
         
         powerLabel.snp.makeConstraints { make in
-            make.left.equalToSuperview().inset(92 * multiplierX).priority(.high)
-            make.right.equalToSuperview().inset(271 * multiplierX).priority(.medium)
+            make.leading.equalToSuperview().inset(92 * multiplierX).priority(.high)
+            make.trailing.equalToSuperview().inset(271 * multiplierX).priority(.medium)
             make.top.equalToSuperview().inset(300 * multiplierY)
         }
         
         batteryLabel.snp.makeConstraints { make in
-            make.left.equalToSuperview().inset(92 * multiplierX).priority(.high)
-            make.right.equalToSuperview().inset(261 * multiplierX).priority(.medium)
+            make.leading.equalToSuperview().inset(92 * multiplierX).priority(.high)
+            make.trailing.equalToSuperview().inset(261 * multiplierX).priority(.medium)
             make.top.equalToSuperview().inset(382 * multiplierY)
         }
         
         volumeLabel.snp.makeConstraints { make in
-            make.left.equalToSuperview().inset(92 * multiplierX).priority(.high)
-            make.right.equalToSuperview().inset(257 * multiplierX).priority(.medium)
+            make.leading.equalToSuperview().inset(92 * multiplierX).priority(.high)
+            make.trailing.equalToSuperview().inset(257 * multiplierX).priority(.medium)
             make.top.equalToSuperview().inset(464 * multiplierY)
         }
         
-        //MARK: Consts for sliders
-        for index in 0..<labelsArray.count{
+        // MARK: Consts for sliders
+        for index in 0..<labelsArray.count {
             slidersArray[index].snp.makeConstraints { make in
                 make.height.equalTo(20 * multiplierY)
-                make.left.equalToSuperview().inset(92 * multiplierX)
-                make.right.equalToSuperview().inset(92 * multiplierX)
+                make.leading.equalToSuperview().inset(92 * multiplierX)
+                make.trailing.equalToSuperview().inset(92 * multiplierX)
                 make.top.equalTo(labelsArray[index].snp.bottom).offset(14 * multiplierY)
             }
             slidersArray[index].lineHeight = 20 * multiplierY
         }
         
-        //MARK: Min Max fields const
+        // MARK: Min Max fields const
         for index in 0..<labelsArray.count {
             maxArray[index].snp.makeConstraints { make in
-                make.left.equalToSuperview().inset(279 * multiplierX)
-                make.right.equalToSuperview().inset(92 * multiplierX)
+                make.leading.equalToSuperview().inset(279 * multiplierX)
+                make.trailing.equalToSuperview().inset(92 * multiplierX)
                 make.centerY.equalTo(labelsArray[index].snp.centerY)
                 make.height.equalTo(24 * multiplierY)
             }
             
             minArray[index].snp.makeConstraints { make in
-                make.left.equalToSuperview().inset(217 * multiplierX)
-                make.right.equalToSuperview().inset(153 * multiplierX)
+                make.leading.equalToSuperview().inset(217 * multiplierX)
+                make.trailing.equalToSuperview().inset(153 * multiplierX)
                 make.centerY.equalTo(labelsArray[index].snp.centerY)
                 make.height.equalTo(24 * multiplierY)
             }
         }
         
-        //MARK: buttons const
-        
+        // MARK: buttons const
         resetButton.snp.makeConstraints { make in
             make.height.equalTo(20 * multiplierY)
-            make.left.equalToSuperview().inset(229 * multiplierX)
-            make.right.equalToSuperview().inset(92 * multiplierX)
+            make.leading.equalToSuperview().inset(229 * multiplierX)
+            make.trailing.equalToSuperview().inset(92 * multiplierX)
             make.top.equalTo(volumeSlider.snp.bottom).offset(48 * multiplierY)
         }
         
         applyButton.snp.makeConstraints { make in
             make.height.equalTo(20 * multiplierY)
-            make.left.equalToSuperview().inset(92 * multiplierX)
-            make.right.equalToSuperview().inset(229 * multiplierX)
+            make.leading.equalToSuperview().inset(92 * multiplierX)
+            make.trailing.equalToSuperview().inset(229 * multiplierX)
             make.top.equalTo(volumeSlider.snp.bottom).offset(48 * multiplierY)
         }
     }
     
     @objc private func applyButtonPressed() {
-        //MARK: Записать данные сортировки
+        // MARK: Записать данные сортировки
         self.dismiss(animated: true)
     }
     
@@ -250,7 +251,7 @@ class FilteringViewController: UIViewController {
             ratingMax, priceMax, releaseMax,
             powerMax, batteryMax, volumeMax,
             ratingMin, priceMin, releaseMin,
-            powerMin, batteryMin, volumeMin,
+            powerMin, batteryMin, volumeMin
         ]
         
         for element in minMaxArray {
@@ -267,7 +268,7 @@ class FilteringViewController: UIViewController {
 }
 
 extension FilteringViewController: RangeSeekSliderDelegate {
-    //MARK: Изменение текста в зависимости от положение ползунков
+    // MARK: Изменение текста в зависимости от положение ползунков
     func rangeSeekSlider(_ slider: RangeSeekSlider, didChange minValue: CGFloat, maxValue: CGFloat) {
         switch slider {
         case ratingSlider:
@@ -306,49 +307,16 @@ extension FilteringViewController: RangeSeekSliderDelegate {
 }
 
 extension FilteringViewController: UITextFieldDelegate {
-    // swiftlint:disable cyclomatic_complexity
     func textFieldDidEndEditing(_ textField: UITextField) {
-        //MARK: Изменение введенных цифр
-        var temp = textField.text ?? ""
-        var tempArray: [Character?] = []
-        
-        for element in temp {
-            tempArray.append(element)
-        }
-        
-        switch tempArray.count {
-        case 0:
-            tempArray.append(contentsOf: [nil, nil, nil])
-        case 1:
-            tempArray.append(contentsOf: [nil, nil])
-        case 2:
-            tempArray.append(contentsOf: [nil])
-            
-        default: break
-        }
-        
-        if  (tempArray[0] == "0" && tempArray[1] == nil && tempArray[2] == nil) ||
-            (tempArray[0] == "0" && tempArray[1] == "0" && tempArray[2] == nil) ||
-            (tempArray[0] == "0" && tempArray[1] == "0" && tempArray[2] == "0") {           //0
-            temp = "1"
-        } else if tempArray[0] == "0" && tempArray[1] == "0" && tempArray[2] != "0" {       //001
-            temp.removeFirst()
-            temp.removeFirst()
-        } else if tempArray[0] == "0" && tempArray[1] != "0" {                              //010 025 01 02
-            temp.removeFirst()
-        } else if (Int(temp) ?? 0) > 100 {                                                  // >100
-            temp = "100"
-        }
-        
-        textField.text = temp
+        methods.editingInputValuesOfTextFields(textField: textField)
 
-        //MARK: Изменение положения ползунков в зависимости от текста
+        // MARK: Изменение положения ползунков в зависимости от текста
         let slidersArray = [
             ratingSlider, priceSlider, releaseSlider,
             powerSlider, batterySlider, volumeSlider
         ]
         
-        if let stringValue = textField.text {                   //Для случая, если значение изменилось на число
+        if let stringValue = textField.text {        // Для случая, если значение изменилось на число
             if let floatValue = Float(stringValue) {
                 switch textField {
                 case ratingMax:
@@ -384,7 +352,7 @@ extension FilteringViewController: UITextFieldDelegate {
                 }
                 
             } else {
-                switch textField {                      //Для случая, если значение скинулось на дефолтное 
+                switch textField {              // Для случая, если значение скинулось на дефолтное
                 case ratingMax:
                     ratingSlider.selectedMaxValue = 100
                 case ratingMin:
@@ -421,7 +389,7 @@ extension FilteringViewController: UITextFieldDelegate {
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        //MARK: Ограничение вводимого текста 3 символами
+        // MARK: Ограничение вводимого текста 3 символами
         let currentText = textField.text ?? ""
         
         guard let stringRange = Range(range, in: currentText) else { return false }

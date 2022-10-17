@@ -36,7 +36,7 @@ final class CustomSlider: RangeSeekSlider {
         fatalError("init(frame:) has not been implemented")
     }
     
-    private func setupUI(){
+    private func setupUI() {
         self.minValue = minimumValue
         self.maxValue = maximumValue
         

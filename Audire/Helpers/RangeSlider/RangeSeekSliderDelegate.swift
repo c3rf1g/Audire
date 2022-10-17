@@ -8,7 +8,7 @@
 
 import CoreGraphics
 
-public protocol RangeSeekSliderDelegate: class {
+public protocol RangeSeekSliderDelegate: AnyObject {
 
     /// Called when the RangeSeekSlider values are changed
     ///
@@ -44,7 +44,6 @@ public protocol RangeSeekSliderDelegate: class {
     /// - Returns: String to be replaced
     func rangeSeekSlider(_ slider: RangeSeekSlider, stringForMaxValue: CGFloat) -> String?
 }
-
 
 // MARK: - Default implementation
 

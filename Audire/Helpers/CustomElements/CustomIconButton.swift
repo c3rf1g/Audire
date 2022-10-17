@@ -16,7 +16,7 @@ final class CustomIconButton: UIButton {
     private let radius: CGFloat
 
     required init(iconImage: UIImage, iconButtonLabel: CustomLabel, radius: CGFloat) {
-        self.iconImage = iconImage
+        self.iconImage = iconImage.withRenderingMode(.alwaysTemplate)
         self.iconImageView = UIImageView(image: self.iconImage)
         self.iconButtonLabel = iconButtonLabel
         self.radius = radius
@@ -33,6 +33,7 @@ final class CustomIconButton: UIButton {
     }
     
     private func setupUI() {
+        self.iconImageView.tintColor = .white
         self.backgroundColor = Resources.Colors.inactiveButtonColor
         self.layer.cornerRadius = radius * Resources.Multipliers.multiplierY
         self.layer.shadowColor = UIColor.black.cgColor
@@ -48,16 +49,16 @@ final class CustomIconButton: UIButton {
     
     private func setupConst() {
         iconImageView.snp.makeConstraints { make in
-            make.left.equalToSuperview().inset(15 * Resources.Multipliers.multiplierX)
-            make.right.equalToSuperview().inset(136 * Resources.Multipliers.multiplierX).priority(750)
+            make.leading.equalToSuperview().inset(15 * Resources.Multipliers.multiplierX)
+            make.trailing.equalToSuperview().inset(136 * Resources.Multipliers.multiplierX).priority(750)
             make.top.equalToSuperview().inset(4 * Resources.Multipliers.multiplierY)
             make.bottom.equalToSuperview().inset(6 * Resources.Multipliers.multiplierY)
-            make.width.equalTo(iconImageView.snp.height).priority(1000)
+            make.width.equalTo(iconImageView.snp.height).priority(1000) 
         }
         
         iconButtonLabel.snp.makeConstraints { make in
-            make.left.equalTo(iconImageView.snp.right).offset(16 * Resources.Multipliers.multiplierX).priority(.high)
-            make.right.equalToSuperview().inset(56 * Resources.Multipliers.multiplierX).priority(.low)
+            make.leading.equalTo(iconImageView.snp.trailing).offset(16 * Resources.Multipliers.multiplierX).priority(.high)
+            make.trailing.equalToSuperview().inset(56 * Resources.Multipliers.multiplierX).priority(.low)
             make.top.equalToSuperview().inset(9 * Resources.Multipliers.multiplierY)
             make.bottom.equalToSuperview().inset(10 * Resources.Multipliers.multiplierY)
         }
@@ -72,33 +73,13 @@ final class CustomIconButton: UIButton {
         self.backgroundColor = Resources.Colors.inactiveButtonColor
         self.layer.shadowOffset = CGSize(width: Constants.shadowOffsetWidth, height: Constants.shadowOffsetHeight)
         self.iconButtonLabel.textColor = .white
-        switch iconImageView.image {
-        case Resources.AppImages.walletActive:
-            iconImageView.image = Resources.AppImages.wallet
-        case Resources.AppImages.accountActive:
-            iconImageView.image = Resources.AppImages.account
-        case Resources.AppImages.settingsActive:
-            iconImageView.image = Resources.AppImages.settings
-        case Resources.AppImages.aboutActive:
-            iconImageView.image = Resources.AppImages.about
-        default: break
-        }
+        self.iconImageView.tintColor = .white
     }
     
     @objc private func clicked() {
         self.backgroundColor = Resources.Colors.activeButtonColor
         self.layer.shadowOffset = CGSize(width: -Constants.shadowOffsetWidth, height: -Constants.shadowOffsetHeight)
         self.iconButtonLabel.textColor = Resources.Colors.activeButtonTextColor
-        switch iconImageView.image {
-        case Resources.AppImages.wallet:
-            iconImageView.image = Resources.AppImages.walletActive
-        case Resources.AppImages.account:
-            iconImageView.image = Resources.AppImages.accountActive
-        case Resources.AppImages.settings:
-            iconImageView.image = Resources.AppImages.settingsActive
-        case Resources.AppImages.about:
-            iconImageView.image = Resources.AppImages.aboutActive
-        default: break
-        }
+        self.iconImageView.tintColor = Resources.Colors.activeButtonTextColor
     }
 }

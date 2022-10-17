@@ -1,7 +1,7 @@
 import UIKit
 import SnapKit
 
-final class ShopViewController: UIViewController {
+final class MarketViewController: UIViewController {
     private let sortingButton = CustomButton(
         text: "Sort by",
         fontStyle: "Regular",
@@ -35,16 +35,16 @@ final class ShopViewController: UIViewController {
     
     private func setupConst() {
         sortingButton.snp.makeConstraints { make in
-            make.left.equalToSuperview().inset(30 * Resources.Multipliers.multiplierX)
+            make.leading.equalToSuperview().inset(30 * Resources.Multipliers.multiplierX)
             make.top.equalToSuperview().inset(195 * Resources.Multipliers.multiplierY)
-            make.right.equalToSuperview().inset(225 * Resources.Multipliers.multiplierX)
+            make.trailing.equalToSuperview().inset(225 * Resources.Multipliers.multiplierX)
             make.bottom.equalToSuperview().inset(701 * Resources.Multipliers.multiplierY)
         }
         
         filteringButton.snp.makeConstraints { make in
-            make.left.equalToSuperview().inset(225 * Resources.Multipliers.multiplierX)
+            make.leading.equalToSuperview().inset(225 * Resources.Multipliers.multiplierX)
             make.top.equalToSuperview().inset(195 * Resources.Multipliers.multiplierY)
-            make.right.equalToSuperview().inset(30 * Resources.Multipliers.multiplierX)
+            make.trailing.equalToSuperview().inset(30 * Resources.Multipliers.multiplierX)
             make.bottom.equalToSuperview().inset(701 * Resources.Multipliers.multiplierY)
         }
     }
@@ -60,11 +60,11 @@ final class ShopViewController: UIViewController {
     }
     
     @objc private func filteringButtonPressed() {
-        let vc = FilteringViewController()
+        let viewController = FilteringViewController()
         
-        if let presentationController = vc.presentationController as? UISheetPresentationController {
+        if let presentationController = viewController.presentationController as? UISheetPresentationController {
             presentationController.detents = [.large()]
         }
-        self.present(vc, animated: true)
+        self.present(viewController, animated: true)
     }
 }

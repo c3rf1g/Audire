@@ -1,8 +1,8 @@
 import UIKit
 
 final class MainTabBarViewController: UITabBarController {
-    private let customView = NavigationBarView()
-    private let multiplier: Double = 121 / 926
+    private let navBarView = NavigationBarView(withBackButton: false)
+    private let methods = Methods()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -14,13 +14,8 @@ final class MainTabBarViewController: UITabBarController {
     private func setNavigationBar() {
         self.view.backgroundColor = Resources.Colors.backgroundColor
         
-        self.view.addSubview(customView)
-        customView.snp.makeConstraints { make in
-            make.width.equalToSuperview()
-            make.height.equalTo(self.view.safeAreaLayoutGuide.snp.height).multipliedBy(multiplier)
-            make.top.equalTo(self.view.safeAreaLayoutGuide.snp.top)
-            make.centerX.equalToSuperview()
-        }
+        self.view.addSubview(navBarView)
+        methods.makeConstraintsForNavigationBarView(navBar: navBarView, addingToViewController: self)
     }
     
     private func  generateTabBar() {
@@ -28,7 +23,7 @@ final class MainTabBarViewController: UITabBarController {
         generateVc(viewController: AirPodsViewController(),
                    image: UIImage(systemName: "airpods")
                   ),
-        generateVc(viewController: ShopViewController(),
+        generateVc(viewController: MarketViewController(),
                    image: UIImage(systemName: "bag")
                   ),
         generateVc(viewController: ProfileViewController(),

@@ -2,7 +2,7 @@ import Foundation
 import UIKit
 import SnapKit
 
-final class ProfileViewController: UIViewController {
+final class ViewController: UIViewController {
     private let methods = Methods()
     private let profile = ProfileView()
     
@@ -68,3 +68,4 @@ final class ProfileViewController: UIViewController {
         methods.presentViewController(newVC: WalletViewController(), oldVC: self, withStyle: .fullScreen)
     }
 }
+
