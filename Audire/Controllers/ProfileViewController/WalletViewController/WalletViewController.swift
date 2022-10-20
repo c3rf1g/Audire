@@ -6,9 +6,9 @@ final class WalletViewController: UIViewController {
     private struct Constants {
         static let screenWidthForChangingFontSize: CGFloat = 380
     }
-    private let methods = Methods()
     
     private let navBarView = NavigationBarView(withBackButton: true)
+    
     private let walletLabel = CustomLabel(
         customText: "Wallet",
         fontStyle: "Bold",
@@ -75,7 +75,7 @@ final class WalletViewController: UIViewController {
     }
     
     private func setupConst() {
-        methods.makeConstraintsForNavigationBarView(navBar: navBarView, addingToViewController: self)
+        makeConstraintsForNavigationBarView(navBar: navBarView)
         
         walletLabel.snp.makeConstraints { make in
             make.leading.equalToSuperview().inset(30 * Resources.Multipliers.multiplierX).priority(.high)
@@ -120,10 +120,7 @@ final class WalletViewController: UIViewController {
     }
     
     @objc private func backButtonClicked() {
-        let tabBarController = MainTabBarViewController()
-        tabBarController.selectedIndex = 2
-        methods.settingAnimation(direction: .fromLeft, usingView: self.view)
-        methods.presentViewController(newVC: tabBarController, oldVC: self, withStyle: .fullScreen)
+        self.navigationController?.popViewController(animated: true)
     }
     
     @objc private func showWalletsButtonClicked() {

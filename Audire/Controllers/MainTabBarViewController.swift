@@ -1,32 +1,24 @@
 import UIKit
 
 final class MainTabBarViewController: UITabBarController {
-    private let navBarView = NavigationBarView(withBackButton: false)
-    private let methods = Methods()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.view.backgroundColor = Resources.Colors.backgroundColor
         generateTabBar()
         setTabBarAppearance()
-        setNavigationBar()
-    }
-    
-    private func setNavigationBar() {
-        self.view.backgroundColor = Resources.Colors.backgroundColor
-        
-        self.view.addSubview(navBarView)
-        methods.makeConstraintsForNavigationBarView(navBar: navBarView, addingToViewController: self)
     }
     
     private func  generateTabBar() {
         viewControllers = [
-        generateVc(viewController: AirPodsViewController(),
+        generateVc(viewController: UINavigationController(rootViewController: AirPodsViewController()),
                    image: UIImage(systemName: "airpods")
                   ),
-        generateVc(viewController: MarketViewController(),
+        generateVc(viewController: UINavigationController(rootViewController: MarketViewController()),
                    image: UIImage(systemName: "bag")
                   ),
-        generateVc(viewController: ProfileViewController(),
+        generateVc(viewController: UINavigationController(rootViewController: ProfileViewController()),
                    image: UIImage(systemName: "person.crop.circle")
                   )
         ]

@@ -3,10 +3,10 @@ import UIKit
 import SnapKit
 
 final class ProfileViewController: UIViewController {
-    private let methods = Methods()
-    private let profile = ProfileView()
-    
-    override func viewDidLoad() {
+    private let navBarView = NavigationBarView(withBackButton: false)
+    private let profileView = ProfileView()
+
+        override func viewDidLoad() {
         super.viewDidLoad()
         
         self.addingSubviews()
@@ -15,33 +15,37 @@ final class ProfileViewController: UIViewController {
     }
     
     private func addingSubviews() {
-        self.view.addSubview(profile)
+        self.navigationController?.navigationBar.removeFromSuperview()
+        self.view.addSubview(profileView)
+        self.view.addSubview(navBarView)
     }
     
     private func setupConst() {
-        profile.snp.makeConstraints { make in
+        profileView.snp.makeConstraints { make in
             make.width.height.equalToSuperview()
-            make.centerX.centerY.equalToSuperview()
+            make.center.equalToSuperview()
         }
+        
+        makeConstraintsForNavigationBarView(navBar: navBarView)
     }
     
     private func addingTargets() {
-        self.profile.walletButton.addTarget(
+        self.profileView.walletButton.addTarget(
             self,
             action: #selector(walletButtonClicked),
             for: .touchUpInside
         )
-        self.profile.accountButton.addTarget(
+        self.profileView.accountButton.addTarget(
             self,
             action: #selector(accountButtonClicked),
             for: .touchUpInside
         )
-        self.profile.settingsButton.addTarget(
+        self.profileView.settingsButton.addTarget(
             self,
             action: #selector(settingsButtonClicked),
             for: .touchUpInside
         )
-        self.profile.aboutButton.addTarget(
+        self.profileView.aboutButton.addTarget(
             self,
             action: #selector(aboutButtonClicked),
             for: .touchUpInside
@@ -49,22 +53,18 @@ final class ProfileViewController: UIViewController {
     }
     
     @objc private func walletButtonClicked() {
-        methods.settingAnimation(direction: .fromRight, usingView: self.view)
-        methods.presentViewController(newVC: WalletViewController(), oldVC: self, withStyle: .fullScreen)
+        self.navigationController?.pushViewController(WalletViewController(), animated: true)
     }
     
     @objc private func accountButtonClicked() {
-        methods.settingAnimation(direction: .fromRight, usingView: self.view)
-        methods.presentViewController(newVC: WalletViewController(), oldVC: self, withStyle: .fullScreen)
+        self.navigationController?.pushViewController(WalletViewController(), animated: true)
     }
     
     @objc private func settingsButtonClicked() {
-        methods.settingAnimation(direction: .fromRight, usingView: self.view)
-        methods.presentViewController(newVC: WalletViewController(), oldVC: self, withStyle: .fullScreen)
+        self.navigationController?.pushViewController(WalletViewController(), animated: true)
     }
     
     @objc private func aboutButtonClicked() {
-        methods.settingAnimation(direction: .fromRight, usingView: self.view)
-        methods.presentViewController(newVC: WalletViewController(), oldVC: self, withStyle: .fullScreen)
+        self.navigationController?.pushViewController(WalletViewController(), animated: true)
     }
 }

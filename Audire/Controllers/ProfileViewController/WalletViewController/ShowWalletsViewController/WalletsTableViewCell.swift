@@ -1,10 +1,10 @@
 import UIKit
 import SnapKit
 
-class WalletsTableViewCell: UITableViewCell {
+final class WalletsTableViewCell: UITableViewCell {
 
-    public let walletName = CustomLabel(
-        customText: "Wallet1",
+    public var walletName = CustomLabel(
+        customText: "",
         fontStyle: "Regular",
         fontSize: 20
     )
@@ -18,7 +18,8 @@ class WalletsTableViewCell: UITableViewCell {
         contentView.addSubview(walletName)
         
         walletName.snp.makeConstraints { make in
-            make.center.equalToSuperview()
+            make.leading.equalToSuperview()
+            make.centerY.equalToSuperview()
         }
     }
 

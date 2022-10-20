@@ -3,7 +3,12 @@ import SnapKit
 
 final class ShowWalletsViewController: UIViewController {
     
-    let showWalletsCellReuseIdentifier = "showWalletsCellReuseIdentifier"
+    private struct Constants {
+        static let cellHeight: CGFloat = 50
+    }
+    private var testDataForTableView = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15"]
+    
+    private let showWalletsCellReuseIdentifier = "showWalletsCellReuseIdentifier"
     private lazy var tableView: UITableView = {
         let tableView = UITableView()
         tableView.backgroundColor = Resources.Colors.backgroundColor
@@ -11,7 +16,7 @@ final class ShowWalletsViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(WalletsTableViewCell.self, forCellReuseIdentifier: showWalletsCellReuseIdentifier)
-        tableView.rowHeight = 50
+        tableView.showsVerticalScrollIndicator = false
         return tableView
     }()
     
@@ -70,14 +75,21 @@ final class ShowWalletsViewController: UIViewController {
         }
         
         tableView.snp.makeConstraints { make in
-            make.leading.trailing.equalToSuperview()
-            make.top.equalToSuperview()
-            make.height.equalTo(250 * multiplierY)
+            make.leading.trailing.equalToSuperview().inset(92 * multiplierX)
+            make.top.equalToSuperview().inset(22 * multiplierY)
+            make.height.equalTo(200 * multiplierY)
         }
+        
+        tableView.rowHeight = Constants.cellHeight * multiplierY
     }
     
     private func addingTargetsandDelegates() {
-        
+        createNewWalletButton.addTarget(self, action: #selector(createNewWalletButtonClicked), for: .touchUpInside)
+    }
+    
+    @objc private func createNewWalletButtonClicked() {
+        testDataForTableView.append(String(testDataForTableView.count + 1))
+        tableView.reloadData()
     }
 }
 
@@ -87,13 +99,14 @@ extension ShowWalletsViewController: UITableViewDelegate {
 
 extension ShowWalletsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 15
+        return testDataForTableView.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: showWalletsCellReuseIdentifier, for: indexPath) as? WalletsTableViewCell
-    
+        
+        cell?.walletName.text! = "Wallet" + testDataForTableView[indexPath.row]
+        
         return cell!
     }
-    
 }

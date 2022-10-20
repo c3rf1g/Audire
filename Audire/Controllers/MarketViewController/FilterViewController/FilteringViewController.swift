@@ -1,9 +1,9 @@
 import UIKit
 import SnapKit
 // swiftlint:disable cyclomatic_complexity
-class FilteringViewController: UIViewController {
-    private let methods = Methods()
-    
+// swiftlint:disable type_body_length
+// swiftlint:disable file_length
+final class FilteringViewController: UIViewController {
     private let ratingLabel = CustomLabel(customText: "Rating", fontStyle: "Regular", fontSize: 20)
     private let priceLabel = CustomLabel(customText: "Price", fontStyle: "Regular", fontSize: 20)
     private let releaseLabel = CustomLabel(customText: "Release", fontStyle: "Regular", fontSize: 20)
@@ -47,24 +47,78 @@ class FilteringViewController: UIViewController {
         mainColor: Resources.Colors.volumeSliderColor,
         borderShadowColor: Resources.Colors.volumeSliderShadowColor
     )
-    
-    private let ratingMax = CustomTextField(startText: "100", fontStyle: "Regular", fontSize: 20)
-    private let ratingMin = CustomTextField(startText: "1", fontStyle: "Regular", fontSize: 20)
-    
-    private let priceMax = CustomTextField(startText: "100", fontStyle: "Regular", fontSize: 20)
-    private let priceMin = CustomTextField(startText: "1", fontStyle: "Regular", fontSize: 20)
-    
-    private let releaseMax = CustomTextField(startText: "100", fontStyle: "Regular", fontSize: 20)
-    private let releaseMin = CustomTextField(startText: "1", fontStyle: "Regular", fontSize: 20)
-    
-    private let powerMax = CustomTextField(startText: "100", fontStyle: "Regular", fontSize: 20)
-    private let powerMin = CustomTextField(startText: "1", fontStyle: "Regular", fontSize: 20)
-    
-    private let batteryMax = CustomTextField(startText: "100", fontStyle: "Regular", fontSize: 20)
-    private let batteryMin = CustomTextField(startText: "1", fontStyle: "Regular", fontSize: 20)
-    
-    private let volumeMax = CustomTextField(startText: "100", fontStyle: "Regular", fontSize: 20)
-    private let volumeMin = CustomTextField(startText: "1", fontStyle: "Regular", fontSize: 20)
+    private let ratingMax = CustomTextField(
+        startText: "100",
+        fontStyle: "Regular",
+        fontSize: 20,
+        cornerRadius: 5
+    )
+    private let ratingMin = CustomTextField(
+        startText: "1",
+        fontStyle: "Regular",
+        fontSize: 20,
+        cornerRadius: 5
+    )
+    private let priceMax = CustomTextField(
+        startText: "100",
+        fontStyle: "Regular",
+        fontSize: 20,
+        cornerRadius: 5
+    )
+    private let priceMin = CustomTextField(
+        startText: "1",
+        fontStyle: "Regular",
+        fontSize: 20,
+        cornerRadius: 5
+    )
+    private let releaseMax = CustomTextField(
+        startText: "100",
+        fontStyle: "Regular",
+        fontSize: 20,
+        cornerRadius: 5
+    )
+    private let releaseMin = CustomTextField(
+        startText: "1",
+        fontStyle: "Regular",
+        fontSize: 20,
+        cornerRadius: 5
+    )
+    private let powerMax = CustomTextField(
+        startText: "100",
+        fontStyle: "Regular",
+        fontSize: 20,
+        cornerRadius: 5
+    )
+    private let powerMin = CustomTextField(
+        startText: "1",
+        fontStyle: "Regular",
+        fontSize: 20,
+        cornerRadius: 5
+    )
+    private let batteryMax = CustomTextField(
+        startText: "100",
+        fontStyle: "Regular",
+        fontSize: 20,
+        cornerRadius: 5
+    )
+    private let batteryMin = CustomTextField(
+        startText: "1",
+        fontStyle: "Regular",
+        fontSize: 20,
+        cornerRadius: 5
+    )
+    private let volumeMax = CustomTextField(
+        startText: "100",
+        fontStyle: "Regular",
+        fontSize: 20,
+        cornerRadius: 5
+    )
+    private let volumeMin = CustomTextField(
+        startText: "1",
+        fontStyle: "Regular",
+        fontSize: 20,
+        cornerRadius: 5
+    )
     
     private let applyButton = CustomButton(
         text: "Apply",
@@ -265,6 +319,41 @@ class FilteringViewController: UIViewController {
             slider.updateHandlePositions()
         }
     }
+    
+    private func editingInputValuesOfTextFields(textField: UITextField) {
+        var temp = textField.text ?? ""
+        var tempArray: [Character?] = []
+        
+        for element in temp {
+            tempArray.append(element)
+        }
+        
+        switch tempArray.count {
+        case 0:
+            tempArray.append(contentsOf: [nil, nil, nil])
+        case 1:
+            tempArray.append(contentsOf: [nil, nil])
+        case 2:
+            tempArray.append(contentsOf: [nil])
+            
+        default: break
+        }
+        
+        if  (tempArray[0] == "0" && tempArray[1] == nil && tempArray[2] == nil) ||
+            (tempArray[0] == "0" && tempArray[1] == "0" && tempArray[2] == nil) ||
+            (tempArray[0] == "0" && tempArray[1] == "0" && tempArray[2] == "0") {           // 0
+            temp = "1"
+        } else if tempArray[0] == "0" && tempArray[1] == "0" && tempArray[2] != "0" {       // 001
+            temp.removeFirst()
+            temp.removeFirst()
+        } else if tempArray[0] == "0" && tempArray[1] != "0" {                              // 010 025 01 02
+            temp.removeFirst()
+        } else if (Int(temp) ?? 0) > 100 {                                                  // >100
+            temp = "100"
+        }
+        
+        textField.text = temp
+    }
 }
 
 extension FilteringViewController: RangeSeekSliderDelegate {
@@ -308,8 +397,8 @@ extension FilteringViewController: RangeSeekSliderDelegate {
 
 extension FilteringViewController: UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField) {
-        methods.editingInputValuesOfTextFields(textField: textField)
-
+        editingInputValuesOfTextFields(textField: textField)
+        
         // MARK: Изменение положения ползунков в зависимости от текста
         let slidersArray = [
             ratingSlider, priceSlider, releaseSlider,

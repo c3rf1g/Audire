@@ -68,4 +68,3 @@ final class ViewController: UIViewController {
         methods.presentViewController(newVC: WalletViewController(), oldVC: self, withStyle: .fullScreen)
     }
 }
-
