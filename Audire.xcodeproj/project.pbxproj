@@ -33,7 +33,7 @@
 		B70C811728FB46AF0063CD9F /* CustomArrowButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70C811628FB46AE0063CD9F /* CustomArrowButton.swift */; };
 		B70C811A28FB6B970063CD9F /* ShowWalletsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70C811928FB6B970063CD9F /* ShowWalletsViewController.swift */; };
 		B70C811E28FB70F10063CD9F /* WalletsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70C811D28FB70F10063CD9F /* WalletsTableViewCell.swift */; };
-		B70C8165290191790063CD9F /* ViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70C8164290191790063CD9F /* ViewControllerExtensions.swift */; };
+		B70C8165290191790063CD9F /* ViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70C8164290191790063CD9F /* ViewControllerExtension.swift */; };
 		B76D513628EDC4D900C053E0 /* CustomLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B76D513528EDC4D900C053E0 /* CustomLabel.swift */; };
 		B76D513828EDC50D00C053E0 /* CustomSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B76D513728EDC50D00C053E0 /* CustomSlider.swift */; };
 		B76D513A28EDC52400C053E0 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B76D513928EDC52400C053E0 /* CustomTextField.swift */; };
@@ -82,7 +82,7 @@
 		B70C811628FB46AE0063CD9F /* CustomArrowButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomArrowButton.swift; sourceTree = "<group>"; };
 		B70C811928FB6B970063CD9F /* ShowWalletsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowWalletsViewController.swift; sourceTree = "<group>"; };
 		B70C811D28FB70F10063CD9F /* WalletsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletsTableViewCell.swift; sourceTree = "<group>"; };
-		B70C8164290191790063CD9F /* ViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerExtensions.swift; sourceTree = "<group>"; };
+		B70C8164290191790063CD9F /* ViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerExtension.swift; sourceTree = "<group>"; };
 		B76D513528EDC4D900C053E0 /* CustomLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLabel.swift; sourceTree = "<group>"; };
 		B76D513728EDC50D00C053E0 /* CustomSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSlider.swift; sourceTree = "<group>"; };
 		B76D513928EDC52400C053E0 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
@@ -203,7 +203,7 @@
 			isa = PBXGroup;
 			children = (
 				97C816BC28EB08B70048658F /* UIColor + ext.swift */,
-				B70C8164290191790063CD9F /* ViewControllerExtensions.swift */,
+				B70C8164290191790063CD9F /* ViewControllerExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -506,7 +506,7 @@
 				9769C61328EB056500037B51 /* InventoryCollectionViewCell.swift in Sources */,
 				9769C61328EB056500037B51 /* InventoryCollectionViewCell.swift in Sources */,
 				B7E074B928F3504C001B10D5 /* ProfileView.swift in Sources */,
-				B70C8165290191790063CD9F /* ViewControllerExtensions.swift in Sources */,
+				B70C8165290191790063CD9F /* ViewControllerExtension.swift in Sources */,
 				B70C810F28F9FC4A0063CD9F /* WalletViewController.swift in Sources */,
 				97C816C328EB091F0048658F /* UIColor + ext.swift in Sources */,
 				97C816CA28EB13110048658F /* SceneDelegate.swift in Sources */,
