@@ -3,6 +3,7 @@ import UIKit
 final class MainTabBarViewController: UITabBarController {
     private let customView = NavigationBarView()
     private let multiplier: Double = 121 / 926
+    var gradientLayer: CAGradientLayer!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -13,8 +14,8 @@ final class MainTabBarViewController: UITabBarController {
     
     private func setNavigationBar() {
         self.view.backgroundColor = Resources.Colors.backgroundColor
-        
         self.view.addSubview(customView)
+        navigationController?.navigationBar.barTintColor = UIColor.green
         customView.snp.makeConstraints { make in
             make.width.equalToSuperview()
             make.height.equalTo(self.view.safeAreaLayoutGuide.snp.height).multipliedBy(multiplier)
@@ -22,6 +23,8 @@ final class MainTabBarViewController: UITabBarController {
             make.centerX.equalToSuperview()
         }
     }
+    
+    
     
     private func  generateTabBar() {
         viewControllers = [

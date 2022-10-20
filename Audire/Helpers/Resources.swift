@@ -24,6 +24,7 @@ enum Resources {
         static var volumeSliderColor = UIColor(hexString: "#FFAAD3")
         static var volumeSliderShadowColor = UIColor(hexString: "#FF007A")
         static var profileAtarBorderColor = UIColor(hexString: "#F9B7FF")
+        
     }
     
     enum Multipliers {
@@ -49,5 +50,10 @@ enum Resources {
         static let accountActive = UIImage(named: "accountActive.png")
         static let settingsActive = UIImage(named: "settingsActive.png")
         static let aboutActive = UIImage(named: "aboutActive.png")
+        static let arrowImage = UIImage(named: "arrowImage.png")
+        static let batteryImage = UIImage(named: "batteryImage.png")
+        static let priceImage = UIImage(named: "priceImage.png")
+        static let lightningImage = UIImage(named: "lightningImage.png")
+        static let speakerImage = UIImage(named: "speakerImage.png")
     }
 }

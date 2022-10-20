@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D3F5BBF28FEAEF100B058AC /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3F5BBE28FEAEF100B058AC /* DetailView.swift */; };
+		3D3F5BC128FEB42C00B058AC /* MethodsUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3F5BC028FEB42C00B058AC /* MethodsUI.swift */; };
 		3DEC11FC28F69C710034C4C9 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DEC11FB28F69C710034C4C9 /* DetailViewController.swift */; };
 		970AB75128E9C596002EE407 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 970AB75028E9C596002EE407 /* Assets.xcassets */; };
 		970AB75428E9C596002EE407 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 970AB75228E9C596002EE407 /* LaunchScreen.storyboard */; };
@@ -18,7 +20,6 @@
 		97C64B6C28EC8476001F857F /* ApolloGen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C64B6B28EC8476001F857F /* ApolloGen.swift */; };
 		97C64B6F28EC8676001F857F /* Apollo in Frameworks */ = {isa = PBXBuildFile; productRef = 97C64B6E28EC8676001F857F /* Apollo */; };
 		97C64B7128EC8676001F857F /* ApolloCodegenLib in Frameworks */ = {isa = PBXBuildFile; productRef = 97C64B7028EC8676001F857F /* ApolloCodegenLib */; };
-		97C64B7528ED9B93001F857F /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C64B7328EC876C001F857F /* API.swift */; };
 		97C816C328EB091F0048658F /* UIColor + ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C816BC28EB08B70048658F /* UIColor + ext.swift */; };
 		97C816C728EB12700048658F /* Resources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C816C628EB12700048658F /* Resources.swift */; };
 		97C816CA28EB13110048658F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C816C828EB13110048658F /* SceneDelegate.swift */; };
@@ -47,6 +48,8 @@
 /* Begin PBXFileReference section */
 		11179938EE2FD5F334DDF5AB /* Pods-Audire.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Audire.debug.xcconfig"; path = "Target Support Files/Pods-Audire/Pods-Audire.debug.xcconfig"; sourceTree = "<group>"; };
 		2A968D28BA71CEBB2F6C6753 /* Pods-Audire.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Audire.release.xcconfig"; path = "Target Support Files/Pods-Audire/Pods-Audire.release.xcconfig"; sourceTree = "<group>"; };
+		3D3F5BBE28FEAEF100B058AC /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		3D3F5BC028FEB42C00B058AC /* MethodsUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MethodsUI.swift; sourceTree = "<group>"; };
 		3DEC11FB28F69C710034C4C9 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		79A155AC9D337D43BE8D9080 /* Pods_Audire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Audire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		970AB74428E9C594002EE407 /* Audire.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Audire.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -162,6 +165,7 @@
 				97C816C628EB12700048658F /* Resources.swift */,
 				97C816BB28EB08A80048658F /* Extensions */,
 				97C64B6B28EC8476001F857F /* ApolloGen.swift */,
+				3D3F5BC028FEB42C00B058AC /* MethodsUI.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -189,6 +193,7 @@
 			children = (
 				97C816D128EB1A940048658F /* NavigationBarView.swift */,
 				B7E074B828F3504C001B10D5 /* ProfileView.swift */,
+				3D3F5BBE28FEAEF100B058AC /* DetailView.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -284,12 +289,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 970AB75828E9C596002EE407 /* Build configuration list for PBXNativeTarget "Audire" */;
 			buildPhases = (
-				97C64B7228EC8718001F857F /* GraphQL */,
 				EEA25085B7FB7C2721036F11 /* [CP] Check Pods Manifest.lock */,
-
 				3DEC11FA28EECBA40034C4C9 /* Run SwiftLint */,
 				97711EC628E9C7D000FE1462 /* GraphQL */,
-
 				970AB74028E9C594002EE407 /* Sources */,
 				970AB74128E9C594002EE407 /* Frameworks */,
 				970AB74228E9C594002EE407 /* Resources */,
@@ -379,7 +381,6 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Audire/Pods-Audire-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-
 		3DEC11FA28EECBA40034C4C9 /* Run SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -399,7 +400,6 @@
 			shellScript = "${PODS_ROOT}/SwiftLint/swiftlint\n";
 		};
 		97711EC628E9C7D000FE1462 /* GraphQL */ = {
-
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -447,12 +447,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				97C816D928EB1C790048658F /* CustomButton.swift in Sources */,
+				3D3F5BC128FEB42C00B058AC /* MethodsUI.swift in Sources */,
 				B7E074E328F59D8B001B10D5 /* CustomActionSheet.swift in Sources */,
 				B70C810A28F722440063CD9F /* TapticEngine.swift in Sources */,
 				B76D513828EDC50D00C053E0 /* CustomSlider.swift in Sources */,
 				97C816CB28EB13110048658F /* AppDelegate.swift in Sources */,
 				9769C60E28EB04F600037B51 /* MainTabBarViewController.swift in Sources */,
 				B70C810928F722440063CD9F /* RangeSeekSlider.swift in Sources */,
+				3D3F5BBF28FEAEF100B058AC /* DetailView.swift in Sources */,
 				B7ED2DD628EDCA4900653D87 /* FilteringViewController.swift in Sources */,
 				B76D513A28EDC52400C053E0 /* CustomTextField.swift in Sources */,
 				B7E074BC28F35117001B10D5 /* ProfileViewController.swift in Sources */,
@@ -461,12 +463,11 @@
 				B70C810B28F722440063CD9F /* RangeSeekSliderDelegate.swift in Sources */,
 				97C816CE28EB13570048658F /* ShopViewController.swift in Sources */,
 				9769C61328EB056500037B51 /* AirPodsCollectionViewCell.swift in Sources */,
-				9769C61328EB056500037B51 /* CustomCollectionViewCell.swift in Sources */,
+				9769C61328EB056500037B51 /* AirPodsCollectionViewCell.swift in Sources */,
 				B7E074B928F3504C001B10D5 /* ProfileView.swift in Sources */,
 				97C816C328EB091F0048658F /* UIColor + ext.swift in Sources */,
 				97C816CA28EB13110048658F /* SceneDelegate.swift in Sources */,
 				97711ED028E9D09000FE1462 /* Net.swift in Sources */,
-				9769C5FF28EAFBA700037B51 /* API.swift in Sources */,
 				B7E074E728F6D597001B10D5 /* CustomIconButton.swift in Sources */,
 				97C816C728EB12700048658F /* Resources.swift in Sources */,
 				97C64B6C28EC8476001F857F /* ApolloGen.swift in Sources */,

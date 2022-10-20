@@ -8,7 +8,7 @@
 
 import UIKit
 
-@IBDesignable open class RangeSeekSlider: UIControl {
+@IBDesignable open class RangeSeekSlider: UIControl { // swiftlint:disable:this type_body_length
 
     // MARK: - initializers
 

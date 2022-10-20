@@ -192,7 +192,7 @@ class FilteringViewController: UIViewController {
         }
         
         //MARK: Consts for sliders
-        for i in 0..<labelsArray.count{
+        for i in 0..<labelsArray.count{ // swiftlint:disable:this identifier_name
             slidersArray[i].snp.makeConstraints { make in
                 make.height.equalTo(20 * multiplierY)
                 make.left.equalToSuperview().inset(92 * multiplierX)
@@ -203,7 +203,7 @@ class FilteringViewController: UIViewController {
         }
         
         //MARK: Min Max fields const
-        for i in 0..<labelsArray.count {
+        for i in 0..<labelsArray.count { // swiftlint:disable:this identifier_name
             maxArray[i].snp.makeConstraints { make in
                 make.left.equalToSuperview().inset(279 * multiplierX)
                 make.right.equalToSuperview().inset(92 * multiplierX)
@@ -306,7 +306,7 @@ extension FilteringViewController: RangeSeekSliderDelegate {
 }
 
 extension FilteringViewController: UITextFieldDelegate {
-    func textFieldDidEndEditing(_ textField: UITextField) {
+    func textFieldDidEndEditing(_ textField: UITextField) { // swiftlint:disable:this cyclomatic_complexity
         //MARK: Изменение введенных цифр
         var temp = textField.text ?? ""
         var tempArray: [Character?] = []

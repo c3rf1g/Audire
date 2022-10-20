@@ -7,28 +7,28 @@ class AirPodsViewController: UIViewController {
     weak var collectionView: UICollectionView!
     private let multiplierX = Double(UIScreen.main.bounds.size.width / 428)
     private let multiplierY = Double(UIScreen.main.bounds.size.height / 926)
-    private let multiplier: Double = 121 / 926
     
-       override func loadView() {
-           super.loadView()
-
-           let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
-           self.view.addSubview(collectionView)
- 
-           self.collectionView = collectionView
-       }
-
-       override func viewDidLoad() {
-           super.viewDidLoad()
-
-           self.collectionView.backgroundColor = .clear
-           self.collectionView.dataSource = self
-           self.collectionView.delegate = self
-
-           self.collectionView.register(AirPodsCollectionViewCell.self, forCellWithReuseIdentifier: AirPodsCollectionViewCell.identifier)
-           makeConstraints()
-       }
-   }
+    override func loadView() {
+        super.loadView()
+        
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
+        self.view.addSubview(collectionView)
+        
+        self.collectionView = collectionView
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        self.collectionView.backgroundColor = .clear
+        self.collectionView.dataSource = self
+        self.collectionView.delegate = self
+        
+        self.collectionView.register(AirPodsCollectionViewCell.self, forCellWithReuseIdentifier: AirPodsCollectionViewCell.identifier)
+        makeConstraints()
+    }
+    
+}
 
 extension AirPodsViewController: UICollectionViewDataSource {
 
@@ -45,7 +45,9 @@ extension AirPodsViewController: UICollectionViewDataSource {
 extension AirPodsViewController: UICollectionViewDelegate {
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let detailViewController = DetailViewController()
         
+        self.navigationController?.pushViewController(detailViewController, animated: true)
     }
 }
 
@@ -73,7 +75,7 @@ extension AirPodsViewController: UICollectionViewDelegateFlowLayout {
     private func makeConstraints() {
         
         collectionView.snp.makeConstraints { make in
-            make.top.equalToSuperview().inset(UIScreen.main.bounds.height * multiplier)
+            make.top.equalToSuperview().inset(121 * multiplierY)
             make.leading.trailing.equalToSuperview()
             make.bottom.equalToSuperview()
         }
