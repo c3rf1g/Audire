@@ -1,93 +1,84 @@
 import UIKit
 import SnapKit
 
-class AirPodsCollectionViewCell: UICollectionViewCell {
+class InventoryCollectionViewCell: UICollectionViewCell {
+    private struct Constants {
+        static let borderWidth: CGFloat = 2
+        static let cornerRadius: CGFloat = 15
+        static let shadowRadius: CGFloat = 6
+        static let shadowOpacity: Float = 1
+    }
     
     static let identifier = "AirPodsCell"
     
-    private let multiplierX = Double(UIScreen.main.bounds.size.width / 428)
-    private let multiplierY = Double(UIScreen.main.bounds.size.height / 926)
-    
     private let headphoneImageView: UIImageView = {
         let image = UIImageView()
-        image.image = UIImage(systemName: "airpods")
+        image.image = Resources.AppImages.airpods
         image.contentMode = .scaleAspectFit
         return image
     }()
     
-    private let headphoneNameLabel: UILabel = {
-        let headphoneName = UILabel()
-        headphoneName.font = UIFont(name: "Montserrat-Bold", size: 20)
-        headphoneName.textColor = .white
-        headphoneName.text = "PODS"
-        return headphoneName
-    }()
+    private let headphoneNameLabel = CustomLabel(
+        customText: "Pods",
+        fontStyle: "Bold",
+        fontSize: 20
+    )
     
     private let batteryImageView: UIImageView = {
         let image = UIImageView()
-        image.image = UIImage(named: "batteryImage.png")
+        image.image = Resources.AppImages.batteryImage
         image.contentMode = .scaleAspectFit
         return image
     }()
   
-    private let batteryLabel: UILabel = {
-        let batteryLabel = UILabel()
-        batteryLabel.font = UIFont(name: "Montserrat-Bold", size: 20)
-        batteryLabel.textColor = .white
-        batteryLabel.text = "100"
-        batteryLabel.numberOfLines = 0
-        batteryLabel.lineBreakMode = NSLineBreakMode.byWordWrapping
-        return batteryLabel
-    }()
+    private let batteryLabel = CustomLabel(
+        customText: "100",
+        fontStyle: "Bold",
+        fontSize: 20
+    )
     
     private let priceImageView: UIImageView = {
         let image = UIImageView()
-        image.image = UIImage(named: "priceImage.png")
+        image.image = Resources.AppImages.priceImage
         image.contentMode = .scaleAspectFit
         return image
     }()
     
-    private let priceLabel: UILabel = {
-        let priceLabel = UILabel()
-        priceLabel.font = UIFont(name: "Montserrat-Bold", size: 20)
-        priceLabel.textColor = .white
-        priceLabel.text = "100"
-        return priceLabel
-    }()
+    private let priceLabel = CustomLabel(
+        customText: "100",
+        fontStyle: "Bold",
+        fontSize: 20
+    )
     
     private let lightningImageView: UIImageView = {
         let image = UIImageView()
-        image.image = UIImage(named: "lightningImage.png")
+        image.image = Resources.AppImages.lightningImage
         image.contentMode = .scaleAspectFit
         return image
     }()
     
-    private let lightningLabel: UILabel = {
-        let lightningLabel = UILabel()
-        lightningLabel.font = UIFont(name: "Montserrat-Bold", size: 20)
-        lightningLabel.textColor = .white
-        lightningLabel.text = "100"
-        return lightningLabel
-    }()
+    private let lightningLabel = CustomLabel(
+        customText: "100",
+        fontStyle: "Bold",
+        fontSize: 20
+    )
     
     private let speakerImageView: UIImageView = {
         let image = UIImageView()
-        image.image = UIImage(named: "speakerImage.png")
+        image.image = Resources.AppImages.speakerImage
         image.contentMode = .scaleAspectFit
         return image
     }()
     
-    private let speakerLabel: UILabel = {
-        let speakerLabel = UILabel()
-        speakerLabel.font = UIFont(name: "Montserrat-Bold", size: 20)
-        speakerLabel.textColor = .white
-        speakerLabel.text = "100"
-        return speakerLabel
-    }()
+    private let speakerLabel = CustomLabel(
+        customText: "100",
+        fontStyle: "Bold",
+        fontSize: 20
+    )
     
     private let arrowImageView: UIImageView = {
         let image = UIImageView()
-        image.image = UIImage(named: "arrowImage.png")
+        image.image = Resources.AppImages.arrowButtonImage?.withHorizontallyFlippedOrientation()
         image.contentMode = .scaleAspectFit
         return image
     }()
@@ -106,100 +97,96 @@ class AirPodsCollectionViewCell: UICollectionViewCell {
     
     private func setupAppereance() {
         contentView.backgroundColor = Resources.Colors.backgroundColor
-        contentView.layer.borderWidth = 2
-        contentView.layer.cornerRadius = 15
+        contentView.layer.borderWidth = Constants.borderWidth
+        contentView.layer.cornerRadius = Constants.cornerRadius
         contentView.layer.borderColor = Resources.Colors.borderHeadphones.cgColor
         contentView.layer.shadowColor = Resources.Colors.borderHeadphones.cgColor
-        contentView.layer.shadowRadius = 6
-        contentView.layer.shadowOpacity = 1
+        contentView.layer.shadowRadius = Constants.shadowRadius
+        contentView.layer.shadowOpacity = Constants.shadowOpacity
         contentView.layer.shadowOffset = .zero
         
     }
     
     private func addViews() {
-        contentView.addSubview(headphoneImageView)
-        contentView.addSubview(headphoneNameLabel)
-        contentView.addSubview(batteryImageView)
-        contentView.addSubview(batteryLabel)
-        contentView.addSubview(priceImageView)
-        contentView.addSubview(priceLabel)
-        contentView.addSubview(lightningImageView)
-        contentView.addSubview(lightningLabel)
-        contentView.addSubview(speakerImageView)
-        contentView.addSubview(speakerLabel)
-        contentView.addSubview(arrowImageView)
+        
+        let items =
+        [
+            headphoneImageView, headphoneNameLabel, batteryImageView, batteryLabel,
+            priceImageView, priceLabel, lightningImageView, lightningLabel,
+            speakerImageView, speakerLabel, arrowImageView
+        ]
+        
+        for item in items {
+            contentView.addSubview(item)
+        }
     }
     
     private func makeConstarints() {
         
         headphoneImageView.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(22 * multiplierY)
-            make.leading.equalToSuperview().offset(31 * multiplierX)
-            make.trailing.equalToSuperview().inset(230 * multiplierX)
-            make.bottom.equalToSuperview().inset(35 * multiplierY)
+            make.top.equalToSuperview().offset(22 * Resources.Multipliers.multiplierY)
+            make.leading.equalToSuperview().offset(31 * Resources.Multipliers.multiplierX)
+            make.trailing.equalToSuperview().inset(230 * Resources.Multipliers.multiplierX)
+            make.bottom.equalToSuperview().inset(35 * Resources.Multipliers.multiplierY)
         }
         
         headphoneNameLabel.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(22 * multiplierY)
-            make.leading.equalToSuperview().offset(155 * multiplierX)
-            make.trailing.equalToSuperview().inset(5 * multiplierX)
+            make.top.equalTo(headphoneImageView.snp.top)
+            make.leading.equalTo(headphoneImageView.snp.trailing).offset(17 * Resources.Multipliers.multiplierX)
+            make.trailing.equalToSuperview().inset(5 * Resources.Multipliers.multiplierX)
         }
         
         batteryImageView.snp.makeConstraints { make in
             make.width.height.equalTo(26)
-            make.top.equalToSuperview().offset(62 * multiplierY)
-            make.leading.equalToSuperview().offset(150 * multiplierX)
+            make.top.equalTo(headphoneNameLabel.snp.bottom).offset(21 * Resources.Multipliers.multiplierY)
+            make.leading.equalTo(headphoneImageView.snp.trailing).offset(12 * Resources.Multipliers.multiplierX)
         }
         
         batteryLabel.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(63 * multiplierY)
-            make.leading.equalToSuperview().offset(187 * multiplierX)
-            make.trailing.equalTo(priceImageView).inset(35 * multiplierX)
+            make.top.equalTo(batteryImageView)
+            make.leading.equalTo(batteryImageView.snp.trailing).offset(11 * Resources.Multipliers.multiplierX)
         }
         
         priceImageView.snp.makeConstraints { make in
             make.width.height.equalTo(26)
-            make.top.equalToSuperview().offset(62 * multiplierY)
-            make.leading.equalToSuperview().offset(249 * multiplierX)
+            make.top.equalTo(batteryImageView)
+            make.leading.equalTo(batteryImageView.snp.trailing).offset(73 * Resources.Multipliers.multiplierX)
         }
         
         priceLabel.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(63 * multiplierY)
-            make.leading.equalToSuperview().offset(286 * multiplierX)
-            make.trailing.equalToSuperview().inset(5 * multiplierX)
+            make.top.equalTo(priceImageView)
+            make.leading.equalTo(priceImageView.snp.trailing).offset(11 * Resources.Multipliers.multiplierX)
            
         }
         
         lightningImageView.snp.makeConstraints { make in
             make.width.height.equalTo(26)
-            make.top.equalToSuperview().offset(103 * multiplierY)
-            make.leading.equalToSuperview().offset(150 * multiplierX)
+            make.top.equalTo(batteryImageView.snp.bottom).offset(15)
+            make.leading.equalTo(batteryImageView)
         }
         
         lightningLabel.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(104 * multiplierY)
-            make.leading.equalToSuperview().offset(187 * multiplierX)
-            make.trailing.equalTo(speakerImageView).inset(35 * multiplierX)
+            make.top.equalTo(lightningImageView)
+            make.leading.equalTo(batteryLabel)
         }
         
         speakerImageView.snp.makeConstraints { make in
             make.width.height.equalTo(26)
-            make.top.equalToSuperview().offset(103 * multiplierY)
-            make.leading.equalToSuperview().offset(249 * multiplierX)
+            make.top.equalTo(lightningImageView)
+            make.leading.equalTo(priceImageView)
         }
         
         speakerLabel.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(104 * multiplierY)
-            make.leading.equalToSuperview().offset(286 * multiplierX)
-            make.trailing.equalToSuperview().inset(5 * multiplierX)
+            make.top.equalTo(speakerImageView)
+            make.leading.equalTo(priceLabel)
         }
         
         arrowImageView.snp.makeConstraints { make in
             make.width.equalTo(7)
             make.height.equalTo(16)
-            make.top.equalToSuperview().offset(74 * multiplierY)
-            make.leading.equalToSuperview().offset(345 * multiplierX)
-            make.trailing.equalToSuperview().inset(16 * multiplierX)
+            make.top.equalToSuperview().offset(74 * Resources.Multipliers.multiplierY)
+            make.leading.equalTo(priceImageView.snp.trailing).offset(70 * Resources.Multipliers.multiplierX)
+            make.trailing.equalToSuperview().inset(16 * Resources.Multipliers.multiplierX)
         }
     }
 }

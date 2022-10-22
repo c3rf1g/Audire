@@ -59,7 +59,7 @@ final class ProfileView: UIView {
     }
     
     private func setupUI() {
-        self.backgroundColor = Resources.Colors.backgroundColor
+        self.backgroundColor = .clear
         
         self.walletAdress.textColor = Resources.Colors.activeButtonTextColor
         self.walletAdress.textAlignment = .center

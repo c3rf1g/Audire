@@ -19,7 +19,7 @@ final class FilteringViewController: UIViewController {
     )
     private let priceSlider = CustomSlider(
         minimumValue: 1,
-        maximumValue: 100,
+        maximumValue: 10000,
         mainColor: Resources.Colors.priceSliderColor,
         borderShadowColor: Resources.Colors.priceSliderShadowColor
     )
@@ -51,73 +51,97 @@ final class FilteringViewController: UIViewController {
         startText: "100",
         fontStyle: "Regular",
         fontSize: 20,
-        cornerRadius: 5
+        cornerRadius: 5,
+        keyboard: .numbersOnly,
+        withDoneButton: true
     )
     private let ratingMin = CustomTextField(
         startText: "1",
         fontStyle: "Regular",
         fontSize: 20,
-        cornerRadius: 5
+        cornerRadius: 5,
+        keyboard: .numbersOnly,
+        withDoneButton: true
     )
     private let priceMax = CustomTextField(
-        startText: "100",
+        startText: "10000",
         fontStyle: "Regular",
         fontSize: 20,
-        cornerRadius: 5
+        cornerRadius: 5,
+        keyboard: .numbersOnly,
+        withDoneButton: true
     )
     private let priceMin = CustomTextField(
         startText: "1",
         fontStyle: "Regular",
         fontSize: 20,
-        cornerRadius: 5
+        cornerRadius: 5,
+        keyboard: .numbersOnly,
+        withDoneButton: true
     )
     private let releaseMax = CustomTextField(
         startText: "100",
         fontStyle: "Regular",
         fontSize: 20,
-        cornerRadius: 5
+        cornerRadius: 5,
+        keyboard: .numbersOnly,
+        withDoneButton: true
     )
     private let releaseMin = CustomTextField(
         startText: "1",
         fontStyle: "Regular",
         fontSize: 20,
-        cornerRadius: 5
+        cornerRadius: 5,
+        keyboard: .numbersOnly,
+        withDoneButton: true
     )
     private let powerMax = CustomTextField(
         startText: "100",
         fontStyle: "Regular",
         fontSize: 20,
-        cornerRadius: 5
+        cornerRadius: 5,
+        keyboard: .numbersOnly,
+        withDoneButton: true
     )
     private let powerMin = CustomTextField(
         startText: "1",
         fontStyle: "Regular",
         fontSize: 20,
-        cornerRadius: 5
+        cornerRadius: 5,
+        keyboard: .numbersOnly,
+        withDoneButton: true
     )
     private let batteryMax = CustomTextField(
         startText: "100",
         fontStyle: "Regular",
         fontSize: 20,
-        cornerRadius: 5
+        cornerRadius: 5,
+        keyboard: .numbersOnly,
+        withDoneButton: true
     )
     private let batteryMin = CustomTextField(
         startText: "1",
         fontStyle: "Regular",
         fontSize: 20,
-        cornerRadius: 5
+        cornerRadius: 5,
+        keyboard: .numbersOnly,
+        withDoneButton: true
     )
     private let volumeMax = CustomTextField(
         startText: "100",
         fontStyle: "Regular",
         fontSize: 20,
-        cornerRadius: 5
+        cornerRadius: 5,
+        keyboard: .numbersOnly,
+        withDoneButton: true
     )
     private let volumeMin = CustomTextField(
         startText: "1",
         fontStyle: "Regular",
         fontSize: 20,
-        cornerRadius: 5
+        cornerRadius: 5,
+        keyboard: .numbersOnly,
+        withDoneButton: true
     )
     
     private let applyButton = CustomButton(
@@ -149,6 +173,13 @@ final class FilteringViewController: UIViewController {
     
     private func setupUI() {
         self.view.backgroundColor = Resources.Colors.backgroundColor
+        
+        priceMax.adjustsFontSizeToFitWidth = true
+        priceMax.minimumFontSize = 12
+        priceMin.adjustsFontSizeToFitWidth = true
+        priceMin.minimumFontSize = 12
+        
+        priceSlider.step = 100
     }
     
     private func addingSubviews() {
@@ -315,44 +346,26 @@ final class FilteringViewController: UIViewController {
         
         for slider in slidersArray {
             slider.selectedMinValue = 1
-            slider.selectedMaxValue = 100
+            if slider == priceSlider {
+                slider.selectedMaxValue = 10000
+            } else {
+                slider.selectedMaxValue = 100
+            }
             slider.updateHandlePositions()
         }
     }
     
     private func editingInputValuesOfTextFields(textField: UITextField) {
-        var temp = textField.text ?? ""
-        var tempArray: [Character?] = []
+        let temp = textField.text ?? ""
         
-        for element in temp {
-            tempArray.append(element)
+        if temp.first == "0" {
+            textField.text = "1"
+        } else if (Int(temp) ?? 0) > 10000 && temp.count > 3 {
+            textField.text = "10000"
+        } else if (Int(temp) ?? 0) > 100 && (textField != priceMax && textField != priceMin) {
+            print("Done")
+            textField.text = "100"
         }
-        
-        switch tempArray.count {
-        case 0:
-            tempArray.append(contentsOf: [nil, nil, nil])
-        case 1:
-            tempArray.append(contentsOf: [nil, nil])
-        case 2:
-            tempArray.append(contentsOf: [nil])
-            
-        default: break
-        }
-        
-        if  (tempArray[0] == "0" && tempArray[1] == nil && tempArray[2] == nil) ||
-            (tempArray[0] == "0" && tempArray[1] == "0" && tempArray[2] == nil) ||
-            (tempArray[0] == "0" && tempArray[1] == "0" && tempArray[2] == "0") {           // 0
-            temp = "1"
-        } else if tempArray[0] == "0" && tempArray[1] == "0" && tempArray[2] != "0" {       // 001
-            temp.removeFirst()
-            temp.removeFirst()
-        } else if tempArray[0] == "0" && tempArray[1] != "0" {                              // 010 025 01 02
-            temp.removeFirst()
-        } else if (Int(temp) ?? 0) > 100 {                                                  // >100
-            temp = "100"
-        }
-        
-        textField.text = temp
     }
 }
 
@@ -404,6 +417,14 @@ extension FilteringViewController: UITextFieldDelegate {
             ratingSlider, priceSlider, releaseSlider,
             powerSlider, batterySlider, volumeSlider
         ]
+        let minArray = [
+            ratingMin, priceMin, releaseMin,
+            powerMin, batteryMin, volumeMin
+        ]
+        let maxArray = [
+            ratingMax, priceMax, releaseMax,
+            powerMax, batteryMax, volumeMax
+        ]
         
         if let stringValue = textField.text {        // Для случая, если значение изменилось на число
             if let floatValue = Float(stringValue) {
@@ -436,8 +457,13 @@ extension FilteringViewController: UITextFieldDelegate {
                 default: break
                 }
                 
-                for slider in slidersArray {
-                    slider.updateHandlePositions()
+                for index in 0..<slidersArray.count {
+                    if slidersArray[index].selectedMinValue >= slidersArray[index].selectedMaxValue {
+                        slidersArray[index].selectedMinValue = slidersArray[index].selectedMaxValue - slidersArray[index].step
+                        minArray[index].text = String(Int(slidersArray[index].selectedMinValue))
+                        maxArray[index].text = String(Int(slidersArray[index].selectedMaxValue))
+                    }
+                    slidersArray[index].updateHandlePositions()
                 }
                 
             } else {
@@ -447,7 +473,7 @@ extension FilteringViewController: UITextFieldDelegate {
                 case ratingMin:
                     ratingSlider.selectedMinValue = 1
                 case priceMax:
-                    priceSlider.selectedMaxValue = 100
+                    priceSlider.selectedMaxValue = 10000
                 case priceMin:
                     priceSlider.selectedMinValue = 1
                 case releaseMax:
@@ -478,12 +504,19 @@ extension FilteringViewController: UITextFieldDelegate {
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        // MARK: Ограничение вводимого текста 3 символами
+        // MARK: Ограничение вводимого текста 3/5 символами
         let currentText = textField.text ?? ""
+        var decision = false
         
         guard let stringRange = Range(range, in: currentText) else { return false }
-
         let updatedText = currentText.replacingCharacters(in: stringRange, with: string)
-        return updatedText.count <= 3
+        
+        if textField == priceMax || textField == priceMin {
+            decision = (updatedText.count <= 5)
+        } else {
+            decision = (updatedText.count <= 3)
+        }
+       
+        return decision
     }
 }

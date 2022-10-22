@@ -1,23 +1,25 @@
 import UIKit
 import SnapKit
 
-final class CustomArrowButton: UIButton {
+final class CustomSymbolButton: UIButton {
     enum Orientation {
         case left
         case right
+        case standart
     }
     
-    private var iconImage = Resources.AppImages.arrowButtonImage?.withRenderingMode(.alwaysTemplate)
-    private var iconImageView = UIImageView(frame: .zero)
+    private var symbolImage: UIImage?
+    private var symbolImageView = UIImageView(frame: .zero)
     private let orientation: Orientation
     
-    required init(orientation: Orientation) {
+    required init(orientation: Orientation, symbolImage: UIImage?) {
         self.orientation = orientation
+        self.symbolImage = symbolImage?.withRenderingMode(.alwaysTemplate)
         super.init(frame: .zero)
         
         self.setupUI()
-        self.addSubview(iconImageView)
-        iconImageView.snp.makeConstraints { make in
+        self.addSubview(symbolImageView)
+        symbolImageView.snp.makeConstraints { make in
             make.width.height.equalToSuperview()
             make.center.equalToSuperview()
         }
@@ -31,13 +33,13 @@ final class CustomArrowButton: UIButton {
     private func setupUI() {
         self.backgroundColor = .clear
         switch orientation {
-        case .left:
+        case .left, .standart:
             break
         case .right:
-            iconImage = iconImage?.withHorizontallyFlippedOrientation()
+            symbolImage = symbolImage?.withHorizontallyFlippedOrientation()
         }
-        iconImageView = UIImageView(image: self.iconImage)
-        iconImageView.tintColor = .white
+        symbolImageView = UIImageView(image: self.symbolImage)
+        symbolImageView.tintColor = .white
     }
     
     private func addingTargets() {
@@ -46,10 +48,10 @@ final class CustomArrowButton: UIButton {
     }
     
     @objc private func unclicked() {
-        self.iconImageView.tintColor = .white
+        self.symbolImageView.tintColor = .white
     }
     
     @objc private func clicked() {
-        self.iconImageView.tintColor = Resources.Colors.activeButtonTextColor
+        self.symbolImageView.tintColor = Resources.Colors.activeButtonTextColor
     }
 }

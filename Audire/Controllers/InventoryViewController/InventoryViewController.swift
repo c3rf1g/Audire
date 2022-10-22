@@ -2,65 +2,64 @@ import Foundation
 import UIKit
 import SnapKit
 
-class AirPodsViewController: UIViewController {
+final class InventoryViewController: UIViewController {
     
     weak var collectionView: UICollectionView!
-    private let multiplierX = Double(UIScreen.main.bounds.size.width / 428)
-    private let multiplierY = Double(UIScreen.main.bounds.size.height / 926)
-    private let multiplier: Double = 121 / 926
+    private let navBarView = NavigationBarView(withBackButton: false)
     
-       override func loadView() {
-           super.loadView()
+    override func loadView() {
+        super.loadView()
+        
+        createGradientLayer()
+        addingSubviews()
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    
+        self.collectionView.backgroundColor = .clear
+        self.collectionView.dataSource = self
+        self.collectionView.delegate = self
+        
+        self.collectionView.register(InventoryCollectionViewCell.self, forCellWithReuseIdentifier: InventoryCollectionViewCell.identifier)
+        makeConstraints()
+    }
+    
+}
 
-           let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
-           self.view.addSubview(collectionView)
- 
-           self.collectionView = collectionView
-       }
-
-       override func viewDidLoad() {
-           super.viewDidLoad()
-
-           self.collectionView.backgroundColor = .clear
-           self.collectionView.dataSource = self
-           self.collectionView.delegate = self
-
-           self.collectionView.register(AirPodsCollectionViewCell.self, forCellWithReuseIdentifier: AirPodsCollectionViewCell.identifier)
-           makeConstraints()
-       }
-   }
-
-extension AirPodsViewController: UICollectionViewDataSource {
+extension InventoryViewController: UICollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 10
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AirPodsCollectionViewCell.identifier, for: indexPath) as! AirPodsCollectionViewCell // swiftlint:disable:this force_cast
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: InventoryCollectionViewCell.identifier, for: indexPath) as! InventoryCollectionViewCell // swiftlint:disable:this force_cast
         return cell
     }
 }
 
-extension AirPodsViewController: UICollectionViewDelegate {
+extension InventoryViewController: UICollectionViewDelegate {
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let detailViewController = DetailViewController()
         
+        self.navigationController?.pushViewController(detailViewController, animated: true)
     }
 }
 
-extension AirPodsViewController: UICollectionViewDelegateFlowLayout {
+extension InventoryViewController: UICollectionViewDelegateFlowLayout {
 
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
 
-        return CGSize(width: 368 * multiplierX, height: 164 * multiplierY)
+        return CGSize(width: 368 * Resources.Multipliers.multiplierX, height: 164 * Resources.Multipliers.multiplierY)
     }
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 41 * multiplierY
+        return 41 * Resources.Multipliers.multiplierY
     }
 
     func collectionView(_ collectionView: UICollectionView,
@@ -73,9 +72,20 @@ extension AirPodsViewController: UICollectionViewDelegateFlowLayout {
     private func makeConstraints() {
         
         collectionView.snp.makeConstraints { make in
-            make.top.equalToSuperview().inset(UIScreen.main.bounds.height * multiplier)
+            make.top.equalToSuperview().inset(121 * Resources.Multipliers.multiplierY)
             make.leading.trailing.equalToSuperview()
             make.bottom.equalToSuperview()
         }
+        
+        makeConstraintsForNavigationBarView(navBar: navBarView)
+    }
+    
+    private func addingSubviews() {
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
+        
+        self.navigationController?.navigationBar.removeFromSuperview()
+        self.view.addSubview(collectionView)
+        self.view.addSubview(navBarView)
+        self.collectionView = collectionView
     }
 }

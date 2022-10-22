@@ -9,6 +9,7 @@ final class ProfileViewController: UIViewController {
         override func viewDidLoad() {
         super.viewDidLoad()
         
+        createGradientLayer()
         self.addingSubviews()
         self.setupConst()
         self.addingTargets()
@@ -22,8 +23,7 @@ final class ProfileViewController: UIViewController {
     
     private func setupConst() {
         profileView.snp.makeConstraints { make in
-            make.width.height.equalToSuperview()
-            make.center.equalToSuperview()
+            make.leading.trailing.top.bottom.equalToSuperview()
         }
         
         makeConstraintsForNavigationBarView(navBar: navBarView)

@@ -14,23 +14,22 @@ final class MarketViewController: UIViewController {
         fontSize: 20,
         radius: 10
     )
-
+    
+    private let navBarView = NavigationBarView(withBackButton: false)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.setupUI()
+        createGradientLayer()
         self.addingSubviews()
         self.setupConst()
         self.addingTargets()
     }
     
-    private func setupUI() {
-        self.view.backgroundColor = Resources.Colors.backgroundColor
-    }
-    
     private func addingSubviews() {
         self.view.addSubview(sortingButton)
         self.view.addSubview(filteringButton)
+        self.view.addSubview(navBarView)
     }
     
     private func setupConst() {
@@ -47,6 +46,8 @@ final class MarketViewController: UIViewController {
             make.trailing.equalToSuperview().inset(30 * Resources.Multipliers.multiplierX)
             make.bottom.equalToSuperview().inset(701 * Resources.Multipliers.multiplierY)
         }
+        
+        makeConstraintsForNavigationBarView(navBar: navBarView)
     }
     
     private func addingTargets() {

@@ -10,17 +10,30 @@ final class CustomTextField: UITextField {
     private let fontStyle: String
     private let fontSize: CGFloat
     private let cornerRadius: CGFloat
+    enum KeyboardType {
+        case numbersOnly
+        case numbersWithPoint
+        case defaultType
+    }
+    private let keyboard: KeyboardType
+    private let withDoneButton: Bool
     
-    required init(startText: String, fontStyle: String, fontSize: CGFloat, cornerRadius: CGFloat) {
+    required init(startText: String, fontStyle: String, fontSize: CGFloat, cornerRadius: CGFloat, keyboard: KeyboardType, withDoneButton: Bool) {
         self.startText = startText
         self.fontStyle = fontStyle
         self.fontSize = fontSize
         self.cornerRadius = cornerRadius
+        self.keyboard = keyboard
+        self.withDoneButton = withDoneButton
         
         super.init(frame: .zero)
         
         setupUI()
-        addDoneButtonOnKeyboard()
+        
+        if self.withDoneButton == true {
+            addDoneButtonOnKeyboard()
+        }
+        
         setupTargets()
     }
 
@@ -52,7 +65,15 @@ final class CustomTextField: UITextField {
             font = UIFont(name: "Montserrat-\(fontStyle)", size: fontSize)
         }
         
-        keyboardType = .asciiCapableNumberPad
+        switch keyboard {
+        case .numbersOnly:
+            keyboardType = .numberPad
+        case .numbersWithPoint:
+            keyboardType = .decimalPad
+        case .defaultType:
+            keyboardType = .default
+        }
+
         keyboardAppearance = .dark
     }
     
@@ -81,6 +102,9 @@ final class CustomTextField: UITextField {
     }
     
     private func setupTargets() {
+        if self.keyboard != .defaultType {
+            self.addTargetForReplacingArabianNumbers()
+        }
         self.addTarget(self, action: #selector(didBeginEditing), for: .editingDidBegin)
         self.addTarget(self, action: #selector(didEndEditing), for: .editingDidEnd)
     }

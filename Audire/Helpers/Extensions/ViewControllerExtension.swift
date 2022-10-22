@@ -10,4 +10,11 @@ extension UIViewController {
             make.centerX.equalToSuperview()
         }
     }
+    
+    func createGradientLayer() {
+        let newGradientLayer = CAGradientLayer()
+        newGradientLayer.frame = self.view.bounds
+        newGradientLayer.colors = [UIColor(hexString: "#28183D").cgColor, UIColor(hexString: "#130E22").cgColor]
+        self.view.layer.addSublayer(newGradientLayer)
+    }
 }

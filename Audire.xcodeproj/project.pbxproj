@@ -30,13 +30,17 @@
 		B70C810A28F722440063CD9F /* TapticEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70C810728F722430063CD9F /* TapticEngine.swift */; };
 		B70C810B28F722440063CD9F /* RangeSeekSliderDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70C810628F722420063CD9F /* RangeSeekSliderDelegate.swift */; };
 		B70C810F28F9FC4A0063CD9F /* WalletViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70C810E28F9FC4A0063CD9F /* WalletViewController.swift */; };
-		B70C811728FB46AF0063CD9F /* CustomArrowButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70C811628FB46AE0063CD9F /* CustomArrowButton.swift */; };
+		B70C811728FB46AF0063CD9F /* CustomSymbolButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70C811628FB46AE0063CD9F /* CustomSymbolButton.swift */; };
 		B70C811A28FB6B970063CD9F /* ShowWalletsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70C811928FB6B970063CD9F /* ShowWalletsViewController.swift */; };
 		B70C811E28FB70F10063CD9F /* WalletsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70C811D28FB70F10063CD9F /* WalletsTableViewCell.swift */; };
 		B70C8165290191790063CD9F /* ViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70C8164290191790063CD9F /* ViewControllerExtension.swift */; };
 		B76D513628EDC4D900C053E0 /* CustomLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B76D513528EDC4D900C053E0 /* CustomLabel.swift */; };
 		B76D513828EDC50D00C053E0 /* CustomSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B76D513728EDC50D00C053E0 /* CustomSlider.swift */; };
 		B76D513A28EDC52400C053E0 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B76D513928EDC52400C053E0 /* CustomTextField.swift */; };
+		B7D8B7CF2902B2E0009BF226 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D8B7CE2902B2E0009BF226 /* DetailView.swift */; };
+		B7D8B7D72902D6D3009BF226 /* WalletView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D8B7D62902D6D3009BF226 /* WalletView.swift */; };
+		B7D8B7DB29034055009BF226 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D8B7DA29034055009BF226 /* StringExtension.swift */; };
+		B7D8B7DD2903535E009BF226 /* UITextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D8B7DC2903535E009BF226 /* UITextFieldExtension.swift */; };
 		B7E074B928F3504C001B10D5 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E074B828F3504C001B10D5 /* ProfileView.swift */; };
 		B7E074BC28F35117001B10D5 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E074BB28F35117001B10D5 /* ProfileViewController.swift */; };
 		B7E074E328F59D8B001B10D5 /* CustomActionSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E074E228F59D8A001B10D5 /* CustomActionSheet.swift */; };
@@ -79,13 +83,17 @@
 		B70C810728F722430063CD9F /* TapticEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapticEngine.swift; sourceTree = "<group>"; };
 		B70C810828F722440063CD9F /* RangeSeekSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RangeSeekSlider.swift; sourceTree = "<group>"; };
 		B70C810E28F9FC4A0063CD9F /* WalletViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletViewController.swift; sourceTree = "<group>"; };
-		B70C811628FB46AE0063CD9F /* CustomArrowButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomArrowButton.swift; sourceTree = "<group>"; };
+		B70C811628FB46AE0063CD9F /* CustomSymbolButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSymbolButton.swift; sourceTree = "<group>"; };
 		B70C811928FB6B970063CD9F /* ShowWalletsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowWalletsViewController.swift; sourceTree = "<group>"; };
 		B70C811D28FB70F10063CD9F /* WalletsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletsTableViewCell.swift; sourceTree = "<group>"; };
 		B70C8164290191790063CD9F /* ViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerExtension.swift; sourceTree = "<group>"; };
 		B76D513528EDC4D900C053E0 /* CustomLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLabel.swift; sourceTree = "<group>"; };
 		B76D513728EDC50D00C053E0 /* CustomSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSlider.swift; sourceTree = "<group>"; };
 		B76D513928EDC52400C053E0 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		B7D8B7CE2902B2E0009BF226 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		B7D8B7D62902D6D3009BF226 /* WalletView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletView.swift; sourceTree = "<group>"; };
+		B7D8B7DA29034055009BF226 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		B7D8B7DC2903535E009BF226 /* UITextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldExtension.swift; sourceTree = "<group>"; };
 		B7E074B828F3504C001B10D5 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		B7E074BB28F35117001B10D5 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		B7E074E228F59D8A001B10D5 /* CustomActionSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomActionSheet.swift; sourceTree = "<group>"; };
@@ -137,9 +145,9 @@
 			isa = PBXGroup;
 			children = (
 				B76D513B28EDC63800C053E0 /* Application */,
-				97C816D328EB1AD80048658F /* Resources */,
-				97C816B628EB07D80048658F /* Helpers */,
+				B7D8B7D52902D476009BF226 /* Views */,
 				9769C61228EB052400037B51 /* Controllers */,
+				97C816B628EB07D80048658F /* Helpers */,
 				97711EC728E9C82500FE1462 /* schema.json */,
 				97711EC928E9C84700FE1462 /* GraphQL */,
 				970AB75028E9C596002EE407 /* Assets.xcassets */,
@@ -149,12 +157,12 @@
 			path = Audire;
 			sourceTree = "<group>";
 		};
-		975100CB28F858950094800F /* FilterViewController */ = {
+		975100CB28F858950094800F /* FilteringViewController */ = {
 			isa = PBXGroup;
 			children = (
 				B7ED2DD528EDCA4900653D87 /* FilteringViewController.swift */,
 			);
-			path = FilterViewController;
+			path = FilteringViewController;
 			sourceTree = "<group>";
 		};
 		975100CD28F858CD0094800F /* DetailsViewController */ = {
@@ -189,11 +197,11 @@
 		97C816B628EB07D80048658F /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				97C816D028EB1A890048658F /* CustomViews */,
-				B7E074BD28F35BDD001B10D5 /* CustomElements */,
-				B70C810C28F7224E0063CD9F /* RangeSlider */,
 				97C816C628EB12700048658F /* Resources.swift */,
+				B7E074BD28F35BDD001B10D5 /* CustomElements */,
 				97C816BB28EB08A80048658F /* Extensions */,
+				97C816D328EB1AD80048658F /* Fonts */,
+				B70C810C28F7224E0063CD9F /* RangeSlider */,
 				97C64B6B28EC8476001F857F /* ApolloGen.swift */,
 			);
 			path = Helpers;
@@ -204,6 +212,8 @@
 			children = (
 				97C816BC28EB08B70048658F /* UIColor + ext.swift */,
 				B70C8164290191790063CD9F /* ViewControllerExtension.swift */,
+				B7D8B7DA29034055009BF226 /* StringExtension.swift */,
+				B7D8B7DC2903535E009BF226 /* UITextFieldExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -211,28 +221,19 @@
 		97C816C228EB08F50048658F /* InventoryViewController */ = {
 			isa = PBXGroup;
 			children = (
-				975100CD28F858CD0094800F /* DetailsViewController */,
-				9769C61028EB050100037B51 /* InventoryCollectionViewCell.swift */,
 				9769C61128EB050100037B51 /* InventoryViewController.swift */,
+				9769C61028EB050100037B51 /* InventoryCollectionViewCell.swift */,
+				975100CD28F858CD0094800F /* DetailsViewController */,
 			);
 			path = InventoryViewController;
 			sourceTree = "<group>";
 		};
-		97C816D028EB1A890048658F /* CustomViews */ = {
-			isa = PBXGroup;
-			children = (
-				97C816D128EB1A940048658F /* NavigationBarView.swift */,
-				B7E074B828F3504C001B10D5 /* ProfileView.swift */,
-			);
-			path = CustomViews;
-			sourceTree = "<group>";
-		};
-		97C816D328EB1AD80048658F /* Resources */ = {
+		97C816D328EB1AD80048658F /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
 				97C816D428EB1AE30048658F /* Fonts */,
 			);
-			path = Resources;
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		97C816D428EB1AE30048658F /* Fonts */ = {
@@ -282,6 +283,17 @@
 			path = Application;
 			sourceTree = "<group>";
 		};
+		B7D8B7D52902D476009BF226 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				97C816D128EB1A940048658F /* NavigationBarView.swift */,
+				B7E074B828F3504C001B10D5 /* ProfileView.swift */,
+				B7D8B7CE2902B2E0009BF226 /* DetailView.swift */,
+				B7D8B7D62902D6D3009BF226 /* WalletView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		B7E074BA28F35060001B10D5 /* ProfileViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -296,7 +308,7 @@
 			children = (
 				97C816D828EB1C790048658F /* CustomButton.swift */,
 				B7E074E628F6D597001B10D5 /* CustomIconButton.swift */,
-				B70C811628FB46AE0063CD9F /* CustomArrowButton.swift */,
+				B70C811628FB46AE0063CD9F /* CustomSymbolButton.swift */,
 				B76D513528EDC4D900C053E0 /* CustomLabel.swift */,
 				B76D513728EDC50D00C053E0 /* CustomSlider.swift */,
 				B76D513928EDC52400C053E0 /* CustomTextField.swift */,
@@ -308,8 +320,8 @@
 		B7ED2DDA28EDCEDB00653D87 /* MarketViewController */ = {
 			isa = PBXGroup;
 			children = (
-				975100CB28F858950094800F /* FilterViewController */,
 				97C816CC28EB13570048658F /* MarketViewController.swift */,
+				975100CB28F858950094800F /* FilteringViewController */,
 			);
 			path = MarketViewController;
 			sourceTree = "<group>";
@@ -487,11 +499,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B70C811728FB46AF0063CD9F /* CustomArrowButton.swift in Sources */,
+				B70C811728FB46AF0063CD9F /* CustomSymbolButton.swift in Sources */,
 				B70C811A28FB6B970063CD9F /* ShowWalletsViewController.swift in Sources */,
 				97C816D928EB1C790048658F /* CustomButton.swift in Sources */,
 				B7E074E328F59D8B001B10D5 /* CustomActionSheet.swift in Sources */,
 				B70C810A28F722440063CD9F /* TapticEngine.swift in Sources */,
+				B7D8B7DD2903535E009BF226 /* UITextFieldExtension.swift in Sources */,
 				B76D513828EDC50D00C053E0 /* CustomSlider.swift in Sources */,
 				97C816CB28EB13110048658F /* AppDelegate.swift in Sources */,
 				9769C60E28EB04F600037B51 /* MainTabBarViewController.swift in Sources */,
@@ -502,9 +515,12 @@
 				B76D513628EDC4D900C053E0 /* CustomLabel.swift in Sources */,
 				97C816D228EB1A940048658F /* NavigationBarView.swift in Sources */,
 				B70C810B28F722440063CD9F /* RangeSeekSliderDelegate.swift in Sources */,
+				B7D8B7D72902D6D3009BF226 /* WalletView.swift in Sources */,
 				97C816CE28EB13570048658F /* MarketViewController.swift in Sources */,
+				B7D8B7CF2902B2E0009BF226 /* DetailView.swift in Sources */,
 				9769C61328EB056500037B51 /* InventoryCollectionViewCell.swift in Sources */,
 				9769C61328EB056500037B51 /* InventoryCollectionViewCell.swift in Sources */,
+				B7D8B7DB29034055009BF226 /* StringExtension.swift in Sources */,
 				B7E074B928F3504C001B10D5 /* ProfileView.swift in Sources */,
 				B70C8165290191790063CD9F /* ViewControllerExtension.swift in Sources */,
 				B70C810F28F9FC4A0063CD9F /* WalletViewController.swift in Sources */,

@@ -5,14 +5,13 @@ final class MainTabBarViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.view.backgroundColor = Resources.Colors.backgroundColor
         generateTabBar()
         setTabBarAppearance()
     }
     
     private func  generateTabBar() {
         viewControllers = [
-        generateVc(viewController: UINavigationController(rootViewController: AirPodsViewController()),
+        generateVc(viewController: UINavigationController(rootViewController: InventoryViewController()),
                    image: UIImage(systemName: "airpods")
                   ),
         generateVc(viewController: UINavigationController(rootViewController: MarketViewController()),
