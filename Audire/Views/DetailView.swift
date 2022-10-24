@@ -6,8 +6,15 @@ final class DetailView: UIView {
     private let headphoneNameLabel = CustomLabel(
         customText: "Pods",
         fontStyle: "Bold",
-        fontSize: 20
+        fontSize: 24
     )
+    
+    private let backRectangle: UIImageView = {
+        let image = UIImageView()
+        image.image = Resources.AppImages.backRectangle
+        image.contentMode = .scaleAspectFit
+        return image
+    }()
     
     private let headphoneImageView: UIImageView = {
         let image = UIImageView()
@@ -144,11 +151,13 @@ final class DetailView: UIView {
     private func addViews() {
         let items =
         [
-            headphoneImageView, headphoneNameLabel, headphoneCode, headphoneTypeOfConnect,
-            batteryImageView, batteryLabel, priceImageView, priceLabel,
-            lightningImageView, lightningLabel, speakerImageView, speakerLabel,
-            tokenImageViewFirst, tokenImageViewSecond, chargeLabel, equipButton,
-            chargeButton, sellButton, sellTextField
+            headphoneNameLabel, headphoneCode, headphoneTypeOfConnect,
+            headphoneImageView, backRectangle, batteryImageView,
+            batteryLabel, priceImageView, priceLabel, lightningImageView,
+            lightningLabel, speakerImageView, speakerLabel,
+            tokenImageViewFirst, tokenImageViewSecond,
+            chargeLabel, equipButton, chargeButton, sellButton,
+            sellTextField
         ]
         
         for item in items {
@@ -182,10 +191,17 @@ final class DetailView: UIView {
             
         }
         
+        backRectangle.snp.makeConstraints { make in
+            make.height.equalTo(40 * Resources.Multipliers.multiplierY)
+            make.width.equalTo(4 * Resources.Multipliers.multiplierX)
+            make.centerY.equalToSuperview()
+            make.leading.equalToSuperview().offset(10 * Resources.Multipliers.multiplierX)
+        }
+        
         batteryImageView.snp.makeConstraints { make in
-            make.height.equalTo(26 * Resources.Multipliers.multiplierY)
-            make.width.equalTo(26 * Resources.Multipliers.multiplierX)
-            make.top.equalTo(headphoneTypeOfConnect.snp.bottom).offset(97 * Resources.Multipliers.multiplierY)
+            make.height.equalTo(35 * Resources.Multipliers.multiplierY)
+            make.width.equalTo(35 * Resources.Multipliers.multiplierX)
+            make.top.equalTo(headphoneTypeOfConnect.snp.bottom).offset(80 * Resources.Multipliers.multiplierY)
             make.leading.equalTo(headphoneImageView.snp.trailing).offset(36 * Resources.Multipliers.multiplierX)
         }
         
@@ -196,8 +212,8 @@ final class DetailView: UIView {
         }
         
         lightningImageView.snp.makeConstraints { make in
-            make.height.equalTo(26 * Resources.Multipliers.multiplierY)
-            make.width.equalTo(26 * Resources.Multipliers.multiplierX)
+            make.height.equalTo(35 * Resources.Multipliers.multiplierY)
+            make.width.equalTo(35 * Resources.Multipliers.multiplierX)
             make.top.equalTo(batteryImageView.snp.bottom).offset(15 * Resources.Multipliers.multiplierY)
             make.leading.equalTo(batteryImageView)
         }
@@ -209,8 +225,8 @@ final class DetailView: UIView {
         }
         
         priceImageView.snp.makeConstraints { make in
-            make.height.equalTo(26 * Resources.Multipliers.multiplierY)
-            make.width.equalTo(26 * Resources.Multipliers.multiplierX)
+            make.height.equalTo(35 * Resources.Multipliers.multiplierY)
+            make.width.equalTo(35 * Resources.Multipliers.multiplierX)
             make.top.equalTo(lightningImageView.snp.bottom).offset(15 * Resources.Multipliers.multiplierY)
             make.leading.equalTo(lightningImageView)
         }
@@ -222,8 +238,8 @@ final class DetailView: UIView {
         }
         
         speakerImageView.snp.makeConstraints { make in
-            make.height.equalTo(26 * Resources.Multipliers.multiplierY)
-            make.width.equalTo(26 * Resources.Multipliers.multiplierX)
+            make.height.equalTo(35 * Resources.Multipliers.multiplierY)
+            make.width.equalTo(35 * Resources.Multipliers.multiplierX)
             make.top.equalTo(priceImageView.snp.bottom).offset(15 * Resources.Multipliers.multiplierY)
             make.leading.equalTo(priceImageView)
         }
@@ -250,7 +266,7 @@ final class DetailView: UIView {
         tokenImageViewFirst.snp.makeConstraints { make in
             make.height.equalTo(55 * Resources.Multipliers.multiplierY)
             make.width.equalTo(55 * Resources.Multipliers.multiplierX)
-            make.top.equalTo(chargeLabel).offset(-5)
+            make.top.equalTo(chargeLabel).offset(-8 * Resources.Multipliers.multiplierY)
             make.leading.equalTo(chargeLabel.snp.trailing).offset(20 * Resources.Multipliers.multiplierX)
         }
         
@@ -270,7 +286,7 @@ final class DetailView: UIView {
         tokenImageViewSecond.snp.makeConstraints { make in
             make.height.equalTo(55 * Resources.Multipliers.multiplierY)
             make.width.equalTo(55 * Resources.Multipliers.multiplierX)
-            make.top.equalTo(sellTextField).offset(-5)
+            make.top.equalTo(sellTextField).offset(-8 * Resources.Multipliers.multiplierY)
             make.leading.equalTo(sellTextField.snp.trailing).offset(20 * Resources.Multipliers.multiplierX)
         }
         

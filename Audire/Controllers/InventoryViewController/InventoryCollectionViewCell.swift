@@ -138,7 +138,8 @@ class InventoryCollectionViewCell: UICollectionViewCell {
         }
         
         batteryImageView.snp.makeConstraints { make in
-            make.width.height.equalTo(26)
+            make.width.equalTo(35 * Resources.Multipliers.multiplierX)
+            make.height.equalTo(35 * Resources.Multipliers.multiplierY)
             make.top.equalTo(headphoneNameLabel.snp.bottom).offset(10 * Resources.Multipliers.multiplierY)
             make.leading.equalTo(headphoneImageView.snp.trailing).offset(12 * Resources.Multipliers.multiplierX)
             
@@ -146,22 +147,24 @@ class InventoryCollectionViewCell: UICollectionViewCell {
         
         batteryLabel.snp.makeConstraints { make in
             make.top.bottom.equalTo(batteryImageView)
-            make.leading.equalTo(batteryImageView.snp.trailing).offset(11 * Resources.Multipliers.multiplierX)
+            make.leading.equalTo(batteryImageView.snp.trailing).offset(7 * Resources.Multipliers.multiplierX)
         }
         
         priceImageView.snp.makeConstraints { make in
-            make.width.height.equalTo(26)
+            make.width.equalTo(35 * Resources.Multipliers.multiplierX)
+            make.height.equalTo(35 * Resources.Multipliers.multiplierY)
             make.top.equalTo(batteryImageView)
             make.leading.equalTo(batteryImageView.snp.trailing).offset(73 * Resources.Multipliers.multiplierX)
         }
         
         priceLabel.snp.makeConstraints { make in
             make.top.bottom.equalTo(priceImageView)
-            make.leading.equalTo(priceImageView.snp.trailing).offset(11 * Resources.Multipliers.multiplierX)
+            make.leading.equalTo(priceImageView.snp.trailing).offset(7 * Resources.Multipliers.multiplierX)
         }
         
         lightningImageView.snp.makeConstraints { make in
-            make.width.height.equalTo(26)
+            make.width.equalTo(35 * Resources.Multipliers.multiplierX)
+            make.height.equalTo(35 * Resources.Multipliers.multiplierY)
             make.top.equalTo(batteryImageView.snp.bottom).offset(15 * Resources.Multipliers.multiplierY)
             make.leading.equalTo(batteryImageView)
             
@@ -173,7 +176,8 @@ class InventoryCollectionViewCell: UICollectionViewCell {
         }
         
         speakerImageView.snp.makeConstraints { make in
-            make.width.height.equalTo(26)
+            make.width.equalTo(35 * Resources.Multipliers.multiplierX)
+            make.height.equalTo(35 * Resources.Multipliers.multiplierY)
             make.top.equalTo(lightningImageView)
             make.leading.equalTo(priceImageView)
         }
@@ -184,8 +188,8 @@ class InventoryCollectionViewCell: UICollectionViewCell {
         }
         
         arrowImageView.snp.makeConstraints { make in
-            make.width.equalTo(7).multipliedBy(Resources.Multipliers.multiplierX)
-            make.height.equalTo(16).multipliedBy(Resources.Multipliers.multiplierX)
+            make.width.equalTo(7 * Resources.Multipliers.multiplierX)
+            make.height.equalTo(16 * Resources.Multipliers.multiplierY)
             make.top.equalToSuperview().offset(74 * Resources.Multipliers.multiplierY)
             make.trailing.equalToSuperview().inset(11 * Resources.Multipliers.multiplierX)
         }

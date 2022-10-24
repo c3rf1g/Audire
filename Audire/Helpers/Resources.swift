@@ -52,5 +52,6 @@ enum Resources {
         static let priceImage = UIImage(named: "priceImage.png")
         static let lightningImage = UIImage(named: "lightningImage.png")
         static let speakerImage = UIImage(named: "speakerImage.png")
+        static let backRectangle = UIImage(named: "backRectangle.png")
     }
 }
