@@ -12,11 +12,12 @@ final class ProfileViewController: UIViewController {
         createGradientLayer()
         self.addingSubviews()
         self.setupConst()
-        self.addingTargets()
+        self.addingTargetsAndDelegates()
     }
     
     private func addingSubviews() {
         self.navigationController?.navigationBar.removeFromSuperview()
+        
         self.view.addSubview(profileView)
         self.view.addSubview(navBarView)
     }
@@ -29,7 +30,7 @@ final class ProfileViewController: UIViewController {
         makeConstraintsForNavigationBarView(navBar: navBarView)
     }
     
-    private func addingTargets() {
+    private func addingTargetsAndDelegates() {
         self.profileView.walletButton.addTarget(
             self,
             action: #selector(walletButtonClicked),
@@ -50,6 +51,8 @@ final class ProfileViewController: UIViewController {
             action: #selector(aboutButtonClicked),
             for: .touchUpInside
         )
+        
+        self.navigationController?.interactivePopGestureRecognizer?.delegate = self
     }
     
     @objc private func walletButtonClicked() {

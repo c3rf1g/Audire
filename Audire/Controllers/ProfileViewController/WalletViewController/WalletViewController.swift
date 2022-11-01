@@ -3,6 +3,7 @@ import UIKit
 import SnapKit
 
 final class WalletViewController: UIViewController {
+    
     private let walletView = WalletView()
     private let navBarView = NavigationBarView(withBackButton: true)
 

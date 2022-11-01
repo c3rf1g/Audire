@@ -5,20 +5,29 @@ final class ShowWalletsViewController: UIViewController {
     
     private struct Constants {
         static let cellHeight: CGFloat = 50
+        static let numberOfCells = 4
     }
-    private var testDataForTableView = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15"]
     
-    private let showWalletsCellReuseIdentifier = "showWalletsCellReuseIdentifier"
-    private lazy var tableView: UITableView = {
+    private let walletsCellReuseIdentifier = "walletsCellReuseIdentifier"
+    private lazy var walletsTableView: UITableView = {
         let tableView = UITableView()
         tableView.backgroundColor = Resources.Colors.backgroundColor
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.register(WalletsTableViewCell.self, forCellReuseIdentifier: showWalletsCellReuseIdentifier)
+        tableView.register(WalletsTableViewCell.self, forCellReuseIdentifier: walletsCellReuseIdentifier)
         tableView.showsVerticalScrollIndicator = false
+        
+        if TestData.wallets.count <= Constants.numberOfCells {
+            tableView.isScrollEnabled = false
+        }
+        
         return tableView
     }()
+    private let closeButton = CustomSymbolButton(
+        orientation: .standart,
+        symbolImage: Resources.AppImages.crossButtonImage
+    )
     
     private let createNewWalletButton = CustomButton(
         text: "Create new wallet",
@@ -54,7 +63,8 @@ final class ShowWalletsViewController: UIViewController {
     private func addingSubviews() {
         self.view.addSubview(createNewWalletButton)
         self.view.addSubview(importWalletButton)
-        self.view.addSubview(tableView)
+        self.view.addSubview(walletsTableView)
+        self.view.addSubview(closeButton)
     }
     
     private func setupConst() {
@@ -74,38 +84,60 @@ final class ShowWalletsViewController: UIViewController {
             make.height.equalTo(30 * multiplierY)
         }
         
-        tableView.snp.makeConstraints { make in
+        walletsTableView.snp.makeConstraints { make in
             make.leading.trailing.equalToSuperview().inset(92 * multiplierX)
             make.top.equalToSuperview().inset(22 * multiplierY)
             make.height.equalTo(200 * multiplierY)
         }
         
-        tableView.rowHeight = Constants.cellHeight * multiplierY
+        walletsTableView.rowHeight = Constants.cellHeight * multiplierY
+        
+        closeButton.snp.makeConstraints { make in
+            make.leading.equalToSuperview().inset(20 * multiplierX)
+            make.trailing.equalToSuperview().inset(392 * multiplierX).priority(750)
+            make.top.equalToSuperview().inset(20 * multiplierY)
+            make.bottom.equalToSuperview().inset(465.67 * multiplierY)
+            make.width.equalTo(closeButton.snp.height).priority(1000)
+        }
     }
     
     private func addingTargetsandDelegates() {
         createNewWalletButton.addTarget(self, action: #selector(createNewWalletButtonClicked), for: .touchUpInside)
+        importWalletButton.addTarget(self, action: #selector(importWalletButtonClicked), for: .touchUpInside)
+        closeButton.addTarget(self, action: #selector(closeButtonPressed), for: .touchUpInside)
     }
     
     @objc private func createNewWalletButtonClicked() {
-        testDataForTableView.append(String(testDataForTableView.count + 1))
-        tableView.reloadData()
+       /* TestData.wallets.append("Wallet" + String(TestData.wallets.count + 1))
+        walletsTableView.reloadData()
+        
+        if TestData.wallets.count > Constants.numberOfCells {
+            walletsTableView.isScrollEnabled = true
+        } */
+        self.present(UINavigationController(rootViewController: NewWalletViewController()), animated: true)
+    }
+    
+    @objc private func importWalletButtonClicked() {
+        self.present(UINavigationController(rootViewController: ImportWalletViewController()), animated: true)
+    }
+    
+    @objc private func closeButtonPressed() {
+        self.dismiss(animated: true)
     }
 }
 
 extension ShowWalletsViewController: UITableViewDelegate {
-    
 }
 
 extension ShowWalletsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return testDataForTableView.count
+        return TestData.wallets.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: showWalletsCellReuseIdentifier, for: indexPath) as? WalletsTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: walletsCellReuseIdentifier, for: indexPath) as? WalletsTableViewCell
         
-        cell?.walletName.text! = "Wallet" + testDataForTableView[indexPath.row]
+        cell?.walletName.text! = TestData.wallets[indexPath.row]
         
         return cell!
     }

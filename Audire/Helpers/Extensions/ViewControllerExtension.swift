@@ -2,6 +2,18 @@ import UIKit
 import SnapKit
 
 extension UIViewController {
+    var largePresentControllerMultiplierY: Double {
+        return Double(self.view.frame.height / 869)
+    }
+    
+    var mediumPresentControllerMultiplierY: Double {
+        return Double(self.view.frame.height / 501.67)
+    }
+    
+    var anyPresentControllerMultiplierX: Double {
+        return Double(self.view.frame.width / 428)
+    }
+    
     func makeConstraintsForNavigationBarView(navBar: NavigationBarView) {
         navBar.snp.makeConstraints { make in
             make.width.equalToSuperview()
@@ -16,5 +28,11 @@ extension UIViewController {
         newGradientLayer.frame = self.view.bounds
         newGradientLayer.colors = [UIColor(hexString: "#28183D").cgColor, UIColor(hexString: "#130E22").cgColor]
         self.view.layer.addSublayer(newGradientLayer)
+    }
+}
+
+extension UIViewController: UIGestureRecognizerDelegate {
+    public func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldBeRequiredToFailBy otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        return true
     }
 }

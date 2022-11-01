@@ -7,7 +7,7 @@ final class CustomLabel: UILabel {
     
     private let customText: String
     private let fontStyle: String
-    private let fontSize: CGFloat
+    let fontSize: CGFloat
     
     required init(customText: String, fontStyle: String, fontSize: CGFloat) {
         self.customText = customText
@@ -25,7 +25,7 @@ final class CustomLabel: UILabel {
     
     private func setupUI() {
         text = customText
-        
+
         if Resources.ScreenSizes.width < Constants.screenWidthForChangingFontSize {
             font = UIFont(name: "Montserrat-\(fontStyle)", size: (fontSize - 4))
         } else {

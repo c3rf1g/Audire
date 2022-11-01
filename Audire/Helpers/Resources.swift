@@ -4,7 +4,7 @@ enum Resources {
     enum Colors {
         static var inactive = UIColor(hexString: "#FF06FE")
         static var tabBarBackground = UIColor(hexString: "#130E22")
-        static var backgroundColor = UIColor(hexString: "#28183D")
+        static var backgroundColor = UIColor(hexString: "#21093B")
         static var borderHeadphones = UIColor(hexString: "#FA00FF")
         static var topBorder = UIColor(hexString: "#EB00FF")
         static var inactiveButtonColor = UIColor(hexString: "#27004A")
@@ -41,17 +41,21 @@ enum Resources {
         static let chargeStatus = UIImage(named: "chargeStatus.png")
         static let firstToken = UIImage(named: "token.png")
         static let mainToken = UIImage(named: "mainToken.png")
+        static let mainTokenLarge = UIImage(named: "mainTokenLarge.png")
+        
         static let wallet = UIImage(named: "wallet.png")
         static let account = UIImage(named: "account.png")
         static let settings = UIImage(named: "settings.png")
         static let about = UIImage(named: "about.png")
+        
         static let arrowButtonImage = UIImage(named: "arrow.png")
         static let showWalletsButtonImage = UIImage(named: "showWallets.png")
+        static let crossButtonImage = UIImage(named: "cross.png")
+        
         static let airpods = UIImage(systemName: "airpods")
         static let batteryImage = UIImage(named: "batteryImage.png")
         static let priceImage = UIImage(named: "priceImage.png")
         static let lightningImage = UIImage(named: "lightningImage.png")
         static let speakerImage = UIImage(named: "speakerImage.png")
-        static let mainTokenLarge = UIImage(named: "mainTokenLarge.png")
     }
 }

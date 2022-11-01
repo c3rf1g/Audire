@@ -1,9 +1,9 @@
 import UIKit
 import SnapKit
 
-final class WalletsTableViewCell: UITableViewCell {
+final class PhraseTableViewCell: UITableViewCell {
 
-    var walletName = CustomLabel(
+    var word = CustomLabel(
         customText: "",
         fontStyle: "Regular",
         fontSize: 20
@@ -12,14 +12,13 @@ final class WalletsTableViewCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        self.backgroundColor = Resources.Colors.backgroundColor
+        self.backgroundColor = .clear
         self.selectionStyle = .none
         
-        contentView.addSubview(walletName)
+        contentView.addSubview(word)
         
-        walletName.snp.makeConstraints { make in
-            make.leading.equalToSuperview()
-            make.centerY.equalToSuperview()
+        word.snp.makeConstraints { make in
+            make.center.equalToSuperview()
         }
     }
 

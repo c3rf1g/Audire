@@ -157,6 +157,11 @@ final class FilteringViewController: UIViewController {
         radius: 5
     )
     
+    private let closeButton = CustomSymbolButton(
+        orientation: .standart,
+        symbolImage: Resources.AppImages.crossButtonImage
+    )
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -169,6 +174,13 @@ final class FilteringViewController: UIViewController {
         super.viewWillAppear(animated)
         
         self.setupConst()
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        if touches.first != nil {
+            view.endEditing(true)
+        }
+        super.touchesBegan(touches, with: event)
     }
     
     private func setupUI() {
@@ -187,7 +199,8 @@ final class FilteringViewController: UIViewController {
             ratingLabel, priceLabel, releaseLabel, powerLabel, batteryLabel, volumeLabel,
             ratingSlider, priceSlider, releaseSlider, powerSlider, batterySlider, volumeSlider,
             ratingMax, priceMax, releaseMax, powerMax, batteryMax, volumeMax,
-            ratingMin, priceMin, releaseMin, powerMin, batteryMin, volumeMin, applyButton, resetButton
+            ratingMin, priceMin, releaseMin, powerMin, batteryMin, volumeMin,
+            applyButton, resetButton, closeButton
         ]
         
         for element in allElements {
@@ -217,6 +230,7 @@ final class FilteringViewController: UIViewController {
         
         applyButton.addTarget(self, action: #selector(applyButtonPressed), for: .touchUpInside)
         resetButton.addTarget(self, action: #selector(resetButtonPressed), for: .touchUpInside)
+        closeButton.addTarget(self, action: #selector(closeButtonPressed), for: .touchUpInside)
     }
     
     private func setupConst() {
@@ -320,6 +334,14 @@ final class FilteringViewController: UIViewController {
             make.trailing.equalToSuperview().inset(229 * multiplierX)
             make.top.equalTo(volumeSlider.snp.bottom).offset(48 * multiplierY)
         }
+        
+        closeButton.snp.makeConstraints { make in
+            make.leading.equalToSuperview().inset(20 * multiplierX)
+            make.trailing.equalToSuperview().inset(392 * multiplierX).priority(750)
+            make.top.equalToSuperview().inset(20 * multiplierY)
+            make.bottom.equalToSuperview().inset(833 * multiplierY)
+            make.width.equalTo(closeButton.snp.height).priority(1000)
+        }
     }
     
     @objc private func applyButtonPressed() {
@@ -353,6 +375,10 @@ final class FilteringViewController: UIViewController {
             }
             slider.updateHandlePositions()
         }
+    }
+    
+    @objc private func closeButtonPressed() {
+        self.dismiss(animated: true)
     }
     
     private func editingInputValuesOfTextFields(textField: UITextField) {

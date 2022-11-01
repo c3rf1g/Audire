@@ -84,6 +84,8 @@ extension InventoryViewController: UICollectionViewDelegateFlowLayout {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
         
         self.navigationController?.navigationBar.removeFromSuperview()
+        self.navigationController?.interactivePopGestureRecognizer?.delegate = self
+        
         self.view.addSubview(collectionView)
         self.view.addSubview(navBarView)
         self.collectionView = collectionView

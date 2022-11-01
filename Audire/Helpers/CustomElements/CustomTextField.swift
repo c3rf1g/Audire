@@ -14,6 +14,7 @@ final class CustomTextField: UITextField {
         case numbersOnly
         case numbersWithPoint
         case defaultType
+        case forSecretPhrase
     }
     private let keyboard: KeyboardType
     private let withDoneButton: Bool
@@ -72,6 +73,10 @@ final class CustomTextField: UITextField {
             keyboardType = .decimalPad
         case .defaultType:
             keyboardType = .default
+            returnKeyType = UIReturnKeyType.done
+        case .forSecretPhrase:
+            keyboardType = .asciiCapable
+            returnKeyType = UIReturnKeyType.done
         }
 
         keyboardAppearance = .dark

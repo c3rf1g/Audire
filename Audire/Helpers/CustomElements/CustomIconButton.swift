@@ -67,6 +67,7 @@ final class CustomIconButton: UIButton {
     private func addingTargets() {
         self.addTarget(self, action: #selector(unclicked), for: .touchUpInside)
         self.addTarget(self, action: #selector(clicked), for: .touchDown)
+        self.addTarget(self, action: #selector(unclicked), for: .touchDragExit)
     }
     
     @objc private func unclicked() {

@@ -41,6 +41,15 @@
 		B7D8B7D72902D6D3009BF226 /* WalletView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D8B7D62902D6D3009BF226 /* WalletView.swift */; };
 		B7D8B7DB29034055009BF226 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D8B7DA29034055009BF226 /* StringExtension.swift */; };
 		B7D8B7DD2903535E009BF226 /* UITextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D8B7DC2903535E009BF226 /* UITextFieldExtension.swift */; };
+		B7D8B7E32905B808009BF226 /* BalancesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D8B7E22905B808009BF226 /* BalancesTableViewCell.swift */; };
+		B7D8B7E62905C03A009BF226 /* TestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D8B7E52905C03A009BF226 /* TestData.swift */; };
+		B7D8B7EA2906BA29009BF226 /* NewWalletViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D8B7E92906BA29009BF226 /* NewWalletViewController.swift */; };
+		B7D8B7EC2906C23A009BF226 /* EnterSecretPhraseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D8B7EB2906C23A009BF226 /* EnterSecretPhraseViewController.swift */; };
+		B7D8B7EF2906E212009BF226 /* NewWalletView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D8B7EE2906E212009BF226 /* NewWalletView.swift */; };
+		B7D8B7F129070B6E009BF226 /* PhraseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D8B7F029070B6E009BF226 /* PhraseTableViewCell.swift */; };
+		B7D8B7F62907EB85009BF226 /* EnterSecretPhraseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D8B7F52907EB85009BF226 /* EnterSecretPhraseView.swift */; };
+		B7D8B7F92907FAC4009BF226 /* ImportWalletViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D8B7F82907FAC4009BF226 /* ImportWalletViewController.swift */; };
+		B7D8B7FC2907FB1A009BF226 /* ImportWalletView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D8B7FB2907FB1A009BF226 /* ImportWalletView.swift */; };
 		B7E074B928F3504C001B10D5 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E074B828F3504C001B10D5 /* ProfileView.swift */; };
 		B7E074BC28F35117001B10D5 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E074BB28F35117001B10D5 /* ProfileViewController.swift */; };
 		B7E074E328F59D8B001B10D5 /* CustomActionSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E074E228F59D8A001B10D5 /* CustomActionSheet.swift */; };
@@ -94,6 +103,15 @@
 		B7D8B7D62902D6D3009BF226 /* WalletView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletView.swift; sourceTree = "<group>"; };
 		B7D8B7DA29034055009BF226 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		B7D8B7DC2903535E009BF226 /* UITextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldExtension.swift; sourceTree = "<group>"; };
+		B7D8B7E22905B808009BF226 /* BalancesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalancesTableViewCell.swift; sourceTree = "<group>"; };
+		B7D8B7E52905C03A009BF226 /* TestData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestData.swift; sourceTree = "<group>"; };
+		B7D8B7E92906BA29009BF226 /* NewWalletViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewWalletViewController.swift; sourceTree = "<group>"; };
+		B7D8B7EB2906C23A009BF226 /* EnterSecretPhraseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterSecretPhraseViewController.swift; sourceTree = "<group>"; };
+		B7D8B7EE2906E212009BF226 /* NewWalletView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewWalletView.swift; sourceTree = "<group>"; };
+		B7D8B7F029070B6E009BF226 /* PhraseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhraseTableViewCell.swift; sourceTree = "<group>"; };
+		B7D8B7F52907EB85009BF226 /* EnterSecretPhraseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterSecretPhraseView.swift; sourceTree = "<group>"; };
+		B7D8B7F82907FAC4009BF226 /* ImportWalletViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ImportWalletViewController.swift; path = Audire/Views/WalletView/NewWalletView/EnterSecretPhraseView/ImportWalletViewController.swift; sourceTree = SOURCE_ROOT; };
+		B7D8B7FB2907FB1A009BF226 /* ImportWalletView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportWalletView.swift; sourceTree = "<group>"; };
 		B7E074B828F3504C001B10D5 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		B7E074BB28F35117001B10D5 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		B7E074E228F59D8A001B10D5 /* CustomActionSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomActionSheet.swift; sourceTree = "<group>"; };
@@ -144,6 +162,7 @@
 		970AB74628E9C594002EE407 /* Audire */ = {
 			isa = PBXGroup;
 			children = (
+				B7D8B7E42905C029009BF226 /* Model */,
 				B76D513B28EDC63800C053E0 /* Application */,
 				B7D8B7D52902D476009BF226 /* Views */,
 				9769C61228EB052400037B51 /* Controllers */,
@@ -270,6 +289,8 @@
 			children = (
 				B70C811928FB6B970063CD9F /* ShowWalletsViewController.swift */,
 				B70C811D28FB70F10063CD9F /* WalletsTableViewCell.swift */,
+				B7D8B7E82906BA0A009BF226 /* NewWalletViewController */,
+				B7D8B7F72907FAA7009BF226 /* ImportWalletViewController */,
 			);
 			path = ShowWalletsViewController;
 			sourceTree = "<group>";
@@ -286,12 +307,74 @@
 		B7D8B7D52902D476009BF226 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				B7D8B7E72905EF87009BF226 /* WalletView */,
 				97C816D128EB1A940048658F /* NavigationBarView.swift */,
 				B7E074B828F3504C001B10D5 /* ProfileView.swift */,
 				B7D8B7CE2902B2E0009BF226 /* DetailView.swift */,
-				B7D8B7D62902D6D3009BF226 /* WalletView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		B7D8B7E42905C029009BF226 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B7D8B7E52905C03A009BF226 /* TestData.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B7D8B7E72905EF87009BF226 /* WalletView */ = {
+			isa = PBXGroup;
+			children = (
+				B7D8B7D62902D6D3009BF226 /* WalletView.swift */,
+				B7D8B7E22905B808009BF226 /* BalancesTableViewCell.swift */,
+				B7D8B7ED2906E1D9009BF226 /* NewWalletView */,
+				B7D8B7FA2907FB07009BF226 /* ImportWalletView */,
+			);
+			path = WalletView;
+			sourceTree = "<group>";
+		};
+		B7D8B7E82906BA0A009BF226 /* NewWalletViewController */ = {
+			isa = PBXGroup;
+			children = (
+				B7D8B7E92906BA29009BF226 /* NewWalletViewController.swift */,
+				B7D8B7EB2906C23A009BF226 /* EnterSecretPhraseViewController.swift */,
+			);
+			path = NewWalletViewController;
+			sourceTree = "<group>";
+		};
+		B7D8B7ED2906E1D9009BF226 /* NewWalletView */ = {
+			isa = PBXGroup;
+			children = (
+				B7D8B7EE2906E212009BF226 /* NewWalletView.swift */,
+				B7D8B7F029070B6E009BF226 /* PhraseTableViewCell.swift */,
+				B7D8B7F42907EB64009BF226 /* EnterSecretPhraseView */,
+			);
+			path = NewWalletView;
+			sourceTree = "<group>";
+		};
+		B7D8B7F42907EB64009BF226 /* EnterSecretPhraseView */ = {
+			isa = PBXGroup;
+			children = (
+				B7D8B7F52907EB85009BF226 /* EnterSecretPhraseView.swift */,
+			);
+			path = EnterSecretPhraseView;
+			sourceTree = "<group>";
+		};
+		B7D8B7F72907FAA7009BF226 /* ImportWalletViewController */ = {
+			isa = PBXGroup;
+			children = (
+				B7D8B7F82907FAC4009BF226 /* ImportWalletViewController.swift */,
+			);
+			path = ImportWalletViewController;
+			sourceTree = "<group>";
+		};
+		B7D8B7FA2907FB07009BF226 /* ImportWalletView */ = {
+			isa = PBXGroup;
+			children = (
+				B7D8B7FB2907FB1A009BF226 /* ImportWalletView.swift */,
+			);
+			path = ImportWalletView;
 			sourceTree = "<group>";
 		};
 		B7E074BA28F35060001B10D5 /* ProfileViewController */ = {
@@ -503,17 +586,24 @@
 				B70C811A28FB6B970063CD9F /* ShowWalletsViewController.swift in Sources */,
 				97C816D928EB1C790048658F /* CustomButton.swift in Sources */,
 				B7E074E328F59D8B001B10D5 /* CustomActionSheet.swift in Sources */,
+				B7D8B7EA2906BA29009BF226 /* NewWalletViewController.swift in Sources */,
 				B70C810A28F722440063CD9F /* TapticEngine.swift in Sources */,
+				B7D8B7EC2906C23A009BF226 /* EnterSecretPhraseViewController.swift in Sources */,
 				B7D8B7DD2903535E009BF226 /* UITextFieldExtension.swift in Sources */,
 				B76D513828EDC50D00C053E0 /* CustomSlider.swift in Sources */,
 				97C816CB28EB13110048658F /* AppDelegate.swift in Sources */,
+				B7D8B7F92907FAC4009BF226 /* ImportWalletViewController.swift in Sources */,
 				9769C60E28EB04F600037B51 /* MainTabBarViewController.swift in Sources */,
 				B70C810928F722440063CD9F /* RangeSeekSlider.swift in Sources */,
+				B7D8B7FC2907FB1A009BF226 /* ImportWalletView.swift in Sources */,
 				B7ED2DD628EDCA4900653D87 /* FilteringViewController.swift in Sources */,
 				B76D513A28EDC52400C053E0 /* CustomTextField.swift in Sources */,
+				B7D8B7F62907EB85009BF226 /* EnterSecretPhraseView.swift in Sources */,
 				B7E074BC28F35117001B10D5 /* ProfileViewController.swift in Sources */,
 				B76D513628EDC4D900C053E0 /* CustomLabel.swift in Sources */,
+				B7D8B7EF2906E212009BF226 /* NewWalletView.swift in Sources */,
 				97C816D228EB1A940048658F /* NavigationBarView.swift in Sources */,
+				B7D8B7F129070B6E009BF226 /* PhraseTableViewCell.swift in Sources */,
 				B70C810B28F722440063CD9F /* RangeSeekSliderDelegate.swift in Sources */,
 				B7D8B7D72902D6D3009BF226 /* WalletView.swift in Sources */,
 				97C816CE28EB13570048658F /* MarketViewController.swift in Sources */,
@@ -526,8 +616,10 @@
 				B70C810F28F9FC4A0063CD9F /* WalletViewController.swift in Sources */,
 				97C816C328EB091F0048658F /* UIColor + ext.swift in Sources */,
 				97C816CA28EB13110048658F /* SceneDelegate.swift in Sources */,
+				B7D8B7E62905C03A009BF226 /* TestData.swift in Sources */,
 				97711ED028E9D09000FE1462 /* Net.swift in Sources */,
 				B70C811E28FB70F10063CD9F /* WalletsTableViewCell.swift in Sources */,
+				B7D8B7E32905B808009BF226 /* BalancesTableViewCell.swift in Sources */,
 				B7E074E728F6D597001B10D5 /* CustomIconButton.swift in Sources */,
 				97C816C728EB12700048658F /* Resources.swift in Sources */,
 				97C64B6C28EC8476001F857F /* ApolloGen.swift in Sources */,
