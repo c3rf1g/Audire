@@ -29,6 +29,12 @@ extension UIViewController {
         newGradientLayer.colors = [UIColor(hexString: "#28183D").cgColor, UIColor(hexString: "#130E22").cgColor]
         self.view.layer.addSublayer(newGradientLayer)
     }
+    
+    func add(_ child: UIViewController) {
+        addChild(child)
+        view.addSubview(child.view)
+        child.didMove(toParent: self)
+    }
 }
 
 extension UIViewController: UIGestureRecognizerDelegate {

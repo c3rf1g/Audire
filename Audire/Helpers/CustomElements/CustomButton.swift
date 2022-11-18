@@ -61,11 +61,30 @@ final class CustomButton: UIButton {
     
     @objc private func unclicked() {
         self.backgroundColor = Resources.Colors.inactiveButtonColor
-        self.layer.shadowOffset = CGSize(width: Constants.shadowOffsetWidth, height: Constants.shadowOffsetHeight)
+        self.layer.shadowOffset = CGSize(
+            width: Constants.shadowOffsetWidth,
+            height: Constants.shadowOffsetHeight
+        )
     }
     
     @objc private func clicked() {
         self.backgroundColor = Resources.Colors.activeButtonColor
-        self.layer.shadowOffset = CGSize(width: -Constants.shadowOffsetWidth, height: -Constants.shadowOffsetHeight)
+        self.layer.shadowOffset = CGSize(
+            width: -Constants.shadowOffsetWidth,
+            height: -Constants.shadowOffsetHeight
+        )
+    }
+    
+    func setAlwaysPressed() {
+        self.removeTarget(self, action: #selector(unclicked), for: .touchUpInside)
+        self.removeTarget(self, action: #selector(clicked), for: .touchDown)
+        self.removeTarget(self, action: #selector(unclicked), for: .touchDragExit)
+        
+        self.setTitleColor(Resources.Colors.activeButtonTextColor, for: .normal)
+        self.backgroundColor = Resources.Colors.activeButtonColor
+        self.layer.shadowOffset = CGSize(
+            width: -Constants.shadowOffsetWidth,
+            height: -Constants.shadowOffsetHeight
+        )
     }
 }

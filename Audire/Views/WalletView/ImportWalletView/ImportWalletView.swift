@@ -36,15 +36,6 @@ final class ImportWalletView: UIView {
         fontSize: 16
     )
     
-    private let secretPhraseTextField = CustomTextField(
-        startText: "Text",
-        fontStyle: "Light",
-        fontSize: 20,
-        cornerRadius: 10,
-        keyboard: .forSecretPhrase,
-        withDoneButton: false
-    )
-    
     let importWalletButton = CustomButton(
         text: "Import a wallet",
         fontStyle: "Regular",
@@ -70,17 +61,8 @@ final class ImportWalletView: UIView {
     }
     
     private func setupUI() {
-        enterWalletNameTextField.textAlignment = .natural
-        enterWalletNameTextField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10 * Resources.Multipliers.multiplierX, height: enterWalletNameTextField.frame.height))
-        enterWalletNameTextField.leftViewMode = .always
-        
-        secretPhraseTextField.textAlignment = .left
-        secretPhraseTextField.contentVerticalAlignment = .top
-        
-        secretPhraseTextField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 31 * Resources.Multipliers.multiplierX, height: secretPhraseTextField.frame.height))
-        secretPhraseTextField.rightView = secretPhraseTextField.leftView
-        secretPhraseTextField.leftViewMode = .always
-        secretPhraseTextField.rightViewMode = .always
+        enterWalletNameTextField.addLeftSpacing(width: 10, height: enterWalletNameTextField.frame.height)
+        enterWalletNameTextField.addRightSpacing(width: 10, height: enterWalletNameTextField.frame.height)
         
         notificationLabel.numberOfLines = 2
         notificationLabel.font = UIFont(name: "Montserrat-Regular", size: 16)
@@ -91,7 +73,7 @@ final class ImportWalletView: UIView {
         let elementsArray = [
             importWalletLabel, walletNameLabel,
             enterWalletNameTextField, secretPhraseLabel,
-            notificationLabel, secretPhraseTextField, importWalletButton, closeButton
+            notificationLabel, importWalletButton, closeButton
         ]
         
         for element in elementsArray {
@@ -101,7 +83,6 @@ final class ImportWalletView: UIView {
     
     private func setupTargetsAndDelegates() {
         enterWalletNameTextField.delegate = self
-        secretPhraseTextField.delegate = self
     }
     
     func setupSelfConst(multiplierX: Double, multiplierY: Double) {
@@ -133,12 +114,6 @@ final class ImportWalletView: UIView {
         notificationLabel.snp.makeConstraints { make in
             make.leading.trailing.equalToSuperview().inset(30 * multiplierX)
             make.top.equalTo(secretPhraseLabel.snp.bottom).offset(12 * multiplierY)
-        }
-        
-        secretPhraseTextField.snp.makeConstraints { make in
-            make.top.equalTo(notificationLabel.snp.bottom).offset(41 * multiplierY)
-            make.height.equalTo(123 * multiplierY)
-            make.leading.trailing.equalToSuperview().inset(30 * multiplierX)
         }
         
         importWalletButton.snp.makeConstraints { make in

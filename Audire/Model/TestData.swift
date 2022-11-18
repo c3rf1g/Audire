@@ -42,4 +42,8 @@ struct TestData {
         "Smoke", "Computer", "Apple", "Water",
         "Sunny", "Table", "Word", "Bottle"
     ]
+    
+    static var isUserLoggedAlready = false
+    
+    static let loginAndPassword = ["apple" : "1234567."]
 }

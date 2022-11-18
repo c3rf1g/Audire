@@ -285,21 +285,21 @@
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
-			<integer>125</integer>
+			<integer>124</integer>
 		</dict>
 		<key>SQLite (Playground) 58.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
-			<integer>126</integer>
+			<integer>125</integer>
 		</dict>
 		<key>SQLite (Playground) 59.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
-			<integer>127</integer>
+			<integer>126</integer>
 		</dict>
 		<key>SQLite (Playground) 6.xcscheme</key>
 		<dict>
@@ -307,6 +307,42 @@
 			<false/>
 			<key>orderHint</key>
 			<integer>21</integer>
+		</dict>
+		<key>SQLite (Playground) 60.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>133</integer>
+		</dict>
+		<key>SQLite (Playground) 61.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>134</integer>
+		</dict>
+		<key>SQLite (Playground) 62.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>135</integer>
+		</dict>
+		<key>SQLite (Playground) 63.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>140</integer>
+		</dict>
+		<key>SQLite (Playground) 64.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>141</integer>
+		</dict>
+		<key>SQLite (Playground) 65.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>142</integer>
 		</dict>
 		<key>SQLite (Playground) 7.xcscheme</key>
 		<dict>
@@ -637,21 +673,57 @@
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
-			<integer>128</integer>
+			<integer>127</integer>
 		</dict>
 		<key>Spectre (Playground) 61.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
-			<integer>129</integer>
+			<integer>128</integer>
 		</dict>
 		<key>Spectre (Playground) 62.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
+			<integer>129</integer>
+		</dict>
+		<key>Spectre (Playground) 63.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
 			<integer>130</integer>
+		</dict>
+		<key>Spectre (Playground) 64.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>131</integer>
+		</dict>
+		<key>Spectre (Playground) 65.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>132</integer>
+		</dict>
+		<key>Spectre (Playground) 66.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>137</integer>
+		</dict>
+		<key>Spectre (Playground) 67.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>138</integer>
+		</dict>
+		<key>Spectre (Playground) 68.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>139</integer>
 		</dict>
 		<key>Spectre (Playground) 7.xcscheme</key>
 		<dict>

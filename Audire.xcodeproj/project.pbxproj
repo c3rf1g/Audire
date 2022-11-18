@@ -34,9 +34,11 @@
 		B70C811A28FB6B970063CD9F /* ShowWalletsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70C811928FB6B970063CD9F /* ShowWalletsViewController.swift */; };
 		B70C811E28FB70F10063CD9F /* WalletsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70C811D28FB70F10063CD9F /* WalletsTableViewCell.swift */; };
 		B70C8165290191790063CD9F /* ViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70C8164290191790063CD9F /* ViewControllerExtension.swift */; };
+		B7372F71291AD73C00F36C2C /* CustomAgreeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7372F70291AD73C00F36C2C /* CustomAgreeButton.swift */; };
 		B76D513628EDC4D900C053E0 /* CustomLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B76D513528EDC4D900C053E0 /* CustomLabel.swift */; };
 		B76D513828EDC50D00C053E0 /* CustomSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B76D513728EDC50D00C053E0 /* CustomSlider.swift */; };
 		B76D513A28EDC52400C053E0 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B76D513928EDC52400C053E0 /* CustomTextField.swift */; };
+		B79A959F291FDFA1009C553C /* NSMutableAttributedStringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79A959E291FDFA0009C553C /* NSMutableAttributedStringExtension.swift */; };
 		B7D8B7CF2902B2E0009BF226 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D8B7CE2902B2E0009BF226 /* DetailView.swift */; };
 		B7D8B7D72902D6D3009BF226 /* WalletView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D8B7D62902D6D3009BF226 /* WalletView.swift */; };
 		B7D8B7DB29034055009BF226 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D8B7DA29034055009BF226 /* StringExtension.swift */; };
@@ -50,6 +52,11 @@
 		B7D8B7F62907EB85009BF226 /* EnterSecretPhraseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D8B7F52907EB85009BF226 /* EnterSecretPhraseView.swift */; };
 		B7D8B7F92907FAC4009BF226 /* ImportWalletViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D8B7F82907FAC4009BF226 /* ImportWalletViewController.swift */; };
 		B7D8B7FC2907FB1A009BF226 /* ImportWalletView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D8B7FB2907FB1A009BF226 /* ImportWalletView.swift */; };
+		B7D8B800291164A0009BF226 /* AuthorizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D8B7FF291164A0009BF226 /* AuthorizationViewController.swift */; };
+		B7D8B827291292E1009BF226 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D8B826291292E1009BF226 /* LoginViewController.swift */; };
+		B7D8B829291292F8009BF226 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D8B828291292F8009BF226 /* SignUpViewController.swift */; };
+		B7D8B82E29129369009BF226 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D8B82D29129369009BF226 /* LoginView.swift */; };
+		B7D8B8302912937A009BF226 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D8B82F2912937A009BF226 /* SignUpView.swift */; };
 		B7E074B928F3504C001B10D5 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E074B828F3504C001B10D5 /* ProfileView.swift */; };
 		B7E074BC28F35117001B10D5 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E074BB28F35117001B10D5 /* ProfileViewController.swift */; };
 		B7E074E328F59D8B001B10D5 /* CustomActionSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E074E228F59D8A001B10D5 /* CustomActionSheet.swift */; };
@@ -96,9 +103,11 @@
 		B70C811928FB6B970063CD9F /* ShowWalletsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowWalletsViewController.swift; sourceTree = "<group>"; };
 		B70C811D28FB70F10063CD9F /* WalletsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletsTableViewCell.swift; sourceTree = "<group>"; };
 		B70C8164290191790063CD9F /* ViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerExtension.swift; sourceTree = "<group>"; };
+		B7372F70291AD73C00F36C2C /* CustomAgreeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAgreeButton.swift; sourceTree = "<group>"; };
 		B76D513528EDC4D900C053E0 /* CustomLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLabel.swift; sourceTree = "<group>"; };
 		B76D513728EDC50D00C053E0 /* CustomSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSlider.swift; sourceTree = "<group>"; };
 		B76D513928EDC52400C053E0 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		B79A959E291FDFA0009C553C /* NSMutableAttributedStringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSMutableAttributedStringExtension.swift; sourceTree = "<group>"; };
 		B7D8B7CE2902B2E0009BF226 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		B7D8B7D62902D6D3009BF226 /* WalletView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletView.swift; sourceTree = "<group>"; };
 		B7D8B7DA29034055009BF226 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
@@ -112,6 +121,11 @@
 		B7D8B7F52907EB85009BF226 /* EnterSecretPhraseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterSecretPhraseView.swift; sourceTree = "<group>"; };
 		B7D8B7F82907FAC4009BF226 /* ImportWalletViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ImportWalletViewController.swift; path = Audire/Views/WalletView/NewWalletView/EnterSecretPhraseView/ImportWalletViewController.swift; sourceTree = SOURCE_ROOT; };
 		B7D8B7FB2907FB1A009BF226 /* ImportWalletView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportWalletView.swift; sourceTree = "<group>"; };
+		B7D8B7FF291164A0009BF226 /* AuthorizationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationViewController.swift; sourceTree = "<group>"; };
+		B7D8B826291292E1009BF226 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		B7D8B828291292F8009BF226 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		B7D8B82D29129369009BF226 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		B7D8B82F2912937A009BF226 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		B7E074B828F3504C001B10D5 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		B7E074BB28F35117001B10D5 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		B7E074E228F59D8A001B10D5 /* CustomActionSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomActionSheet.swift; sourceTree = "<group>"; };
@@ -195,6 +209,7 @@
 		9769C61228EB052400037B51 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				B7D8B8252912927A009BF226 /* AuthorizationViewController */,
 				9769C60028EB009B00037B51 /* MainTabBarViewController.swift */,
 				97C816C228EB08F50048658F /* InventoryViewController */,
 				B7ED2DDA28EDCEDB00653D87 /* MarketViewController */,
@@ -233,6 +248,7 @@
 				B70C8164290191790063CD9F /* ViewControllerExtension.swift */,
 				B7D8B7DA29034055009BF226 /* StringExtension.swift */,
 				B7D8B7DC2903535E009BF226 /* UITextFieldExtension.swift */,
+				B79A959E291FDFA0009C553C /* NSMutableAttributedStringExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -307,6 +323,7 @@
 		B7D8B7D52902D476009BF226 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				B7D8B82B29129345009BF226 /* AuthorizationView */,
 				B7D8B7E72905EF87009BF226 /* WalletView */,
 				97C816D128EB1A940048658F /* NavigationBarView.swift */,
 				B7E074B828F3504C001B10D5 /* ProfileView.swift */,
@@ -377,6 +394,41 @@
 			path = ImportWalletView;
 			sourceTree = "<group>";
 		};
+		B7D8B8252912927A009BF226 /* AuthorizationViewController */ = {
+			isa = PBXGroup;
+			children = (
+				B7D8B7FF291164A0009BF226 /* AuthorizationViewController.swift */,
+				B7D8B82A2912932C009BF226 /* ChildViewControllers */,
+			);
+			path = AuthorizationViewController;
+			sourceTree = "<group>";
+		};
+		B7D8B82A2912932C009BF226 /* ChildViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				B7D8B826291292E1009BF226 /* LoginViewController.swift */,
+				B7D8B828291292F8009BF226 /* SignUpViewController.swift */,
+			);
+			path = ChildViewControllers;
+			sourceTree = "<group>";
+		};
+		B7D8B82B29129345009BF226 /* AuthorizationView */ = {
+			isa = PBXGroup;
+			children = (
+				B7D8B82C29129357009BF226 /* ChildViews */,
+			);
+			path = AuthorizationView;
+			sourceTree = "<group>";
+		};
+		B7D8B82C29129357009BF226 /* ChildViews */ = {
+			isa = PBXGroup;
+			children = (
+				B7D8B82D29129369009BF226 /* LoginView.swift */,
+				B7D8B82F2912937A009BF226 /* SignUpView.swift */,
+			);
+			path = ChildViews;
+			sourceTree = "<group>";
+		};
 		B7E074BA28F35060001B10D5 /* ProfileViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -396,6 +448,7 @@
 				B76D513728EDC50D00C053E0 /* CustomSlider.swift */,
 				B76D513928EDC52400C053E0 /* CustomTextField.swift */,
 				B7E074E228F59D8A001B10D5 /* CustomActionSheet.swift */,
+				B7372F70291AD73C00F36C2C /* CustomAgreeButton.swift */,
 			);
 			path = CustomElements;
 			sourceTree = "<group>";
@@ -588,6 +641,7 @@
 				B7E074E328F59D8B001B10D5 /* CustomActionSheet.swift in Sources */,
 				B7D8B7EA2906BA29009BF226 /* NewWalletViewController.swift in Sources */,
 				B70C810A28F722440063CD9F /* TapticEngine.swift in Sources */,
+				B7D8B829291292F8009BF226 /* SignUpViewController.swift in Sources */,
 				B7D8B7EC2906C23A009BF226 /* EnterSecretPhraseViewController.swift in Sources */,
 				B7D8B7DD2903535E009BF226 /* UITextFieldExtension.swift in Sources */,
 				B76D513828EDC50D00C053E0 /* CustomSlider.swift in Sources */,
@@ -600,20 +654,26 @@
 				B76D513A28EDC52400C053E0 /* CustomTextField.swift in Sources */,
 				B7D8B7F62907EB85009BF226 /* EnterSecretPhraseView.swift in Sources */,
 				B7E074BC28F35117001B10D5 /* ProfileViewController.swift in Sources */,
+				B7D8B827291292E1009BF226 /* LoginViewController.swift in Sources */,
 				B76D513628EDC4D900C053E0 /* CustomLabel.swift in Sources */,
 				B7D8B7EF2906E212009BF226 /* NewWalletView.swift in Sources */,
 				97C816D228EB1A940048658F /* NavigationBarView.swift in Sources */,
+				B7372F71291AD73C00F36C2C /* CustomAgreeButton.swift in Sources */,
 				B7D8B7F129070B6E009BF226 /* PhraseTableViewCell.swift in Sources */,
 				B70C810B28F722440063CD9F /* RangeSeekSliderDelegate.swift in Sources */,
 				B7D8B7D72902D6D3009BF226 /* WalletView.swift in Sources */,
 				97C816CE28EB13570048658F /* MarketViewController.swift in Sources */,
+				B79A959F291FDFA1009C553C /* NSMutableAttributedStringExtension.swift in Sources */,
 				B7D8B7CF2902B2E0009BF226 /* DetailView.swift in Sources */,
+				B7D8B8302912937A009BF226 /* SignUpView.swift in Sources */,
 				9769C61328EB056500037B51 /* InventoryCollectionViewCell.swift in Sources */,
 				9769C61328EB056500037B51 /* InventoryCollectionViewCell.swift in Sources */,
 				B7D8B7DB29034055009BF226 /* StringExtension.swift in Sources */,
 				B7E074B928F3504C001B10D5 /* ProfileView.swift in Sources */,
 				B70C8165290191790063CD9F /* ViewControllerExtension.swift in Sources */,
 				B70C810F28F9FC4A0063CD9F /* WalletViewController.swift in Sources */,
+				B7D8B800291164A0009BF226 /* AuthorizationViewController.swift in Sources */,
+				B7D8B82E29129369009BF226 /* LoginView.swift in Sources */,
 				97C816C328EB091F0048658F /* UIColor + ext.swift in Sources */,
 				97C816CA28EB13110048658F /* SceneDelegate.swift in Sources */,
 				B7D8B7E62905C03A009BF226 /* TestData.swift in Sources */,

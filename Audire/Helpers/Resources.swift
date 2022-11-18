@@ -51,6 +51,10 @@ enum Resources {
         static let arrowButtonImage = UIImage(named: "arrow.png")
         static let showWalletsButtonImage = UIImage(named: "showWallets.png")
         static let crossButtonImage = UIImage(named: "cross.png")
+        static let rectangleButtonImage = UIImage(named: "rectangle.png")
+        static let checkButtonImage = UIImage(named: "check.png")
+        static let googleButtonImage = UIImage(named: "google.png")
+        static let telegramButtonImage = UIImage(named: "telegram.png")
         
         static let airpods = UIImage(systemName: "airpods")
         static let batteryImage = UIImage(named: "batteryImage.png")

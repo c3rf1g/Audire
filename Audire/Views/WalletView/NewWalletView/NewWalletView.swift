@@ -79,9 +79,8 @@ final class NewWalletView: UIView {
     }
     
     private func setupUI() {
-        enterWalletNameTextField.textAlignment = .natural
-        enterWalletNameTextField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10 * Resources.Multipliers.multiplierX, height: enterWalletNameTextField.frame.height))
-        enterWalletNameTextField.leftViewMode = .always
+        enterWalletNameTextField.addLeftSpacing(width: 10, height: enterWalletNameTextField.frame.height)
+        enterWalletNameTextField.addRightSpacing(width: 10, height: enterWalletNameTextField.frame.height)
         
         notificationLabel.numberOfLines = 2
         notificationLabel.font = UIFont(name: "Montserrat-Regular", size: 16)
@@ -113,8 +112,8 @@ final class NewWalletView: UIView {
         }
         
         walletNameLabel.snp.makeConstraints { make in
-            make.leading.equalToSuperview().inset(30 * multiplierX).priority(.high)
-            make.trailing.equalToSuperview().inset(30 * multiplierX).priority(.medium)
+            make.leading.equalToSuperview().inset(30 * multiplierX)
+            make.trailing.equalToSuperview().inset(30 * multiplierX)
             make.top.equalToSuperview().inset(142 * multiplierY)
             make.bottom.equalToSuperview().inset(698 * multiplierY)
         }

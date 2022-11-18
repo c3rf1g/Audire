@@ -15,6 +15,7 @@ final class CustomTextField: UITextField {
         case numbersWithPoint
         case defaultType
         case forSecretPhrase
+        case email
     }
     private let keyboard: KeyboardType
     private let withDoneButton: Bool
@@ -47,6 +48,9 @@ final class CustomTextField: UITextField {
         layer.borderColor = Resources.Colors.activeButtonTextColor.cgColor
         layer.cornerRadius = self.cornerRadius
         
+        autocapitalizationType = .none
+        autocorrectionType = .no
+        
         contentVerticalAlignment = .center
         contentHorizontalAlignment = .right
         
@@ -76,6 +80,9 @@ final class CustomTextField: UITextField {
             returnKeyType = UIReturnKeyType.done
         case .forSecretPhrase:
             keyboardType = .asciiCapable
+            returnKeyType = UIReturnKeyType.done
+        case .email:
+            keyboardType = .emailAddress
             returnKeyType = UIReturnKeyType.done
         }
 
@@ -126,5 +133,17 @@ final class CustomTextField: UITextField {
         if self.text == "" {
             layer.borderColor = Resources.Colors.activeButtonTextColor.cgColor
         }
+    }
+    
+    func addLeftSpacing(width: Double, height: Double) {
+        self.textAlignment = .natural
+        self.leftView = UIView(frame: CGRect(x: 0, y: 0, width: width * Resources.Multipliers.multiplierX, height: height))
+        self.leftViewMode = .always
+    }
+    
+    func addRightSpacing(width: Double, height: Double) {
+        self.textAlignment = .natural
+        self.rightView = UIView(frame: CGRect(x: 0, y: 0, width: width * Resources.Multipliers.multiplierX, height: height))
+        self.rightViewMode = .always
     }
 }
