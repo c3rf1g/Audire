@@ -2,6 +2,12 @@ import UIKit
 import SnapKit
 
 final class AuthorizationViewController: UIViewController {
+    private struct Constants {
+        static let borderWidth: CGFloat = 2
+        static let cornerRadius: CGFloat = 10
+        static let shadowRadius: CGFloat = 10
+        static let shadowOpacity: Float = 1
+    }
     
     private let childVC = UINavigationController(rootViewController: LoginViewController())
     
@@ -22,7 +28,14 @@ final class AuthorizationViewController: UIViewController {
     
     private func setupUI() {
         createGradientLayer()
-        childVC.view.layer.cornerRadius = 10 * Resources.Multipliers.multiplierX
+        childVC.view.layer.cornerRadius = Constants.cornerRadius * Resources.Multipliers.multiplierX
+        childVC.view.layer.borderWidth = Constants.borderWidth
+        childVC.view.layer.borderColor = Resources.Colors.profileAtarBorderColor.cgColor
+        childVC.view.layer.shadowColor = Resources.Colors.borderHeadphones.cgColor
+        childVC.view.layer.shadowRadius = Constants.shadowRadius
+        childVC.view.layer.shadowOpacity = Constants.shadowOpacity
+        childVC.view.layer.shadowOffset = .zero
+        childVC.view.layer.masksToBounds = false
     }
     
     private func setupConst() {

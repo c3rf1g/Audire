@@ -107,14 +107,13 @@ final class LoginView: UIView {
         backgroundColor = Resources.Colors.backgroundColor
         
         loginButton.setAlwaysPressed()
+        largeLoginButton.removeAllTargets()
         
         emailTextField.addLeftSpacing(width: 10, height: emailTextField.frame.height)
         emailTextField.addRightSpacing(width: 10, height: emailTextField.frame.height)
-        
         passwordTextField.addLeftSpacing(width: 10, height: passwordTextField.frame.height)
         passwordTextField.addRightSpacing(width: 10, height: passwordTextField.frame.height)
         passwordTextField.isSecureTextEntry = true
-        
         
         agreementLabel.attributedText = agreementLabelText
         agreementLabel.adjustsFontSizeToFitWidth = true

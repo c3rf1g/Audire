@@ -24,7 +24,7 @@ final class CustomButton: UIButton {
         super.init(frame: .zero)
         
         self.setupUI()
-        self.addingTargets()
+        self.addTargets()
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -37,7 +37,6 @@ final class CustomButton: UIButton {
         // MARK: Text
         self.setTitle(text, for: .normal)
         self.setTitleColor(.white, for: .normal)
-        self.setTitleColor(Resources.Colors.activeButtonTextColor, for: .highlighted)
         
         if Resources.ScreenSizes.width < Constants.screenWidthForChangingFontSize {
             self.titleLabel?.font = UIFont(name: "Montserrat-\(fontStyle)", size: (fontSize - 4))
@@ -53,10 +52,11 @@ final class CustomButton: UIButton {
         self.layer.shadowRadius = Constants.shadowRadius
     }
     
-    private func addingTargets() {
+    func addTargets() {
         self.addTarget(self, action: #selector(unclicked), for: .touchUpInside)
         self.addTarget(self, action: #selector(clicked), for: .touchDown)
         self.addTarget(self, action: #selector(unclicked), for: .touchDragExit)
+        self.setTitleColor(Resources.Colors.activeButtonTextColor, for: .highlighted)
     }
     
     @objc private func unclicked() {
@@ -73,6 +73,13 @@ final class CustomButton: UIButton {
             width: -Constants.shadowOffsetWidth,
             height: -Constants.shadowOffsetHeight
         )
+    }
+    
+    func removeAllTargets() {
+        self.removeTarget(self, action: #selector(unclicked), for: .touchUpInside)
+        self.removeTarget(self, action: #selector(clicked), for: .touchDown)
+        self.removeTarget(self, action: #selector(unclicked), for: .touchDragExit)
+        self.setTitleColor(.white, for: .highlighted)
     }
     
     func setAlwaysPressed() {

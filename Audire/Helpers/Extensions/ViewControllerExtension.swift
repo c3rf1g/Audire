@@ -30,6 +30,13 @@ extension UIViewController {
         self.view.layer.addSublayer(newGradientLayer)
     }
     
+    func createGradientLayerForLoginScreen() {
+        let newGradientLayer = CAGradientLayer()
+        newGradientLayer.frame = self.view.bounds
+        newGradientLayer.colors = [UIColor(hexString: "#270C43").cgColor, UIColor(hexString: "#1E0737").cgColor]
+        self.view.layer.addSublayer(newGradientLayer)
+    }
+    
     func add(_ child: UIViewController) {
         addChild(child)
         view.addSubview(child.view)

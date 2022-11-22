@@ -16,7 +16,7 @@ final class LoginViewController: UIViewController {
     
     private func setupTargets() {
         loginView.signUpButton.addTarget(self, action: #selector(signUpButtonClicked), for: .touchUpInside)
-        loginView.largeLoginButton.addTarget(self, action: #selector(largeLoginButtonClicked), for: .touchUpInside)
+        loginView.agreeButton.addTarget(self, action: #selector(agreeButtonClicked), for: .touchUpInside)
         loginView.forgotPasswordButton.addTarget(self, action: #selector(forgotPasswordButtonClicked), for: .touchUpInside)
         loginView.googleButton.addTarget(self, action: #selector(googleButtonClicked), for: .touchUpInside)
         loginView.telegramButton.addTarget(self, action: #selector(telegramButtonClicked), for: .touchUpInside)
@@ -31,10 +31,30 @@ final class LoginViewController: UIViewController {
         self.navigationController?.pushViewController(SignUpViewController(), animated: false)
     }
     
+    @objc private func agreeButtonClicked() {
+        if loginView.agreeButton.counter % 2 != 0 {
+            loginView.largeLoginButton.addTargets()
+            loginView.largeLoginButton.addTarget(self, action: #selector(largeLoginButtonClicked), for: .touchUpInside)
+        } else {
+            loginView.largeLoginButton.removeAllTargets()
+            loginView.largeLoginButton.removeTarget(self, action: #selector(largeLoginButtonClicked), for: .touchUpInside)
+        }
+    }
+    
     @objc private func largeLoginButtonClicked() {
-        let tabBarController = MainTabBarViewController()
-        tabBarController.modalPresentationStyle = .fullScreen
-        self.present(tabBarController, animated: true)
+        
+        let result = TestData.loginAndPassword[loginView.emailTextField.text ?? ""] == loginView.passwordTextField.text
+        
+        if result {
+            let tabBarController = MainTabBarViewController()
+            tabBarController.modalPresentationStyle = .fullScreen
+            self.present(tabBarController, animated: true)
+        } else {
+            loginView.emailTextField.textColor = .red
+            loginView.emailTextField.layer.borderColor = UIColor.red.cgColor
+            loginView.passwordTextField.textColor = .red
+            loginView.passwordTextField.layer.borderColor = UIColor.red.cgColor
+        }
     }
     
     @objc private func forgotPasswordButtonClicked() {
@@ -56,23 +76,19 @@ extension LoginViewController: UITextFieldDelegate {
         return true
     }
     
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        switch textField {
-        case loginView.emailTextField:
-            if !TestData.loginAndPassword.keys.contains(textField.text ?? "") && textField.text != "" {
-                loginView.emailTextField.textColor = .red
-                loginView.emailTextField.layer.borderColor = CGColor(red: 1, green: 0, blue: 0, alpha: 1)
-            }
-        case loginView.passwordTextField:
-            if !TestData.loginAndPassword.values.contains(textField.text ?? "") && textField.text != "" {
-                loginView.passwordTextField.textColor = .red
-                loginView.passwordTextField.layer.borderColor = CGColor(red: 1, green: 0, blue: 0, alpha: 1)
-            }
-        default: break
-        }
-    }
-    
     func textFieldDidBeginEditing(_ textField: UITextField) {
         textField.textColor = .white
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        let textFields = [
+            loginView.emailTextField,
+            loginView.passwordTextField
+        ]
+        
+        for element in textFields {
+            element.textColor = .white
+            element.layer.borderColor = UIColor.white.cgColor
+        }
     }
 }

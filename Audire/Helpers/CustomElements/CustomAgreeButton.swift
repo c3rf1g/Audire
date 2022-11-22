@@ -7,7 +7,7 @@ final class CustomAgreeButton: UIButton {
     private let checkImage = Resources.AppImages.checkButtonImage
     private var rectangleImageView = UIImageView(frame: .zero)
     private var checkImageView = UIImageView(frame: .zero)
-    private var counter = 0
+    var counter = 0
     
     required init() {
         super.init(frame: .zero)

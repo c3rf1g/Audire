@@ -23,7 +23,7 @@ final class SignUpView: UIView {
         radius: 10
     )
     
-    private let emailTextField = CustomTextField(
+    let emailTextField = CustomTextField(
         startText: "Email adress",
         fontStyle: "Regular",
         fontSize: 20,
@@ -32,7 +32,7 @@ final class SignUpView: UIView {
         withDoneButton: false
     )
     
-    private let passwordTextField = CustomTextField(
+    let passwordTextField = CustomTextField(
         startText: "Password",
         fontStyle: "Regular",
         fontSize: 20,
@@ -41,7 +41,7 @@ final class SignUpView: UIView {
         withDoneButton: false
     )
     
-    private let repeatPasswordTextField = CustomTextField(
+    let repeatPasswordTextField = CustomTextField(
         startText: "Repeat password",
         fontStyle: "Regular",
         fontSize: 20,
@@ -91,7 +91,6 @@ final class SignUpView: UIView {
         setupUI()
         addingSubviews()
         setupConst()
-        setupDelegates()
     }
     
     required init(coder aDecoder: NSCoder) {
@@ -102,6 +101,7 @@ final class SignUpView: UIView {
         backgroundColor = Resources.Colors.backgroundColor
         
         signUpButton.setAlwaysPressed()
+        largeSignUpButton.removeAllTargets()
         
         emailTextField.addLeftSpacing(width: 10, height: emailTextField.frame.height)
         emailTextField.addRightSpacing(width: 10, height: emailTextField.frame.height)
@@ -114,6 +114,7 @@ final class SignUpView: UIView {
         }
         
         agreementLabel.attributedText = agreementLabelText
+        agreementLabel.adjustsFontSizeToFitWidth = true
         if Resources.ScreenSizes.width < 380 {
             agreementLabel.font = UIFont(name: "Montserrat-Regular", size: 10.5)
         }
@@ -206,18 +207,5 @@ final class SignUpView: UIView {
             make.bottom.equalToSuperview().inset(98 * Resources.Multipliers.multiplierY)
             make.width.equalTo(telegramButton.snp.height).priority(1000)
         }
-    }
-    
-    private func setupDelegates() {
-        emailTextField.delegate = self
-        passwordTextField.delegate = self
-        repeatPasswordTextField.delegate = self
-    }
-}
-
-extension SignUpView: UITextFieldDelegate {
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        return true
     }
 }

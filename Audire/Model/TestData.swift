@@ -45,5 +45,5 @@ struct TestData {
     
     static var isUserLoggedAlready = false
     
-    static let loginAndPassword = ["apple" : "1234567."]
+    static let loginAndPassword = ["apple": "1234567."]
 }
