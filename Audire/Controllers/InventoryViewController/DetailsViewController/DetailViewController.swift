@@ -2,9 +2,9 @@ import Foundation
 import UIKit
 import SnapKit
 
-final class DetailViewController: UIViewController {
+final class InventoryDetailViewController: UIViewController {
     
-    private let inventoryView = DetailView()
+    private let inventoryView = InventoryDetailView()
     private let navBarView = NavigationBarView(withBackButton: true)
 
     override func viewDidLoad() {
@@ -12,8 +12,8 @@ final class DetailViewController: UIViewController {
         
         createGradientLayer()
         addViews()
-        makeConstarints()
         addingTargets()
+        makeConstarints()
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
@@ -28,27 +28,34 @@ final class DetailViewController: UIViewController {
         inventoryView.snp.makeConstraints { make in
             make.top.bottom.leading.trailing.equalToSuperview()
         }
-        
         makeConstraintsForNavigationBarView(navBar: navBarView)
     }
     
     private func addingTargets() {
         navBarView.backButton.addTarget(self, action: #selector(backButtonClicked), for: .touchUpInside)
+        inventoryView.equipButton.addTarget(self, action: #selector(equipTapped), for: .touchUpInside)
     }
     
     @objc func keyboardWillShow(notification: NSNotification) {
             
         guard let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else { return }
         
-        inventoryView.frame.origin.y -= keyboardSize.height * 0.4
+        view.frame.origin.y -= keyboardSize.height * 0.45
     }
 
     @objc func keyboardWillHide(notification: NSNotification) {
         
-        inventoryView.frame = CGRect(x: 0, y: 0, width: self.view.bounds.width, height: self.view.bounds.height)
+        view.frame = CGRect(x: 0, y: 0, width: self.view.bounds.width, height: self.view.bounds.height)
     }
     
     @objc private func backButtonClicked() {
         self.navigationController?.popViewController(animated: true)
+    }
+    
+    @objc private func equipTapped() {
+        
+        let chartViewController = PlayerChartViewController()
+        
+        self.navigationController?.pushViewController(chartViewController, animated: true)
     }
 }

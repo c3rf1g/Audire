@@ -34,6 +34,8 @@
 		B70C811A28FB6B970063CD9F /* ShowWalletsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70C811928FB6B970063CD9F /* ShowWalletsViewController.swift */; };
 		B70C811E28FB70F10063CD9F /* WalletsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70C811D28FB70F10063CD9F /* WalletsTableViewCell.swift */; };
 		B70C8165290191790063CD9F /* ViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70C8164290191790063CD9F /* ViewControllerExtension.swift */; };
+		B710AF0D292D5DE3000457F6 /* PlayerChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B710AF0C292D5DE3000457F6 /* PlayerChartViewController.swift */; };
+		B710AF0F292D5EC0000457F6 /* ColumnChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = B710AF0E292D5EC0000457F6 /* ColumnChart.swift */; };
 		B7372F71291AD73C00F36C2C /* CustomAgreeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7372F70291AD73C00F36C2C /* CustomAgreeButton.swift */; };
 		B76D513628EDC4D900C053E0 /* CustomLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B76D513528EDC4D900C053E0 /* CustomLabel.swift */; };
 		B76D513828EDC50D00C053E0 /* CustomSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B76D513728EDC50D00C053E0 /* CustomSlider.swift */; };
@@ -103,6 +105,8 @@
 		B70C811928FB6B970063CD9F /* ShowWalletsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowWalletsViewController.swift; sourceTree = "<group>"; };
 		B70C811D28FB70F10063CD9F /* WalletsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletsTableViewCell.swift; sourceTree = "<group>"; };
 		B70C8164290191790063CD9F /* ViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerExtension.swift; sourceTree = "<group>"; };
+		B710AF0C292D5DE3000457F6 /* PlayerChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerChartViewController.swift; sourceTree = "<group>"; };
+		B710AF0E292D5EC0000457F6 /* ColumnChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColumnChart.swift; sourceTree = "<group>"; };
 		B7372F70291AD73C00F36C2C /* CustomAgreeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAgreeButton.swift; sourceTree = "<group>"; };
 		B76D513528EDC4D900C053E0 /* CustomLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLabel.swift; sourceTree = "<group>"; };
 		B76D513728EDC50D00C053E0 /* CustomSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSlider.swift; sourceTree = "<group>"; };
@@ -259,6 +263,8 @@
 				9769C61128EB050100037B51 /* InventoryViewController.swift */,
 				9769C61028EB050100037B51 /* InventoryCollectionViewCell.swift */,
 				975100CD28F858CD0094800F /* DetailsViewController */,
+				B710AF0C292D5DE3000457F6 /* PlayerChartViewController.swift */,
+				B710AF0E292D5EC0000457F6 /* ColumnChart.swift */,
 			);
 			path = InventoryViewController;
 			sourceTree = "<group>";
@@ -642,6 +648,7 @@
 				B7D8B7EA2906BA29009BF226 /* NewWalletViewController.swift in Sources */,
 				B70C810A28F722440063CD9F /* TapticEngine.swift in Sources */,
 				B7D8B829291292F8009BF226 /* SignUpViewController.swift in Sources */,
+				B710AF0D292D5DE3000457F6 /* PlayerChartViewController.swift in Sources */,
 				B7D8B7EC2906C23A009BF226 /* EnterSecretPhraseViewController.swift in Sources */,
 				B7D8B7DD2903535E009BF226 /* UITextFieldExtension.swift in Sources */,
 				B76D513828EDC50D00C053E0 /* CustomSlider.swift in Sources */,
@@ -670,6 +677,7 @@
 				9769C61328EB056500037B51 /* InventoryCollectionViewCell.swift in Sources */,
 				B7D8B7DB29034055009BF226 /* StringExtension.swift in Sources */,
 				B7E074B928F3504C001B10D5 /* ProfileView.swift in Sources */,
+				B710AF0F292D5EC0000457F6 /* ColumnChart.swift in Sources */,
 				B70C8165290191790063CD9F /* ViewControllerExtension.swift in Sources */,
 				B70C810F28F9FC4A0063CD9F /* WalletViewController.swift in Sources */,
 				B7D8B800291164A0009BF226 /* AuthorizationViewController.swift in Sources */,

@@ -42,7 +42,7 @@ extension InventoryViewController: UICollectionViewDataSource {
 extension InventoryViewController: UICollectionViewDelegate {
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let detailViewController = DetailViewController()
+        let detailViewController = InventoryDetailViewController()
         
         self.navigationController?.pushViewController(detailViewController, animated: true)
     }

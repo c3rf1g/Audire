@@ -61,5 +61,39 @@ enum Resources {
         static let priceImage = UIImage(named: "priceImage.png")
         static let lightningImage = UIImage(named: "lightningImage.png")
         static let speakerImage = UIImage(named: "speakerImage.png")
+        static let backRectangle = UIImage(named: "backRectangle.png")
+    }
+    
+    enum ColorOfColumn {
+        static let level1 = UIColor(hexString: "#AAE5FF")
+        static let level2 = UIColor(hexString: "#B7D2FF")
+        static let level3 = UIColor(hexString: "#C5BDFF")
+        static let level4 = UIColor(hexString: "#DEBAFF")
+        static let level5 = UIColor(hexString: "#F9B7FF")
+        static let level6 = UIColor(hexString: "#FCB4ED")
+        static let level7 = UIColor(hexString: "#FFB2DC")
+        static let level8 = UIColor(hexString: "#FFB3D1")
+        static let level9 = UIColor(hexString: "#FFB3D1")
+    }
+    
+    enum ColorOfShadow {
+        static let level1 = UIColor(hexString: "#00B2FF")
+        static let level2 = UIColor(hexString: "#3889FF")
+        static let level3 = UIColor(hexString: "#745EFF")
+        static let level4 = UIColor(hexString: "#B530FF")
+        static let level5 = UIColor(hexString: "#FA00FF")
+        static let level6 = UIColor(hexString: "#FC00C3")
+        static let level7 = UIColor(hexString: "#FF008A")
+        static let level8 = UIColor(hexString: "#FF0969")
+        static let level9 = UIColor(hexString: "#FF124B")
+    }
+    enum PositionOfAnimation {
+        static let fromPositionX = 480 * Resources.Multipliers.multiplierX
+        static let toPositionX = -15 * Resources.Multipliers.multiplierX
+        
+        static func positionY(_ height: Int) -> Double {
+            let position: Double = (635 * Resources.Multipliers.multiplierY) - Double(height) * 2.75/2
+            return position
+        }
     }
 }
