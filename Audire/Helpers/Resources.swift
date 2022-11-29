@@ -4,8 +4,96 @@ enum Resources {
     enum Colors {
         static var inactive = UIColor(hexString: "#FF06FE")
         static var tabBarBackground = UIColor(hexString: "#130E22")
-        static var backgroundColor = UIColor(hexString: "#1C1344")
+        static var backgroundColor = UIColor(hexString: "#21093B")
         static var borderHeadphones = UIColor(hexString: "#FA00FF")
         static var topBorder = UIColor(hexString: "#EB00FF")
+        static var inactiveButtonColor = UIColor(hexString: "#27004A")
+        static var activeButtonColor = UIColor(hexString: "#30233D")
+        static var activeButtonTextColor = UIColor(hexString: "#8B759C")
+        static var sortingButtonActionSheetTextColor = UIColor(hexString: "#8B2394")
+        static var ratingSliderColor = UIColor(hexString: "#9AE1FF")
+        static var ratingSliderShadowColor = UIColor(hexString: "#00B2FF")
+        static var priceSliderColor = UIColor(hexString: "#B1B9FF")
+        static var priceSliderShadowColor = UIColor(hexString: "#5E6EFF")
+        static var releaseSliderColor = UIColor(hexString: "#DDB1FF")
+        static var releaseSliderShadowColor = UIColor(hexString: "#AA3EFF")
+        static var powerSliderColor = UIColor(hexString: "#F8A6FF")
+        static var powerSliderShadowColor = UIColor(hexString: "#EB00FF")
+        static var batterySliderColor = UIColor(hexString: "#FFA1E5")
+        static var batterySliderShadowColor = UIColor(hexString: "#FF00B8")
+        static var volumeSliderColor = UIColor(hexString: "#FFAAD3")
+        static var volumeSliderShadowColor = UIColor(hexString: "#FF007A")
+        static var profileAtarBorderColor = UIColor(hexString: "#F9B7FF")
+    }
+    
+    enum Multipliers {
+        static var multiplierX = Double(UIScreen.main.bounds.size.width / 428)
+        static var multiplierY = Double(UIScreen.main.bounds.size.height / 926)
+    }
+    
+    enum ScreenSizes {
+        static var width = UIScreen.main.bounds.size.width
+        static var height = UIScreen.main.bounds.size.height
+    }
+    
+    enum AppImages {
+        static let earphones = UIImage(named: "earphones.png")
+        static let chargeStatus = UIImage(named: "chargeStatus.png")
+        static let firstToken = UIImage(named: "token.png")
+        static let mainToken = UIImage(named: "mainToken.png")
+        static let mainTokenLarge = UIImage(named: "mainTokenLarge.png")
+        
+        static let wallet = UIImage(named: "wallet.png")
+        static let account = UIImage(named: "account.png")
+        static let settings = UIImage(named: "settings.png")
+        static let about = UIImage(named: "about.png")
+        
+        static let arrowButtonImage = UIImage(named: "arrow.png")
+        static let showWalletsButtonImage = UIImage(named: "showWallets.png")
+        static let crossButtonImage = UIImage(named: "cross.png")
+        static let rectangleButtonImage = UIImage(named: "rectangle.png")
+        static let checkButtonImage = UIImage(named: "check.png")
+        static let googleButtonImage = UIImage(named: "google.png")
+        static let telegramButtonImage = UIImage(named: "telegram.png")
+        
+        static let airpods = UIImage(systemName: "airpods")
+        static let batteryImage = UIImage(named: "batteryImage.png")
+        static let priceImage = UIImage(named: "priceImage.png")
+        static let lightningImage = UIImage(named: "lightningImage.png")
+        static let speakerImage = UIImage(named: "speakerImage.png")
+        static let backRectangle = UIImage(named: "backRectangle.png")
+    }
+    
+    enum ColorOfColumn {
+        static let level1 = UIColor(hexString: "#AAE5FF")
+        static let level2 = UIColor(hexString: "#B7D2FF")
+        static let level3 = UIColor(hexString: "#C5BDFF")
+        static let level4 = UIColor(hexString: "#DEBAFF")
+        static let level5 = UIColor(hexString: "#F9B7FF")
+        static let level6 = UIColor(hexString: "#FCB4ED")
+        static let level7 = UIColor(hexString: "#FFB2DC")
+        static let level8 = UIColor(hexString: "#FFB3D1")
+        static let level9 = UIColor(hexString: "#FFB3D1")
+    }
+    
+    enum ColorOfShadow {
+        static let level1 = UIColor(hexString: "#00B2FF")
+        static let level2 = UIColor(hexString: "#3889FF")
+        static let level3 = UIColor(hexString: "#745EFF")
+        static let level4 = UIColor(hexString: "#B530FF")
+        static let level5 = UIColor(hexString: "#FA00FF")
+        static let level6 = UIColor(hexString: "#FC00C3")
+        static let level7 = UIColor(hexString: "#FF008A")
+        static let level8 = UIColor(hexString: "#FF0969")
+        static let level9 = UIColor(hexString: "#FF124B")
+    }
+    enum PositionOfAnimation {
+        static let fromPositionX = 480 * Resources.Multipliers.multiplierX
+        static let toPositionX = -15 * Resources.Multipliers.multiplierX
+        
+        static func positionY(_ height: Int) -> Double {
+            let position: Double = (635 * Resources.Multipliers.multiplierY) - Double(height) * 2.75/2
+            return position
+        }
     }
 }
